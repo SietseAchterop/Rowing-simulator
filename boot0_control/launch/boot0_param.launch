@@ -1,0 +1,6 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find boot0_control)/config/boot0_control.yaml" command="load"/>
+
+</launch>

@@ -1,0 +1,27 @@
+boot0:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  
+  # Trajectory Controller  (not together with the position controllers)
+  joint_trajectory_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - base_body
+      - body_arm
+      - arm_blad
+    constraints:
+      goal_time: 0.0
+      stopped_velocity_tolerance: 0.01
+      base_body: {trajectory: 0.01, goal: 0.01}
+      body_arm: {trajectory: 0.01, goal: 0.01}
+      arm_blad: {trajectory: 0.01, goal: 0.01}
+    gains:
+      base_body: {p: 500000.0, d: 75.0, i: 0.0, i_clamp: 0.0}
+      body_arm:  {p: 4000.0, d: 125.0, i: 0.0, i_clamp: 0.0}
+      arm_blad:  {p: 100.0, d: 25.0, i: 0.0, i_clamp: 0.0}
+      state_publish_rate:  50
+      action_monitor_rate: 50
+      stop_trajectory_duration: 0.0
+
