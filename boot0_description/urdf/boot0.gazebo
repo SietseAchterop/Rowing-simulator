@@ -55,13 +55,19 @@
 	<provideFeedback>true</provideFeedback>
   </gazebo>
 
+  <gazebo reference="base_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
   <gazebo reference="myboat__base">
+    <mu1>0.005</mu1>
+    <mu2>0.005</mu2>
     <material>Gazebo/Orange</material>
   </gazebo>
 
   <gazebo reference="myboat__body">
-    <mu1>0.000</mu1>
-    <mu2>0.000</mu2>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
     <material>Gazebo/Black</material>
   </gazebo>
 
@@ -72,8 +78,8 @@
   </gazebo>
 
   <gazebo reference="myboat__blad">
-    <mu1>0.9</mu1>
-    <mu2>0.9</mu2>
+    <mu1>2.0</mu1>
+    <mu2>2.0</mu2>
     <material>Gazebo/Orange</material>
   </gazebo>
 

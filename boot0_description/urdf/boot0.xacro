@@ -43,7 +43,7 @@
 
   <link name="myboat__base">    
     <inertial>
-      <mass value="15"/>
+      <mass value="75"/>
       <origin rpy="0 0 0" xyz="-1.0 -0.12 0.1"/>
       <inertia ixx="0.6" ixy="0" ixz="0" iyy="11" iyz="0" izz="11.8"/>
     </inertial>
@@ -62,7 +62,7 @@
   </link>
   <link name="myboat__body">
     <inertial>
-      <mass value="60.0"/>
+      <mass value="1.0"/>
       <origin rpy="0 0 0" xyz="0 0 0.97"/>
       <inertia ixx="19" ixy="0" ixz="0" iyy="19" iyz="0" izz="0.056"/>	   
     </inertial>
