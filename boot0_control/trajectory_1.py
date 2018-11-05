@@ -68,7 +68,7 @@ class Trajectory0():
                 arm_trajectory.points[j].positions = arm_goal
                 arm_trajectory.points[j].velocities = [0.0 for i in arm_joints]
                 arm_trajectory.points[j].accelerations = [0.0 for i in arm_joints]
-                arm_trajectory.points[j].time_from_start = rospy.Duration(1+(j*2))
+                arm_trajectory.points[j].time_from_start = rospy.Duration(1+(j*1))
     
             # Send the trajectory to the arm action server
             rospy.loginfo('Moving the arm to next goal position...')

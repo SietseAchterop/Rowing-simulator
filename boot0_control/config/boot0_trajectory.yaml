@@ -20,7 +20,7 @@ boot0:
     gains:
       base_body: {p: 500000.0, d: 75.0, i: 0.0, i_clamp: 0.0}
       body_arm:  {p: 4000.0, d: 125.0, i: 0.0, i_clamp: 0.0}
-      arm_blad:  {p: 100.0, d: 25.0, i: 0.0, i_clamp: 0.0}
+      arm_blad:  {p: 10000.0, d: 25.0, i: 0.0, i_clamp: 0.0}
       state_publish_rate:  50
       action_monitor_rate: 50
       stop_trajectory_duration: 0.0
