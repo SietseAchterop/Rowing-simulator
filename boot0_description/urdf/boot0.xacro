@@ -24,7 +24,7 @@
     <child link="myboat__blad"/>
     <origin rpy="-3.13788  0.91639 -3.13874" xyz="-0.03048 -0.03639  2.64237"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10.0" lower="-1.4" upper="1.4" velocity="1.0"/>
+    <limit effort="200.0" lower="-1.4" upper="1.4" velocity="1.0"/>
   </joint>
   <joint name="base_body" type="revolute">
     <parent link="base_link"/>
