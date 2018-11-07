@@ -60,8 +60,8 @@
   </gazebo>
 
   <gazebo reference="myboat__base">
-    <mu1>0.005</mu1>
-    <mu2>0.005</mu2>
+    <mu1>0.01</mu1>
+    <mu2>0.01</mu2>
     <material>Gazebo/Orange</material>
   </gazebo>
 
