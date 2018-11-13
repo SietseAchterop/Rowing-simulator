@@ -13,81 +13,48 @@
     </plugin>
   </gazebo>
 
-  <gazebo>
-    <plugin name="bb_sensor" filename="libgazebo_ros_ft_sensor.so">
-        <updateRate>10.0</updateRate>
-        <topicName>bb_sensor_topic</topicName>
-        <jointName>base_body</jointName>
-    </plugin>
-
-    <plugin name="ba_sensor" filename="libgazebo_ros_ft_sensor.so">
-        <updateRate>10.0</updateRate>
-        <topicName>ba_sensor_topic</topicName>
-        <jointName>body_arm</jointName>
-    </plugin>
-
-    <plugin name="ab_sensor" filename="libgazebo_ros_ft_sensor.so">
-        <updateRate>10.0</updateRate>
-        <topicName>ab_sensor_topic</topicName>
-        <jointName>arm_blad</jointName>
-    </plugin>
-  </gazebo>
-
-
-  <gazebo reference="base_body">
-       <sensor name="bb_force_torque" type="force_torque">
-          <update_rate>30</update_rate>
-        </sensor>
-	<provideFeedback>true</provideFeedback>
-  </gazebo>
-
-  <gazebo reference="body_arm">
-       <sensor name="ba_force_torque" type="force_torque">
-          <update_rate>30</update_rate>
-        </sensor>
-	<provideFeedback>true</provideFeedback>
-  </gazebo>
-
-  <gazebo reference="arm_blad">
-       <sensor name="ab_force_torque" type="force_torque">
-          <update_rate>30</update_rate>
-        </sensor>
-	<provideFeedback>true</provideFeedback>
-  </gazebo>
-
-  <gazebo reference="base_link">
-    <material>Gazebo/Black</material>
-  </gazebo>
-
-  <gazebo reference="myboat__base">
+  <gazebo reference="skiff">
+    <material>Gazebo/Grey</material>
     <mu1>0.01</mu1>
     <mu2>0.01</mu2>
-    <material>Gazebo/Orange</material>
   </gazebo>
 
-  <gazebo reference="myboat__body">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <material>Gazebo/Black</material>
-  </gazebo>
-
-  <gazebo reference="myboat__arm">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <material>Gazebo/Orange</material>
-  </gazebo>
-
-  <gazebo reference="myboat__blad">
-    <mu1>20.0</mu1>
-    <mu2>20.0</mu2>
-    <material>Gazebo/Orange</material>
-  </gazebo>
-
-  <!-- camera_link -->
-  <gazebo reference="camera_link">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
+  <gazebo reference="starboard_rowlock">
+    <mu1>0.01</mu1>
+    <mu2>0.01</mu2>
     <material>Gazebo/Red</material>
   </gazebo>
+
+  <gazebo reference="port_rowlock">
+    <mu1>0.01</mu1>
+    <mu2>0.01</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="starboard_oar">
+    <mu1>0.01</mu1>
+    <mu2>0.01</mu2>
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="port_oar">
+    <mu1>0.01</mu1>
+    <mu2>0.01</mu2>
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="starboard_blade">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <material>Gazebo/Indigo</material>
+  </gazebo>
+
+  <gazebo reference="port_blade">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <material>Gazebo/Indigo</material>
+  </gazebo>
+
+
 
 </robot>
