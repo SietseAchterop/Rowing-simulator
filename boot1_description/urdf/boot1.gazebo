@@ -2,7 +2,7 @@
 <robot>
 
   <gazebo>
-        <self_collide>1</self_collide>
+    <self_collide>1</self_collide>
   </gazebo>
 
   <!-- ros_control plugin -->

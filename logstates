@@ -1,0 +1,1397 @@
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:  22000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [-0.25191171611077934, 0.48019253771535464]
+velocity: [-20.75710207624186, -5.446009755005074]
+effort: [1000.0, -800.9982970007508]
+---
+header: 
+  seq: 1
+  stamp: 
+    secs: 0
+    nsecs:  42000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [-0.14585292830121332, 0.3639053754136956]
+velocity: [-40.18068349383673, -14.52506391586738]
+effort: [1000.0, 0.0]
+---
+header: 
+  seq: 2
+  stamp: 
+    secs: 0
+    nsecs:  62000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.3398723299718016, 0.5153656639163078]
+velocity: [34.29824224958911, -10.371346144590063]
+effort: [-1000.0, 0.0]
+---
+header: 
+  seq: 3
+  stamp: 
+    secs: 0
+    nsecs:  82000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.3183824089966132, -0.5999270354675659]
+velocity: [9.40459922730624, -0.8314466882813119]
+effort: [-1000.0, 868.6472343015613]
+---
+header: 
+  seq: 4
+  stamp: 
+    secs: 0
+    nsecs: 102000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.1683780142256639, -0.42383017682649715]
+velocity: [90.41253769517428, -44.05409166750098]
+effort: [1000.0, 883.4206353320656]
+---
+header: 
+  seq: 5
+  stamp: 
+    secs: 0
+    nsecs: 122000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.1948370022409689, -0.5160214697321885]
+velocity: [9.218409354909872, -2.6132485598405775]
+effort: [1000.0, 1000.0]
+---
+header: 
+  seq: 6
+  stamp: 
+    secs: 0
+    nsecs: 142000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.3929113616753588, -0.6732828763675291]
+velocity: [-15.364013202172258, 2.890892950014015]
+effort: [-1000.0, 728.73940060224]
+---
+header: 
+  seq: 7
+  stamp: 
+    secs: 0
+    nsecs: 162000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.1349364228194867, -0.1904434273019442]
+velocity: [54.915974784940374, 71.77768259413527]
+effort: [-1000.0, -341.4138295379462]
+---
+header: 
+  seq: 8
+  stamp: 
+    secs: 0
+    nsecs: 182000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.16478490461792283, 0.2877839075157711]
+velocity: [73.84524153512491, -28.541567708203406]
+effort: [-1000.0, 0.0]
+---
+header: 
+  seq: 9
+  stamp: 
+    secs: 0
+    nsecs: 202000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.34433598933022047, -0.4390822410667692]
+velocity: [64.85205580817063, -41.187020947764516]
+effort: [-1000.0, 0.0]
+---
+header: 
+  seq: 10
+  stamp: 
+    secs: 0
+    nsecs: 222000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.6089907170236097, -1.1511402693671497]
+velocity: [55.482791632780085, 42.543179474574174]
+effort: [-1000.0, 0.0]
+---
+header: 
+  seq: 11
+  stamp: 
+    secs: 0
+    nsecs: 242000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [-0.43577977092613285, 1.3267801824729801]
+velocity: [33.811556435077584, -77.29923331004393]
+effort: [1000.0, -1000.0]
+---
+header: 
+  seq: 12
+  stamp: 
+    secs: 0
+    nsecs: 262000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [-7.732419617015369, -9.80515237239878]
+velocity: [374.4009102777115, 797.9344671654218]
+effort: [1000.0, 0.0]
+---
+header: 
+  seq: 13
+  stamp: 
+    secs: 0
+    nsecs: 282000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [2.996455915878168, -21.691837330366322]
+velocity: [-5408904271986854.0, 4958858641266772.0]
+effort: [0.0, 1000.0]
+---
+header: 
+  seq: 14
+  stamp: 
+    secs: 0
+    nsecs: 302000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 15
+  stamp: 
+    secs: 0
+    nsecs: 322000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 16
+  stamp: 
+    secs: 0
+    nsecs: 342000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 17
+  stamp: 
+    secs: 0
+    nsecs: 362000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 18
+  stamp: 
+    secs: 0
+    nsecs: 382000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 19
+  stamp: 
+    secs: 0
+    nsecs: 402000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 20
+  stamp: 
+    secs: 0
+    nsecs: 422000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 21
+  stamp: 
+    secs: 0
+    nsecs: 442000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 22
+  stamp: 
+    secs: 0
+    nsecs: 462000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 23
+  stamp: 
+    secs: 0
+    nsecs: 482000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 24
+  stamp: 
+    secs: 0
+    nsecs: 502000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 25
+  stamp: 
+    secs: 0
+    nsecs: 522000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 26
+  stamp: 
+    secs: 0
+    nsecs: 542000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 27
+  stamp: 
+    secs: 0
+    nsecs: 562000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 28
+  stamp: 
+    secs: 0
+    nsecs: 582000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 29
+  stamp: 
+    secs: 0
+    nsecs: 602000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 30
+  stamp: 
+    secs: 0
+    nsecs: 622000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 31
+  stamp: 
+    secs: 0
+    nsecs: 642000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 32
+  stamp: 
+    secs: 0
+    nsecs: 662000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 33
+  stamp: 
+    secs: 0
+    nsecs: 682000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 34
+  stamp: 
+    secs: 0
+    nsecs: 702000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 35
+  stamp: 
+    secs: 0
+    nsecs: 722000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 36
+  stamp: 
+    secs: 0
+    nsecs: 742000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 37
+  stamp: 
+    secs: 0
+    nsecs: 762000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 38
+  stamp: 
+    secs: 0
+    nsecs: 782000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 39
+  stamp: 
+    secs: 0
+    nsecs: 802000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 40
+  stamp: 
+    secs: 0
+    nsecs: 822000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 41
+  stamp: 
+    secs: 0
+    nsecs: 842000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 42
+  stamp: 
+    secs: 0
+    nsecs: 862000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 43
+  stamp: 
+    secs: 0
+    nsecs: 882000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 44
+  stamp: 
+    secs: 0
+    nsecs: 902000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 45
+  stamp: 
+    secs: 0
+    nsecs: 922000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 46
+  stamp: 
+    secs: 0
+    nsecs: 942000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 47
+  stamp: 
+    secs: 0
+    nsecs: 962000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 48
+  stamp: 
+    secs: 0
+    nsecs: 982000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 49
+  stamp: 
+    secs: 1
+    nsecs:   2000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 50
+  stamp: 
+    secs: 1
+    nsecs:  22000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 51
+  stamp: 
+    secs: 1
+    nsecs:  42000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 52
+  stamp: 
+    secs: 1
+    nsecs:  62000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 53
+  stamp: 
+    secs: 1
+    nsecs:  82000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 54
+  stamp: 
+    secs: 1
+    nsecs: 102000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 55
+  stamp: 
+    secs: 1
+    nsecs: 122000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 56
+  stamp: 
+    secs: 1
+    nsecs: 142000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 57
+  stamp: 
+    secs: 1
+    nsecs: 162000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 58
+  stamp: 
+    secs: 1
+    nsecs: 182000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 59
+  stamp: 
+    secs: 1
+    nsecs: 202000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 60
+  stamp: 
+    secs: 1
+    nsecs: 222000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 61
+  stamp: 
+    secs: 1
+    nsecs: 242000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 62
+  stamp: 
+    secs: 1
+    nsecs: 262000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 63
+  stamp: 
+    secs: 1
+    nsecs: 282000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 64
+  stamp: 
+    secs: 1
+    nsecs: 302000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 65
+  stamp: 
+    secs: 1
+    nsecs: 322000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 66
+  stamp: 
+    secs: 1
+    nsecs: 342000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 67
+  stamp: 
+    secs: 1
+    nsecs: 362000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 68
+  stamp: 
+    secs: 1
+    nsecs: 382000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 69
+  stamp: 
+    secs: 1
+    nsecs: 402000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 70
+  stamp: 
+    secs: 1
+    nsecs: 422000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 71
+  stamp: 
+    secs: 1
+    nsecs: 442000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 72
+  stamp: 
+    secs: 1
+    nsecs: 462000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 73
+  stamp: 
+    secs: 1
+    nsecs: 482000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 74
+  stamp: 
+    secs: 1
+    nsecs: 502000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 75
+  stamp: 
+    secs: 1
+    nsecs: 522000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 76
+  stamp: 
+    secs: 1
+    nsecs: 542000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 77
+  stamp: 
+    secs: 1
+    nsecs: 562000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 78
+  stamp: 
+    secs: 1
+    nsecs: 582000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 79
+  stamp: 
+    secs: 1
+    nsecs: 602000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 80
+  stamp: 
+    secs: 1
+    nsecs: 622000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 81
+  stamp: 
+    secs: 1
+    nsecs: 642000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 82
+  stamp: 
+    secs: 1
+    nsecs: 662000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 83
+  stamp: 
+    secs: 1
+    nsecs: 682000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 84
+  stamp: 
+    secs: 1
+    nsecs: 702000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 85
+  stamp: 
+    secs: 1
+    nsecs: 722000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 86
+  stamp: 
+    secs: 1
+    nsecs: 742000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 87
+  stamp: 
+    secs: 1
+    nsecs: 762000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 88
+  stamp: 
+    secs: 1
+    nsecs: 782000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 89
+  stamp: 
+    secs: 1
+    nsecs: 802000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 90
+  stamp: 
+    secs: 1
+    nsecs: 822000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 91
+  stamp: 
+    secs: 1
+    nsecs: 842000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 92
+  stamp: 
+    secs: 1
+    nsecs: 862000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 93
+  stamp: 
+    secs: 1
+    nsecs: 882000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 94
+  stamp: 
+    secs: 1
+    nsecs: 902000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 95
+  stamp: 
+    secs: 1
+    nsecs: 922000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 96
+  stamp: 
+    secs: 1
+    nsecs: 942000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 97
+  stamp: 
+    secs: 1
+    nsecs: 962000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 98
+  stamp: 
+    secs: 1
+    nsecs: 982000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 99
+  stamp: 
+    secs: 2
+    nsecs:   2000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 100
+  stamp: 
+    secs: 2
+    nsecs:  22000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 101
+  stamp: 
+    secs: 2
+    nsecs:  42000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 102
+  stamp: 
+    secs: 2
+    nsecs:  62000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 103
+  stamp: 
+    secs: 2
+    nsecs:  82000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 104
+  stamp: 
+    secs: 2
+    nsecs: 102000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 105
+  stamp: 
+    secs: 2
+    nsecs: 122000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 106
+  stamp: 
+    secs: 2
+    nsecs: 142000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 107
+  stamp: 
+    secs: 2
+    nsecs: 162000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 108
+  stamp: 
+    secs: 2
+    nsecs: 182000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 109
+  stamp: 
+    secs: 2
+    nsecs: 202000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 110
+  stamp: 
+    secs: 2
+    nsecs: 222000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 111
+  stamp: 
+    secs: 2
+    nsecs: 242000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 112
+  stamp: 
+    secs: 2
+    nsecs: 262000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 113
+  stamp: 
+    secs: 2
+    nsecs: 282000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 114
+  stamp: 
+    secs: 2
+    nsecs: 302000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 115
+  stamp: 
+    secs: 2
+    nsecs: 322000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 116
+  stamp: 
+    secs: 2
+    nsecs: 342000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 117
+  stamp: 
+    secs: 2
+    nsecs: 362000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 118
+  stamp: 
+    secs: 2
+    nsecs: 382000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 119
+  stamp: 
+    secs: 2
+    nsecs: 402000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 120
+  stamp: 
+    secs: 2
+    nsecs: 422000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 121
+  stamp: 
+    secs: 2
+    nsecs: 442000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 122
+  stamp: 
+    secs: 2
+    nsecs: 462000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 123
+  stamp: 
+    secs: 2
+    nsecs: 482000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 124
+  stamp: 
+    secs: 2
+    nsecs: 502000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 125
+  stamp: 
+    secs: 2
+    nsecs: 522000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
+header: 
+  seq: 126
+  stamp: 
+    secs: 2
+    nsecs: 542000000
+  frame_id: ''
+name: [starboard_rowlock_joint, starboard_rowlock_oar_joint]
+position: [0.0, -27.227145168715232]
+velocity: [nan, nan]
+effort: [0.0, 0.0]
+---
