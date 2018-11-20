@@ -16,14 +16,14 @@
     <child link="starboard_rowlock"/>
     <origin rpy="0.0  0.0 0.0" xyz="0.0 0.8 0.32"/>
     <axis xyz="0 0 1"/>
-    <limit effort="300.0" lower="-1.4" upper="1.4" velocity="1.0"/>
+    <limit effort="1000.0" lower="-1.4" upper="1.4" velocity="1.0"/>
   </joint>
   <joint name="port_rowlock_joint" type="revolute">
     <parent link="skiff"/>
     <child link="port_rowlock"/>
     <origin rpy="0.0  0.0 0.0" xyz="0.0 -0.8 0.3"/>
     <axis xyz="0 0 1"/>
-    <limit effort="300.0" lower="-1.4" upper="1.4" velocity="1.0"/>
+    <limit effort="1000.0" lower="-1.4" upper="1.4" velocity="1.0"/>
   </joint>
 
   <joint name="starboard_rowlock_oar_joint" type="revolute">
@@ -58,10 +58,11 @@
     <limit effort="100.0" lower="-0.2" upper="0.2" velocity="1.0"/>
   </joint>
 
-  <link name="base_link"/> 
+  <!--   <link name="base_link"/> -->
+  <link name="world"/>
   <!-- Dummy for gazebo   -->
   <joint name="dummy" type="fixed">
-    <parent link="base_link"/>
+    <parent link="world"/>
     <child link="skiff"/>
   </joint>
 
@@ -91,7 +92,7 @@
     <inertial>
       <mass value="0.1"/>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-      <inertia ixx="0.00007" ixy="0" ixz="0" iyy="0.00007" iyz="0" izz="0.000007"/>
+      <inertia ixx="0.000017" ixy="0" ixz="0" iyy="0.000017" iyz="0" izz="0.000007"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0.0 0.0   0.0"/>
@@ -111,7 +112,7 @@
     <inertial>
       <mass value="0.1"/>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-      <inertia ixx="0.00007" ixy="0" ixz="0" iyy="0.00007" iyz="0" izz="0.000007"/>
+      <inertia ixx="0.000017" ixy="0" ixz="0" iyy="0.000017" iyz="0" izz="0.000007"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0.0 0.0   0.0"/>
@@ -169,7 +170,7 @@
     <inertial>
       <mass value="1.0"/>
       <origin rpy="0 -1.4 0" xyz="0.02 0 -0.02"/>
-      <inertia ixx="0.34" ixy="0" ixz="0" iyy="0.34" iyz="0" izz="0.73"/>
+      <inertia ixx="0.0009" ixy="0" ixz="0" iyy="0.0034" iyz="0" izz="0.004"/>
     </inertial>
     <collision>
       <origin rpy="0 -1.4 0" xyz="0.02    0   -0.02"/>
@@ -188,7 +189,7 @@
     <inertial>
       <mass value="1.0"/>
       <origin rpy="0 1.4 0" xyz="0.02 0 -0.02"/>
-      <inertia ixx="0.34" ixy="0" ixz="0" iyy="0.34" iyz="0" izz="0.73"/>
+      <inertia ixx="0.0009" ixy="0" ixz="0" iyy="0.0034" iyz="0" izz="0.004"/>
     </inertial>
     <collision>
       <origin rpy="0 1.4 0" xyz="0.02    0   -0.02"/>

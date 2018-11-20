@@ -24,13 +24,13 @@ boot1:
       starboard_blade_joint        : {trajectory: 0.01, goal: 0.01}
       port_blade_joint             : {trajectory: 0.01, goal: 0.01}
     gains:
-      starboard_rowlock_joint      :  {p: 300.0, d: 25.0, i: 0.0, i_clamp: 0.0}
-      port_rowlock_joint           :  {p: 300.0, d: 25.0, i: 0.0, i_clamp: 0.0}
+      starboard_rowlock_joint      :  {p: 2000.0, d: 125.0, i: 0.0, i_clamp: 0.0}
+      port_rowlock_joint           :  {p: 2000.0, d: 125.0, i: 0.0, i_clamp: 0.0}
       starboard_rowlock_oar_joint  :  {p: 500.0, d: 25.0, i: 0.0, i_clamp: 0.0}
       port_rowlock_oar_joint       :  {p: 500.0, d: 25.0, i: 0.0, i_clamp: 0.0}
       starboard_blade_joint        :  {p: 100.0, d: 25.0, i: 0.0, i_clamp: 0.0}
       port_blade_joint             :  {p: 100.0, d: 25.0, i: 0.0, i_clamp: 0.0}
-      state_publish_rate:  50
-      action_monitor_rate: 50
+      state_publish_rate:  100       # was 50. stabieler?
+      action_monitor_rate: 100
       stop_trajectory_duration: 0.0
 
