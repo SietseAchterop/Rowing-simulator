@@ -18,48 +18,26 @@
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="-1.4" upper="1.4" velocity="1.0"/>
   </joint>
-  <joint name="port_rowlock_joint" type="revolute">
-    <parent link="skiff"/>
-    <child link="port_rowlock"/>
-    <origin rpy="0.0  0.0 0.0" xyz="0.0 -0.8 0.3"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="1000.0" lower="-1.4" upper="1.4" velocity="1.0"/>
-  </joint>
 
   <joint name="starboard_rowlock_oar_joint" type="revolute">
     <parent link="starboard_rowlock"/>
     <child link="starboard_oar"/>
     <origin rpy="0.0  ${pi/2} -${pi/2}" xyz="0.0 0.0   0.02"/>
     <axis xyz="0 1 0"/>
-    <limit effort="200.0" lower="-0.4" upper="0.0" velocity="1.0"/>
+    <limit effort="1000.0" lower="-0.4" upper="0.0" velocity="1.0"/>
   </joint>
 
-  <joint name="port_rowlock_oar_joint" type="revolute">
-    <parent link="port_rowlock"/>
-    <child link="port_oar"/>
-    <origin rpy="0.0  ${pi/2} -${pi/2}" xyz="0.0 0.0   0.02"/>
-    <axis xyz="0 1 0"/>
-    <limit effort="200.0" lower="0.0" upper="0.4" velocity="1.0"/>
-  </joint>
 
-  <joint name="starboard_blade_joint" type="revolute">
+  <joint name="starboard_blade_joint" type="fixed">
     <parent link="starboard_oar"/>
     <child link="starboard_blade"/>
     <origin rpy="0 0  0.0" xyz="0.0 0.0   -1.8"/>
     <axis xyz="0 1 0"/>
-    <limit effort="100.0" lower="-0.2" upper="0.2" velocity="1.0"/>
+    <limit effort="1000.0" lower="-0.2" upper="0.2" velocity="1.0"/>
   </joint>
 
-  <joint name="port_blade_joint" type="revolute">
-    <parent link="port_oar"/>
-    <child link="port_blade"/>
-    <origin rpy="0.0  0 0.0" xyz="0.0 0.0   1.8"/>
-    <axis xyz="0 1 0"/>
-    <limit effort="100.0" lower="-0.2" upper="0.2" velocity="1.0"/>
-  </joint>
 
-  <!--   <link name="base_link"/> -->
-  <link name="world"/>
+  <link name="world"/> 
   <!-- Dummy for gazebo   -->
   <joint name="dummy" type="fixed">
     <parent link="world"/>
@@ -108,25 +86,6 @@
     </visual>
   </link>
 
-  <link name="port_rowlock">    
-    <inertial>
-      <mass value="0.1"/>
-      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-      <inertia ixx="0.000017" ixy="0" ixz="0" iyy="0.000017" iyz="0" izz="0.000007"/>
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.0 0.0   0.0"/>
-      <geometry>
-        <box size="0.02 0.02 0.04"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0.0 0.0   0.0"/>
-      <geometry>
-        <box size="0.02 0.02 0.04"/>
-      </geometry>
-    </visual>
-  </link>
 
   <link name="starboard_oar">
     <inertial>
@@ -147,25 +106,7 @@
       </geometry>
     </visual>
   </link>
-  <link name="port_oar">
-    <inertial>
-      <mass value="1.0"/>
-      <origin rpy="0 0 0" xyz="0 0 0.45"/>
-      <inertia ixx="0.6" ixy="0" ixz="0" iyy="0.6" iyz="0" izz="0.001"/>	   
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0   0   0.45"/>
-      <geometry>
-        <cylinder length="2.7" radius="0.02"/>  <!-- 2.0 to prevent collissions  -->
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0   0   0.45"/>
-      <geometry>
-        <cylinder length="2.7" radius="0.02"/>
-      </geometry>
-    </visual>
-  </link>
+
   <link name="starboard_blade">
     <inertial>
       <mass value="1.0"/>
@@ -185,25 +126,6 @@
       </geometry>
     </visual>
   </link>
-  <link name="port_blade">
-    <inertial>
-      <mass value="1.0"/>
-      <origin rpy="0 1.4 0" xyz="0.02 0 -0.02"/>
-      <inertia ixx="0.0009" ixy="0" ixz="0" iyy="0.0034" iyz="0" izz="0.004"/>
-    </inertial>
-    <collision>
-      <origin rpy="0 1.4 0" xyz="0.02    0   -0.02"/>
-      <geometry>
-        <box size="0.2 0.1 0.03"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 1.4 0" xyz="0.02    0.0  -0.02"/>
-      <geometry>
-        <box size="0.2 0.1 0.03"/>
-      </geometry>
-    </visual>
-  </link>
 
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
@@ -211,16 +133,6 @@
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor1">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran2">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="port_rowlock_joint">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor2">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -234,37 +146,6 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-
-  <transmission name="tran4">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="port_rowlock_oar_joint">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor4">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran5">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="starboard_blade_joint">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor5">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran6">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="port_blade_joint">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor6">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
 
 
 

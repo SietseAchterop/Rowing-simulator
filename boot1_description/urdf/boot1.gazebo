@@ -15,14 +15,14 @@
 
   <gazebo reference="skiff">
     <material>Gazebo/Grey</material>
-    <mu1>0.01</mu1>
-    <mu2>0.01</mu2>
+    <mu1>0.001</mu1>
+    <mu2>0.001</mu2>
   </gazebo>
 
   <gazebo reference="starboard_rowlock">
     <mu1>0.01</mu1>
     <mu2>0.01</mu2>
-    <material>Gazebo/Red</material>
+    <material>Gazebo/Green</material>
   </gazebo>
 
   <gazebo reference="port_rowlock">
@@ -34,25 +34,31 @@
   <gazebo reference="starboard_oar">
     <mu1>0.01</mu1>
     <mu2>0.01</mu2>
-    <material>Gazebo/Green</material>
+<!--    <material>Gazebo/Green</material> -->
   </gazebo>
 
   <gazebo reference="port_oar">
     <mu1>0.01</mu1>
     <mu2>0.01</mu2>
-    <material>Gazebo/Green</material>
+<!--     <material>Gazebo/Green</material> waarom werkt onderstaande niet? -->
+    <material>
+    <ambient>0.1 0.1 0.1 1</ambient>
+    <diffuse>0.1 0.1 0.2 1</diffuse>
+    <specular>0 0 0 0</specular>
+    <emissive>0 0 0 1</emissive>
+    </material>
   </gazebo>
 
   <gazebo reference="starboard_blade">
     <mu1>1.0</mu1>
     <mu2>1.0</mu2>
-    <material>Gazebo/Indigo</material>
+    <material>Gazebo/Green</material>
   </gazebo>
 
   <gazebo reference="port_blade">
     <mu1>1.0</mu1>
     <mu2>1.0</mu2>
-    <material>Gazebo/Indigo</material>
+    <material>Gazebo/Red</material>
   </gazebo>
 
 
