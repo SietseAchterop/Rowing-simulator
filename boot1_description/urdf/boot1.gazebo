@@ -11,6 +11,16 @@
       <robotNamespace>/boot1</robotNamespace>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
     </plugin>
+
+    <plugin name="sb_rl_sensor" filename="libgazebo_ros_ft_sensor.so">
+      <updateRate>50.0</updateRate>
+      <topicName>sb_rl_sensor</topicName>
+      <jointName>starboard_rowlock_joint</jointName>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="starboard_rowlock_joint">
+    <provideFeedback>true</provideFeedback>
   </gazebo>
 
   <gazebo reference="skiff">
