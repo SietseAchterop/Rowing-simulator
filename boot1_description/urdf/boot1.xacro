@@ -14,26 +14,9 @@
   <joint name="starboard_rowlock_joint" type="revolute">
     <parent link="skiff"/>
     <child link="starboard_rowlock"/>
-    <origin rpy="0.0  0.0 0.0" xyz="0.0 0.8 0.32"/>
+    <origin rpy="0.0  0.0 0.0" xyz="0.0 0.8 0.72"/>
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="-1.4" upper="1.4" velocity="1.0"/>
-  </joint>
-
-  <joint name="starboard_rowlock_oar_joint" type="fixed">
-    <parent link="starboard_rowlock"/>
-    <child link="starboard_oar"/>
-    <origin rpy="0.0  ${pi/2} -${pi/2}" xyz="0.0 0.0   0.02"/>
-    <axis xyz="0 1 0"/>
-    <limit effort="1000.0" lower="-0.4" upper="0.0" velocity="1.0"/>
-  </joint>
-
-
-  <joint name="starboard_blade_joint" type="fixed">
-    <parent link="starboard_oar"/>
-    <child link="starboard_blade"/>
-    <origin rpy="0 0  0.0" xyz="0.0 0.0   -1.8"/>
-    <axis xyz="0 1 0"/>
-    <limit effort="1000.0" lower="-0.2" upper="0.2" velocity="1.0"/>
   </joint>
 
 
@@ -68,64 +51,24 @@
 
   <link name="starboard_rowlock">    
     <inertial>
-      <mass value="0.1"/>
-      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-      <inertia ixx="0.000017" ixy="0" ixz="0" iyy="0.000017" iyz="0" izz="0.000007"/>
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.0 0.0   0.0"/>
-      <geometry>
-        <box size="0.02 0.02 0.04"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0.0 0.0   0.0"/>
-      <geometry>
-        <box size="0.02 0.02 0.04"/>
-      </geometry>
-    </visual>
-  </link>
-
-
-  <link name="starboard_oar">
-    <inertial>
       <mass value="1.0"/>
-      <origin rpy="0 0 0" xyz="0 0 -0.45"/>
-      <inertia ixx="0.6" ixy="0" ixz="0" iyy="0.6" iyz="0" izz="0.001"/>	   
+      <origin rpy="0.0 0 0" xyz="0.4 0.0 0.0"/>
+      <inertia ixx="0.00017" ixy="0" ixz="0" iyy="0.00017" iyz="0" izz="0.00007"/>
     </inertial>
     <collision>
-      <origin rpy="0 0 0" xyz="0   0   -0.45"/>
+      <origin rpy="0.0 0 0" xyz="0.4 0.0   0.0"/>
       <geometry>
-        <cylinder length="2.7" radius="0.02"/>
+        <box size="1.02 0.02 1.04"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0   0.0   -0.45"/>
+      <origin rpy="0.0 0 0" xyz="0.4 0.0   0.0"/>
       <geometry>
-        <cylinder length="2.7" radius="0.02"/>
+        <box size="1.02 0.02 1.04"/>
       </geometry>
     </visual>
   </link>
 
-  <link name="starboard_blade">
-    <inertial>
-      <mass value="1.0"/>
-      <origin rpy="0 -1.4 0" xyz="0.02 0 -0.02"/>
-      <inertia ixx="0.0009" ixy="0" ixz="0" iyy="0.0034" iyz="0" izz="0.004"/>
-    </inertial>
-    <collision>
-      <origin rpy="0 -1.4 0" xyz="0.02    0   -0.02"/>
-      <geometry>
-        <box size="0.2 0.1 0.03"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 -1.4 0" xyz="0.02    0   -0.02"/>
-      <geometry>
-        <box size="0.2 0.1 0.03"/>
-      </geometry>
-    </visual>
-  </link>
 
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
