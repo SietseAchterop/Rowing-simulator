@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<robot>
+
+
+<!-- ros_control plugin -->
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/boot</robotNamespace>
+    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+  </plugin>
+
+  <plugin name="sb_rl_sensor" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>50.0</updateRate>
+    <topicName>sb_rl_sensor</topicName>
+    <jointName>starboard_rowlock</jointName>
+  </plugin>
+
+  <plugin name="p_rl_sensor" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>50.0</updateRate>
+    <topicName>p_rl_sensor</topicName>
+    <jointName>port_rowlock</jointName>
+  </plugin>
+
+  <plugin name="sb_oar_sensor" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>50.0</updateRate>
+    <topicName>sb_oar_sensor</topicName>
+    <jointName>starboard_oar</jointName>
+  </plugin>
+
+  <plugin name="p_oar_sensor" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>50.0</updateRate>
+    <topicName>p_oar_sensor</topicName>
+    <jointName>port_oar</jointName>
+    <noise>
+      <type>gaussian</type>
+      <mean>0.0</mean>
+      <stddev>0.003</stddev> <!-- change this to simulate noise --> 
+    </noise>
+  </plugin>
+
+  <plugin name="sbb_sensor" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>50.0</updateRate>
+    <topicName>sbb_sensor</topicName>
+    <jointName>starboard_blade</jointName>
+  </plugin>
+
+  <plugin name="pb_sensor" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>50.0</updateRate>
+    <topicName>pb_sensor</topicName>
+    <jointName>port_blade</jointName>
+  </plugin>
+</gazebo>
+
+<gazebo reference="starboard_rowlock">
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="port_rowlock">
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="starboard_oar">
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="port_oar">
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="starboard_blade">
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="port_blade">
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="skiff">
+  <material>Gazebo/White</material>
+  <mu1>0.01</mu1>
+  <mu2>0.01</mu2>
+  <collision>
+    <surface>
+      <friction>
+        <ode>
+          <slip1>0.05</slip1>
+          <slip2>0.12</slip2>
+        </ode>
+      </friction>
+    </surface>
+  </collision>
+</gazebo>
+
+<gazebo reference="starboard_rowlock_l">
+  <mu1>0.01</mu1>
+  <mu2>0.01</mu2>
+  <material>Gazebo/Green</material>
+</gazebo>
+
+<gazebo reference="port_rowlock_l">
+  <mu1>0.01</mu1>
+  <mu2>0.01</mu2>
+  <material>Gazebo/Red</material>
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="starboard_oar_l">
+  <mu1>0.01</mu1>
+  <mu2>0.01</mu2>
+  <material>Gazebo/Green</material>
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="port_oar_l">
+  <mu1>0.01</mu1>
+  <mu2>0.01</mu2>
+  <material>Gazebo/Green</material>
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="starboard_blade_l">
+  <mu1>10.0</mu1>
+  <mu2>10.0</mu2>
+  <material>Gazebo/Green</material>
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="port_blade_l">
+  <mu1>10.0</mu1>
+  <mu2>10.0</mu2>
+  <material>Gazebo/Red</material>
+  <provideFeedback>true</provideFeedback>
+</gazebo>
+
+<gazebo reference="voetenboord">
+  <material>Gazebo/Gray</material>
+</gazebo>
+
+<gazebo>
+<!-- close kinematic loops in gazebo -->
+  <joint name="lower12" type="fixed">
+    <pose>0.25 0.0 0 0 0 0.0</pose>
+    <parent>upperleg_1</parent>
+    <child>upperleg_2</child>
+  </joint>
+
+  <joint name="lowerarm_left" type="fixed">
+    <pose>0.0 0.0 0 0 0 0.1</pose>
+    <parent>Ldummy_link_1</parent>
+    <child>Ldummy_link_2</child>
+  </joint>
+
+  <joint name="lowerarm_right" type="fixed">
+    <pose>0.0 0.0 0 0 0 0.1</pose>
+    <parent>Rdummy_link_1</parent>
+    <child>Rdummy_link_2</child>
+  </joint>
+
+</gazebo>
+
+</robot>

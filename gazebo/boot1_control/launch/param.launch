@@ -1,0 +1,7 @@
+<launch>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder '$(find boot1_description)/urdf/boot1.xacro'" />
+
+</launch>

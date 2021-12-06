@@ -1,0 +1,16 @@
+
+Inverse kinematics met trac_ik gebruiken om de kinematic loops te sluiten.
+=====
+
+rosrun tf tf_echo world Ldummy_link_2
+
+
+zet dummy_link_1 op positie van dummy_link_2
+zie ik_1.py
+ let op: sliding tijdelijk vast zetten!
+
+hoe in de workflow te integreren?
+ - stel we hebben een goede beginpositie van dummy_link_2 die ook bij de te verwachten
+   variaties te bereiken is.
+ - we rekenen de nieuwe waardes van de chain van seat t/m dummy_link_1 uit en genereren
+   een nieuwe xacro file.

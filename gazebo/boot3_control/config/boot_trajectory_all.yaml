@@ -1,0 +1,80 @@
+boot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  
+  # Trajectory Controller  (not together with the position controllers)
+  joint_trajectory_controller:
+    type: effort_controllers/JointTrajectoryController
+    # which joints to control:
+    joints:
+      - knee
+      - hip2
+      - back_lh
+
+      - shoulder_l
+      - shoulder_psi_l
+      - shoulder_theta_l
+      - elbow_theta_l
+      - elbow_left
+      - handle_left_j1
+      - handle_left_j2
+      - handle_left_j3
+
+      - shoulder_r
+      - shoulder_psi_r
+      - shoulder_theta_r
+      - elbow_theta_r
+      - elbow_right
+      - handle_right_j1
+      - handle_right_j2
+      - handle_right_j3
+
+
+    constraints:
+      goal_time: 0.5
+      stopped_velocity_tolerance: 0.01
+      knee                   : {trajectory: 0.01, goal: 0.01}
+      hip2                   : {trajectory: 0.01, goal: 0.01}
+      back_lh                : {trajectory: 0.01, goal: 0.01}
+      shoulder_l             : {trajectory: 0.01, goal: 0.01}
+      shoulder_psi_l         : {trajectory: 0.01, goal: 0.01}
+      shoulder_theta_l       : {trajectory: 0.01, goal: 0.01}
+      elbow_theta_l          : {trajectory: 0.01, goal: 0.01}
+      elbow_left             : {trajectory: 0.01, goal: 0.01}
+      handle_left_j1         : {trajectory: 0.01, goal: 0.01}
+      handle_left_j2         : {trajectory: 0.01, goal: 0.01}
+      handle_left_j3         : {trajectory: 0.01, goal: 0.01}
+      shoulder_r             : {trajectory: 0.01, goal: 0.01}
+      shoulder_psi_r         : {trajectory: 0.01, goal: 0.01}
+      shoulder_theta_r       : {trajectory: 0.01, goal: 0.01}
+      elbow_theta_r          : {trajectory: 0.01, goal: 0.01}
+      elbow_right            : {trajectory: 0.01, goal: 0.01}
+      handle_right_j1        : {trajectory: 0.01, goal: 0.01}
+      handle_right_j2        : {trajectory: 0.01, goal: 0.01}
+      handle_right_j3        : {trajectory: 0.01, goal: 0.01}
+    gains:
+      knee                   :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      hip2                   :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      back_lh                :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      shoulder_l             :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      shoulder_psi_l         :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      shoulder_theta_l       :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      elbow_theta_l          :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      elbow_left             :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      handle_left_j1         :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      handle_left_j2         :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      handle_left_j3         :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      shoulder_r             :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      shoulder_psi_r         :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      shoulder_theta_r       :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      elbow_theta_r          :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      elbow_right            :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      handle_right_j1        :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      handle_right_j2        :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+      handle_right_j3        :  {p: 12.0, d: 1.0, i: 0.0, i_clamp: 0.0}
+
+      state_publish_rate:  50       # was 50. stabieler?
+      stop_trajectory_duration: 0.0
+

@@ -1,0 +1,20 @@
+
+controller_manager
+  controller_manager
+    lower level command
+  spawner
+    bij eindigen script worden controller gestopt.
+  unspawner
+
+
+update model via command line
+   # edit model en laad in parameter server
+   roslaunch boot1_control param.launch 
+   # delete current model
+   gz model -m boot1 -d
+   # spawn new model
+   rosrun gazebo_ros spawn_model -model boot1 -urdf -param robot_description
+
+in een keer, maar niet te snel:
+gz model -m boot1 -d; roslaunch boot1_control param.launch; sleep 1; rosrun gazebo_ros spawn_model -model boot1 -urdf -param robot_description
+

@@ -1,0 +1,60 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!--
+    Describes parameters of the boot model
+        template version
+-->
+
+<!-- boat  -->
+<xacro:property name="span" value="1.6"/>
+
+<!-- oar -->
+<xacro:property name="inner" value="0.87"/>  <!-- length inclusive 0.1 meter handle -->
+<xacro:property name="outer" value="2.00"/>
+
+<!--  rower -->
+<xacro:property name="weight" value="70"/>
+<xacro:property name="lowerleg" value="0.53"/>
+<xacro:property name="upperleg" value="0.45"/>
+  <!-- don't change leg for the moment, connection has don by hand -->
+<xacro:property name="back" value="0.60"/>
+<xacro:property name="shoulder" value="0.37"/>
+<xacro:property name="upperarm" value="0.35"/>
+<xacro:property name="lowerarm" value="0.35"/>
+
+<!--
+ lengths of links, musle power?
+-->
+
+<!-- Initial position of links that might change-->
+     
+<xacro:property name="starboard_rowlock" value="-0.4939"/>
+<xacro:property name="port_rowlock" value="0.4939"/>
+<xacro:property name="starboard_oar" value="-0.1258"/>
+<xacro:property name="port_oar" value="0.1159"/>
+<xacro:property name="starboard_blade" value="0.02"/>
+<xacro:property name="port_blade" value="0.0"/>
+<xacro:property name="hip2" value="-0.329"/>
+<xacro:property name="back_lh" value="0.0182"/>
+
+<xacro:property name="shoulder_l" value="-0.5674"/>
+<xacro:property name="shoulder_psi_l" value="0.1546"/>
+<xacro:property name="shoulder_theta_l" value="-0.3847"/>
+<xacro:property name="elbow_xx_l" value="0.1878"/>
+<xacro:property name="elbow_theta_l" value="0.1514"/>
+<xacro:property name="elbow_left" value="0.2139"/>
+<xacro:property name="handle_left_j3" value="0.0805"/>
+<xacro:property name="handle_left_j2" value="-0.0566"/>
+<xacro:property name="handle_left_j1" value="-0.0905"/>
+
+<xacro:property name="shoulder_r" value="-0.5573"/>
+<xacro:property name="shoulder_psi_r" value="0.1429"/>
+<xacro:property name="shoulder_theta_r" value="-0.3884"/>
+<xacro:property name="elbow_xx_r" value="0.0939"/>
+<xacro:property name="elbow_theta_r" value="0.1502"/>
+<xacro:property name="elbow_right" value="0.1662"/>
+<xacro:property name="handle_right_j3" value="0.0429"/>
+<xacro:property name="handle_right_j2" value="-0.0329"/>
+<xacro:property name="handle_right_j1" value="-0.2017"/>
+
+</robot>

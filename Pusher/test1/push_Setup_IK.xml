@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="30000">
+	<InverseKinematicsTool name="eerstetest">
+		<!--Name of the .osim file used to construct a model.-->
+		<model_file>Pusher.osim</model_file>
+		<!--A positive scalar that is used to weight the importance of satisfying constraints.A weighting of 'Infinity' or if it is unassigned results in the constraints being strictly enforced.-->
+		<constraint_weight>20</constraint_weight>
+		<!--The accuracy of the solution in absolute terms. I.e. the number of significantdigits to which the solution can be trusted.-->
+		<accuracy>1e-005</accuracy>
+		<!--Markers and coordinates to be considered (tasks) and their weightings.-->
+		<IKTaskSet name="push_IK">
+			<objects>
+				<IKMarkerTask name="mbasej">
+					<apply>true</apply>
+					<weight>1.0</weight>
+				</IKMarkerTask>
+				<IKMarkerTask name="mbladej">
+					<apply>true</apply>
+					<weight>1.0</weight>
+				</IKMarkerTask>
+				<IKMarkerTask name="mend">
+					<apply>true</apply>
+					<weight>1.0</weight>
+				</IKMarkerTask>
+
+<!--				<IKCoordinateTask name="boatJoint_coord_0">
+				  <locked>true</locked>
+				  <value>0</value>
+				</IKCoordinateTask>
+				<IKCoordinateTask name="boatJoint_coord_1">
+				  <locked>true</locked>
+				  <value>0</value>
+				</IKCoordinateTask>
+				<IKCoordinateTask name="boatJoint_coord_2">
+				  <locked>true</locked>
+				  <value>123</value>				  
+				</IKCoordinateTask>
+				<IKCoordinateTask name="boatJoint_coord_3">
+				  <locked>true</locked>
+				  <value>0</value>
+				</IKCoordinateTask>
+				<IKCoordinateTask name="boatJoint_coord_4">
+				  <locked>true</locked>
+				  <value>0</value>
+				</IKCoordinateTask>
+				<IKCoordinateTask name="boatJoint_coord_5">
+				  <locked>true</locked>
+				  <value>0</value>
+				</IKCoordinateTask>
+-->
+<!-- locked werkt niet   -->
+			</objects>
+			<groups />
+		</IKTaskSet>
+		<marker_file>trajectory.trc</marker_file>
+		<coordinate_file></coordinate_file>
+		<time_range> 0.0 10.0</time_range>
+		<output_motion_file>trajectory.mot</output_motion_file>
+	</InverseKinematicsTool>
+</OpenSimDocument>

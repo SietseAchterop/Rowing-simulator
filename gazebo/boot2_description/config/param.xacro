@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot 	xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!--
+    Describes parameters of the boot model
+-->
+
+<!-- boat  -->
+<xacro:property name="span" value="1.6" />
+
+<!-- oar -->
+<xacro:property name="inner" value="0.87" />
+<xacro:property name="outer" value="2.00" />
+
+<!--  rower -->
+<xacro:property name="weight" value="70" />
+<xacro:property name="lenght" value="1.80" />
+<!--
+ lengths of links, musle power?
+-->
+
+</robot>

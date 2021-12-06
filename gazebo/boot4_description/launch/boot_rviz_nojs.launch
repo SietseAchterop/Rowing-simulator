@@ -1,0 +1,13 @@
+<launch>
+
+  <param name="robot_description"
+    command="xacro '$(find boot4_description)/urdf/boot.xacro' " />
+
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find boot4_description)/launch/boot.rviz"/>
+
+
+</launch>

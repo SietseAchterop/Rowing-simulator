@@ -1,0 +1,30 @@
+
+   Inverse kinematics met trac_ik gebruiken om de kinematic loops te sluiten.
+   =========================================================================
+
+====  ik.py
+ 1. launch boot met een aantal joints op fixed
+    we done want to change those in this 
+       roslaunch boot4_description boot_rviz.launch reconnectloops:=true
+
+ 2. now in ik.py new parameter values are calculated to close the kinematic loop.
+       
+hoe in de workflow te integreren?
+ - stel we hebben een goede beginpositie van dummy_link_2 die ook bij de te verwachten
+   variaties te bereiken is.
+ - we rekenen de nieuwe waardes van de chain van seat t/m dummy_link_1 uit en genereren
+   een nieuwe xacro file.
+
+
+
+
+==== xmltest.py
+  vb met lxml etree
+
+==== pos.py
+  zet boot op een geselecteerde stand i
+  later te gebruiken in control
+    poslaunch boot4_description rviz_nojs.launch
+    python pos.py i
+      (pas zichtbaar in rviz na eerste aanroep)
+  

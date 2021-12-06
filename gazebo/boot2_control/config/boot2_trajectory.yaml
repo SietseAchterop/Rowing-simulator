@@ -1,0 +1,35 @@
+boot2:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  
+  # Trajectory Controller  (not together with the position controllers)
+  joint_trajectory_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - starboard_rowlock
+      - port_rowlock
+      - starboard_oar
+      - port_oar
+      - starboard_blade
+      - port_blade
+    constraints:
+      goal_time: 0.5
+      stopped_velocity_tolerance: 0.01
+      starboard_rowlock      : {trajectory: 0.01, goal: 0.01}
+      port_rowlock           : {trajectory: 0.01, goal: 0.01}
+      starboard_oar          : {trajectory: 0.01, goal: 0.01}
+      port_oar               : {trajectory: 0.01, goal: 0.01}
+      starboard_blade        : {trajectory: 0.01, goal: 0.01}
+      port_blade             : {trajectory: 0.01, goal: 0.01}
+    gains:
+      starboard_rowlock      :  {p: 6000.0, d: 200.0, i: 0.0, i_clamp: 0.0}
+      port_rowlock           :  {p: 6000.0, d: 200.0, i: 0.0, i_clamp: 0.0}
+      starboard_oar          :  {p: 1000.0, d: 25.0, i: 0.0, i_clamp: 0.0}
+      port_oar               :  {p: 1000.0, d: 25.0, i: 0.0, i_clamp: 0.0}
+      starboard_blade        :  {p: 100.0, d: 5.0, i: 0.0, i_clamp: 0.0}
+      port_blade             :  {p: 100.0, d: 5.0, i: 0.0, i_clamp: 0.0}
+      state_publish_rate:  50       # was 50. stabieler?
+      stop_trajectory_duration: 0.0
+
