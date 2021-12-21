@@ -42,7 +42,7 @@
 								<color>0 0 1</color>
 							</Appearance>
 							<!--Half lengths in X, Y, Z respectively.-->
-							<half_lengths>20 0.050000000000000003 2</half_lengths>
+							<half_lengths>20 0.050000000000000003 3.5</half_lengths>
 						</Brick>
 					</attached_geometry>
 					<!--The mass of the body (kg)-->
@@ -50,7 +50,7 @@
 					<!--The location (Vec3) of the mass center in the body frame.-->
 					<mass_center>0 0 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
-					<inertia>0 0 0 0 0 0</inertia>
+					<inertia>1 1 1 0 0 0</inertia>
 				</Body>
 				<Body name="TheBoat">
 					<!--The geometry used to display the axes of this Frame.-->
@@ -71,13 +71,13 @@
 								<color>0 1 1</color>
 							</Appearance>
 							<!--Half lengths in X, Y, Z respectively.-->
-							<half_lengths>6 0.29999999999999999 0.80000000000000004</half_lengths>
+							<half_lengths>3 0.10000000000000001 0.29999999999999999</half_lengths>
 						</Brick>
 					</attached_geometry>
 					<!--The mass of the body (kg)-->
-					<mass>1</mass>
+					<mass>50</mass>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
-					<inertia>1 1 1 0 0 0</inertia>
+					<inertia>7 7 45 0 0 0</inertia>
 				</Body>
 				<Body name="The_upper_leg">
 					<!--The geometry used to display the axes of this Frame.-->
@@ -108,7 +108,7 @@
 					<!--The location (Vec3) of the mass center in the body frame.-->
 					<mass_center>0 0 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
-					<inertia>0 0 0 0 0 0</inertia>
+					<inertia>1 1 1 0 0 0</inertia>
 				</Body>
 				<Body name="The_lower_leg">
 					<!--The geometry used to display the axes of this Frame.-->
@@ -139,7 +139,7 @@
 					<!--The location (Vec3) of the mass center in the body frame.-->
 					<mass_center>0 0 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
-					<inertia>0 0 0 0 0 0</inertia>
+					<inertia>1 1 1 0 0 0</inertia>
 				</Body>
 				<Body name="TheBlade">
 					<!--The geometry used to display the axes of this Frame.-->
@@ -160,11 +160,11 @@
 								<color>1 1 1</color>
 							</Appearance>
 							<!--Half lengths in X, Y, Z respectively.-->
-							<half_lengths>0.029999999999999999 0.59999999999999998 0.59999999999999998</half_lengths>
+							<half_lengths>0.025000000000000001 0.29999999999999999 0.29999999999999999</half_lengths>
 						</Brick>
 					</attached_geometry>
 					<!--The mass of the body (kg)-->
-					<mass>1</mass>
+					<mass>5</mass>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
 					<inertia>1 1 1 0 0 0</inertia>
 				</Body>
@@ -192,7 +192,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/ground</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0.025000000000000001 0</translation>
+							<translation>0 0.050000000000000003 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -221,22 +221,28 @@
 					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
 					<coordinates>
 						<Coordinate name="boatJoint_coord_0">
-							<!--All properties of this object have their default values.-->
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>true</clamped>
 						</Coordinate>
 						<Coordinate name="boatJoint_coord_1">
-							<!--All properties of this object have their default values.-->
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>true</clamped>
 						</Coordinate>
 						<Coordinate name="boatJoint_coord_2">
-							<!--All properties of this object have their default values.-->
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>true</clamped>
 						</Coordinate>
 						<Coordinate name="boatJoint_coord_3">
-							<!--All properties of this object have their default values.-->
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>true</clamped>
 						</Coordinate>
 						<Coordinate name="boatJoint_coord_4">
-							<!--All properties of this object have their default values.-->
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>true</clamped>
 						</Coordinate>
 						<Coordinate name="boatJoint_coord_5">
-							<!--All properties of this object have their default values.-->
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>true</clamped>
 						</Coordinate>
 					</coordinates>
 					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
@@ -252,7 +258,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/bodyset/The_rowing_course</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0.5 0</translation>
+							<translation>0 0.20000000000000001 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -298,7 +304,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/bodyset/TheBoat</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>5 0.29999999999999999 0</translation>
+							<translation>2 0.10000000000000001 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -326,7 +332,7 @@
 					<socket_child_frame>The_lower_leg_offset</socket_child_frame>
 					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
 					<coordinates>
-						<Coordinate name="lowerangle">
+						<Coordinate name="kneeangle">
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-1.2 1.5707963267948966</range>
 						</Coordinate>
@@ -390,7 +396,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/bodyset/The_lower_leg</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 1.6000000000000001 0</translation>
+							<translation>0 1.5 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -419,7 +425,7 @@
 			<objects>
 				<PrescribedController name="prescribedcontroller">
 					<!--The list of model actuators that this controller will control.The keyword ALL indicates the controller will control all the actuators in the model-->
-					<actuator_list>act_1 act_2 act_3</actuator_list>
+					<actuator_list>baseangle kneeangle bladeangle</actuator_list>
 					<!--Functions (one per control) describing the controls for actuatorsspecified for this controller.-->
 					<FunctionSet name="ControlFunctions">
 						<objects>
@@ -442,275 +448,116 @@
 		<!--Forces in the model (includes Actuators).-->
 		<ForceSet name="forceset">
 			<objects>
-				<CoordinateActuator name="act_1">
+				<CoordinateActuator name="baseangle">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>baseangle</coordinate>
 				</CoordinateActuator>
-				<CoordinateActuator name="act_2">
+				<CoordinateActuator name="kneeangle">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
-					<coordinate>lowerangle</coordinate>
+					<coordinate>kneeangle</coordinate>
 				</CoordinateActuator>
-				<CoordinateActuator name="act_3">
+				<CoordinateActuator name="bladeangle">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>bladeangle</coordinate>
 				</CoordinateActuator>
-				<HuntCrossleyForce name="BoatForce_1">
+				<ElasticFoundationForce name="Course">
 					<!--Material properties.-->
-					<HuntCrossleyForce::ContactParametersSet name="contact_parameters">
+					<ElasticFoundationForce::ContactParametersSet name="contact_parameters">
 						<objects>
-							<HuntCrossleyForce::ContactParameters>
+							<ElasticFoundationForce::ContactParameters>
 								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>corner_1 baantje</geometry>
+								<geometry>bootje baantje</geometry>
 								<stiffness>1000000</stiffness>
-								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.10000000000000001</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.40000000000000002</viscous_friction>
-							</HuntCrossleyForce::ContactParameters>
+								<dissipation>1</dissipation>
+								<static_friction>0.001</static_friction>
+								<dynamic_friction>0.001</dynamic_friction>
+								<viscous_friction>0.001</viscous_friction>
+							</ElasticFoundationForce::ContactParameters>
 						</objects>
 						<groups />
-					</HuntCrossleyForce::ContactParametersSet>
+					</ElasticFoundationForce::ContactParametersSet>
 					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.10000000000000001</transition_velocity>
-				</HuntCrossleyForce>
-				<HuntCrossleyForce name="BoatForce_2">
+					<transition_velocity>0.02</transition_velocity>
+				</ElasticFoundationForce>
+				<ElasticFoundationForce name="Blad">
 					<!--Material properties.-->
-					<HuntCrossleyForce::ContactParametersSet name="contact_parameters">
+					<ElasticFoundationForce::ContactParametersSet name="contact_parameters">
 						<objects>
-							<HuntCrossleyForce::ContactParameters>
+							<ElasticFoundationForce::ContactParameters>
 								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>corner_2 baantje</geometry>
-								<stiffness>1000000</stiffness>
-								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.10000000000000001</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.40000000000000002</viscous_friction>
-							</HuntCrossleyForce::ContactParameters>
+								<geometry>bladje baantje</geometry>
+								<stiffness>50000</stiffness>
+								<dissipation>3</dissipation>
+								<static_friction>1</static_friction>
+								<dynamic_friction>1</dynamic_friction>
+								<viscous_friction>0.83999999999999997</viscous_friction>
+							</ElasticFoundationForce::ContactParameters>
 						</objects>
 						<groups />
-					</HuntCrossleyForce::ContactParametersSet>
+					</ElasticFoundationForce::ContactParametersSet>
 					<!--Slip velocity (creep) at which peak static friction occurs.-->
 					<transition_velocity>0.10000000000000001</transition_velocity>
-				</HuntCrossleyForce>
-				<HuntCrossleyForce name="BoatForce_3">
-					<!--Material properties.-->
-					<HuntCrossleyForce::ContactParametersSet name="contact_parameters">
-						<objects>
-							<HuntCrossleyForce::ContactParameters>
-								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>corner_3 baantje</geometry>
-								<stiffness>1000000</stiffness>
-								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.10000000000000001</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.40000000000000002</viscous_friction>
-							</HuntCrossleyForce::ContactParameters>
-						</objects>
-						<groups />
-					</HuntCrossleyForce::ContactParametersSet>
-					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.10000000000000001</transition_velocity>
-				</HuntCrossleyForce>
-				<HuntCrossleyForce name="BoatForce_4">
-					<!--Material properties.-->
-					<HuntCrossleyForce::ContactParametersSet name="contact_parameters">
-						<objects>
-							<HuntCrossleyForce::ContactParameters>
-								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>corner_4 baantje</geometry>
-								<stiffness>1000000</stiffness>
-								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.10000000000000001</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.40000000000000002</viscous_friction>
-							</HuntCrossleyForce::ContactParameters>
-						</objects>
-						<groups />
-					</HuntCrossleyForce::ContactParametersSet>
-					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.10000000000000001</transition_velocity>
-				</HuntCrossleyForce>
-				<HuntCrossleyForce name="BladeForce_1">
-					<!--Material properties.-->
-					<HuntCrossleyForce::ContactParametersSet name="contact_parameters">
-						<objects>
-							<HuntCrossleyForce::ContactParameters>
-								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>blade_1 baantje</geometry>
-								<stiffness>1000000</stiffness>
-								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.10000000000000001</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.40000000000000002</viscous_friction>
-							</HuntCrossleyForce::ContactParameters>
-						</objects>
-						<groups />
-					</HuntCrossleyForce::ContactParametersSet>
-					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.10000000000000001</transition_velocity>
-				</HuntCrossleyForce>
-				<HuntCrossleyForce name="BladeForce_2">
-					<!--Material properties.-->
-					<HuntCrossleyForce::ContactParametersSet name="contact_parameters">
-						<objects>
-							<HuntCrossleyForce::ContactParameters>
-								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>blade_2 baantje</geometry>
-								<stiffness>1000000</stiffness>
-								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.10000000000000001</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.40000000000000002</viscous_friction>
-							</HuntCrossleyForce::ContactParameters>
-						</objects>
-						<groups />
-					</HuntCrossleyForce::ContactParametersSet>
-					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.10000000000000001</transition_velocity>
-				</HuntCrossleyForce>
-				<HuntCrossleyForce name="BladeForce_3">
-					<!--Material properties.-->
-					<HuntCrossleyForce::ContactParametersSet name="contact_parameters">
-						<objects>
-							<HuntCrossleyForce::ContactParameters>
-								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>blade_3 baantje</geometry>
-								<stiffness>1000000</stiffness>
-								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.10000000000000001</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.40000000000000002</viscous_friction>
-							</HuntCrossleyForce::ContactParameters>
-						</objects>
-						<groups />
-					</HuntCrossleyForce::ContactParametersSet>
-					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.10000000000000001</transition_velocity>
-				</HuntCrossleyForce>
-				<HuntCrossleyForce name="BladeForce_4">
-					<!--Material properties.-->
-					<HuntCrossleyForce::ContactParametersSet name="contact_parameters">
-						<objects>
-							<HuntCrossleyForce::ContactParameters>
-								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>blade_4 baantje</geometry>
-								<stiffness>1000000</stiffness>
-								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.10000000000000001</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.40000000000000002</viscous_friction>
-							</HuntCrossleyForce::ContactParameters>
-						</objects>
-						<groups />
-					</HuntCrossleyForce::ContactParametersSet>
-					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.10000000000000001</transition_velocity>
-				</HuntCrossleyForce>
-				<HuntCrossleyForce name="elbow_force_0">
-					<!--Material properties.-->
-					<HuntCrossleyForce::ContactParametersSet name="contact_parameters">
-						<objects>
-							<HuntCrossleyForce::ContactParameters>
-								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>elbow_0 baantje</geometry>
-								<stiffness>1000000</stiffness>
-								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.10000000000000001</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.40000000000000002</viscous_friction>
-							</HuntCrossleyForce::ContactParameters>
-						</objects>
-						<groups />
-					</HuntCrossleyForce::ContactParametersSet>
-					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.10000000000000001</transition_velocity>
-				</HuntCrossleyForce>
+				</ElasticFoundationForce>
 			</objects>
 			<groups />
 		</ForceSet>
+		<!--Markers in the model.-->
+		<MarkerSet name="markerset">
+			<objects>
+				<Marker name="mbasej">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/TheBoat</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>5 0.29999999999999999 0</location>
+				</Marker>
+				<Marker name="mbladej">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/The_lower_leg</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 1.5 0</location>
+				</Marker>
+				<Marker name="mend">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/TheBlade</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 0.59999999999999998 0</location>
+				</Marker>
+			</objects>
+			<groups />
+		</MarkerSet>
 		<!--Geometry to be used in contact forces.-->
 		<ContactGeometrySet name="contactgeometryset">
 			<objects>
-				<ContactHalfSpace name="baantje">
+				<ContactMesh name="baantje">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/The_rowing_course</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0 0.10000000000000001 0</location>
+					<location>0 0 0</location>
 					<!--Orientation of geometry in the PhysicalFrame (body-fixed XYZ Euler angles).-->
-					<orientation>0 0 -1.5707963267948966</orientation>
-				</ContactHalfSpace>
-				<ContactSphere name="corner_1">
+					<orientation>1.5707963267948966 0 0</orientation>
+					<!--Path to mesh geometry file (supports .obj, .stl, .vtp). Mesh should be closed and water-tight.-->
+					<filename>box40_7_0.1_weinig.stl</filename>
+				</ContactMesh>
+				<ContactMesh name="bootje">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/TheBoat</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>6 -0.29999999999999999 -0.80000000000000004</location>
-					<!--Radius of the sphere (default: 0).-->
-					<radius>0.10000000000000001</radius>
-				</ContactSphere>
-				<ContactSphere name="corner_2">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/bodyset/TheBoat</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-6 -0.29999999999999999 -0.80000000000000004</location>
-					<!--Radius of the sphere (default: 0).-->
-					<radius>0.10000000000000001</radius>
-				</ContactSphere>
-				<ContactSphere name="corner_3">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/bodyset/TheBoat</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>6 -0.29999999999999999 0.80000000000000004</location>
-					<!--Radius of the sphere (default: 0).-->
-					<radius>0.10000000000000001</radius>
-				</ContactSphere>
-				<ContactSphere name="corner_4">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/bodyset/TheBoat</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>-6 -0.29999999999999999 0.80000000000000004</location>
-					<!--Radius of the sphere (default: 0).-->
-					<radius>0.10000000000000001</radius>
-				</ContactSphere>
-				<ContactSphere name="blade_1">
+					<location>0 0 0</location>
+					<!--Orientation of geometry in the PhysicalFrame (body-fixed XYZ Euler angles).-->
+					<orientation>1.5707963267948966 0 0</orientation>
+					<!--Path to mesh geometry file (supports .obj, .stl, .vtp). Mesh should be closed and water-tight.-->
+					<filename>box6_0.6_0.2.stl</filename>
+				</ContactMesh>
+				<ContactMesh name="bladje">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/TheBlade</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.050000000000000003 0.59999999999999998 0.59999999999999998</location>
-					<!--Radius of the sphere (default: 0).-->
-					<radius>0.10000000000000001</radius>
-				</ContactSphere>
-				<ContactSphere name="blade_2">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/bodyset/TheBlade</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.050000000000000003 0.59999999999999998 -0.59999999999999998</location>
-					<!--Radius of the sphere (default: 0).-->
-					<radius>0.10000000000000001</radius>
-				</ContactSphere>
-				<ContactSphere name="blade_3">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/bodyset/TheBlade</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.050000000000000003 -0.59999999999999998 0.59999999999999998</location>
-					<!--Radius of the sphere (default: 0).-->
-					<radius>0.10000000000000001</radius>
-				</ContactSphere>
-				<ContactSphere name="blade_4">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/bodyset/TheBlade</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0.050000000000000003 -0.59999999999999998 -0.59999999999999998</location>
-					<!--Radius of the sphere (default: 0).-->
-					<radius>0.10000000000000001</radius>
-				</ContactSphere>
-				<ContactSphere name="elbow_0">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/bodyset/The_upper_leg</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0 1 0</location>
-					<!--Radius of the sphere (default: 0).-->
-					<radius>0.10000000000000001</radius>
-				</ContactSphere>
+					<location>0 0 0</location>
+					<!--Orientation of geometry in the PhysicalFrame (body-fixed XYZ Euler angles).-->
+					<orientation>0 -1.5707963267948966 0</orientation>
+					<!--Path to mesh geometry file (supports .obj, .stl, .vtp). Mesh should be closed and water-tight.-->
+					<filename>box0.05_0.45_0.45.stl</filename>
+				</ContactMesh>
 			</objects>
 			<groups />
 		</ContactGeometrySet>
