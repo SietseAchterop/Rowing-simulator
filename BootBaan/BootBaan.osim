@@ -838,29 +838,20 @@
 						</PhysicalOffsetFrame>
 					</frames>
 				</WeldJoint>
-				<FreeJoint name="boatJoint">
+				<CustomJoint name="boatJoint">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
 					<socket_parent_frame>ground_offset</socket_parent_frame>
 					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
 					<socket_child_frame>TheBoat_offset</socket_child_frame>
 					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
 					<coordinates>
-						<Coordinate name="bJoint_0">
-							<!--All properties of this object have their default values.-->
-						</Coordinate>
 						<Coordinate name="bJoint_1">
-							<!--All properties of this object have their default values.-->
-						</Coordinate>
-						<Coordinate name="bJoint_2">
 							<!--All properties of this object have their default values.-->
 						</Coordinate>
 						<Coordinate name="bJoint_3">
 							<!--All properties of this object have their default values.-->
 						</Coordinate>
 						<Coordinate name="bJoint_4">
-							<!--All properties of this object have their default values.-->
-						</Coordinate>
-						<Coordinate name="bJoint_5">
 							<!--All properties of this object have their default values.-->
 						</Coordinate>
 					</coordinates>
@@ -897,7 +888,60 @@
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
 					</frames>
-				</FreeJoint>
+					<!--Defines how the child body moves with respect to the parent as a function of the generalized coordinates.-->
+					<SpatialTransform>
+						<!--3 Axes for rotations are listed first.-->
+						<TransformAxis name="rotation1">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>1 0 0</axis>
+						</TransformAxis>
+						<TransformAxis name="rotation2">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>bJoint_1</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 1 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<LinearFunction name="function">
+								<coefficients> 1 0</coefficients>
+							</LinearFunction>
+						</TransformAxis>
+						<TransformAxis name="rotation3">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 0 1</axis>
+						</TransformAxis>
+						<!--3 Axes for translations are listed next.-->
+						<TransformAxis name="translation1">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>bJoint_3</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>1 0 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<LinearFunction name="function">
+								<coefficients> 1 0</coefficients>
+							</LinearFunction>
+						</TransformAxis>
+						<TransformAxis name="translation2">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>bJoint_4</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 1 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<LinearFunction name="function">
+								<coefficients> 1 0</coefficients>
+							</LinearFunction>
+						</TransformAxis>
+						<TransformAxis name="translation3">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 0 1</axis>
+						</TransformAxis>
+					</SpatialTransform>
+				</CustomJoint>
 				<WeldJoint name="stretcherJoint">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
 					<socket_parent_frame>TheBoat_offset</socket_parent_frame>
@@ -1171,8 +1215,6 @@
 					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
 					<coordinates>
 						<Coordinate name="sblpos">
-							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>0.040927970959267028</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-0.40000000000000002 0.10000000000000001</range>
 							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
@@ -1360,8 +1402,6 @@
 					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
 					<coordinates>
 						<Coordinate name="pblpos">
-							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
-							<default_value>0.040927970959267028</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
 							<range>-0.40000000000000002 0.10000000000000001</range>
 							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
@@ -2251,23 +2291,39 @@
 						</PhysicalOffsetFrame>
 					</frames>
 				</WeldConstraint>
+				<CoordinateCouplerConstraint name="s_blade">
+					<!--Constraint function of generalized coordinates (to be specified) used to evaluate the constraint errors and their derivatives, and must valid to at least 2nd order. Constraint function must evaluate to zero when coordinates satisfy the constraint.-->
+					<coupled_coordinates_function>
+						<LinearFunction>
+							<coefficients> -1 0</coefficients>
+						</LinearFunction>
+					</coupled_coordinates_function>
+					<!--List of names of the right hand side (independent) coordinates. Note the constraint function above, must be able to handle multiple coordinate values if more than one coordinate name is provided.-->
+					<independent_coordinate_names>soarinout</independent_coordinate_names>
+					<!--Name of the left-hand side (dependent) coordinate of the constraint coupling function.-->
+					<dependent_coordinate_name>sblpos</dependent_coordinate_name>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="p_blade">
+					<!--Constraint function of generalized coordinates (to be specified) used to evaluate the constraint errors and their derivatives, and must valid to at least 2nd order. Constraint function must evaluate to zero when coordinates satisfy the constraint.-->
+					<coupled_coordinates_function>
+						<LinearFunction>
+							<coefficients> -1 0</coefficients>
+						</LinearFunction>
+					</coupled_coordinates_function>
+					<!--List of names of the right hand side (independent) coordinates. Note the constraint function above, must be able to handle multiple coordinate values if more than one coordinate name is provided.-->
+					<independent_coordinate_names>poarinout</independent_coordinate_names>
+					<!--Name of the left-hand side (dependent) coordinate of the constraint coupling function.-->
+					<dependent_coordinate_name>pblpos</dependent_coordinate_name>
+				</CoordinateCouplerConstraint>
 			</objects>
 			<groups />
 		</ConstraintSet>
 		<!--Forces in the model (includes Actuators).-->
 		<ForceSet name="forceset">
 			<objects>
-				<CoordinateActuator name="bJ_act_0">
-					<!--Name of the generalized coordinate to which the actuator applies.-->
-					<coordinate>bJoint_0</coordinate>
-				</CoordinateActuator>
 				<CoordinateActuator name="bJ_act_1">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>bJoint_1</coordinate>
-				</CoordinateActuator>
-				<CoordinateActuator name="bJ_act_2">
-					<!--Name of the generalized coordinate to which the actuator applies.-->
-					<coordinate>bJoint_2</coordinate>
 				</CoordinateActuator>
 				<CoordinateActuator name="bJ_act_3">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
@@ -2276,10 +2332,6 @@
 				<CoordinateActuator name="bJ_act_4">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>bJoint_4</coordinate>
-				</CoordinateActuator>
-				<CoordinateActuator name="bJ_act_5">
-					<!--Name of the generalized coordinate to which the actuator applies.-->
-					<coordinate>bJoint_5</coordinate>
 				</CoordinateActuator>
 				<CoordinateActuator name="seatact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
@@ -2462,7 +2514,7 @@
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/Seat</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 0.050000000000000003 0</location>
+					<location>0 0 0</location>
 				</Marker>
 				<Marker name="mShoulder">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
@@ -2498,19 +2550,13 @@
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/PortBlade</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 0.22500000000000001 0</location>
+					<location>0 -0.22500000000000001 0</location>
 				</Marker>
 				<Marker name="msBlade">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/StarboardBlade</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 -0.22500000000000001 0</location>
-				</Marker>
-				<Marker name="tijdelijk">
-					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
-					<socket_parent_frame>/bodyset/Upper_Arm_Right</socket_parent_frame>
-					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 -0.13950000000000001 0</location>
+					<location>0 0.22500000000000001 0</location>
 				</Marker>
 			</objects>
 			<groups />
@@ -2518,16 +2564,14 @@
 		<!--Geometry to be used in contact forces.-->
 		<ContactGeometrySet name="contactgeometryset">
 			<objects>
-				<ContactMesh name="baan">
+				<ContactHalfSpace name="baan">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/Rowing_course</socket_frame>
 					<!--Location of geometry center in the PhysicalFrame.-->
 					<location>0 0 0</location>
 					<!--Orientation of geometry in the PhysicalFrame (body-fixed XYZ Euler angles).-->
-					<orientation>1.5707963267948966 0 0</orientation>
-					<!--Path to mesh geometry file (supports .obj, .stl, .vtp). Mesh should be closed and water-tight.-->
-					<filename>box40_7_0.1_weinig.stl</filename>
-				</ContactMesh>
+					<orientation>0 0 -1.5707963267948966</orientation>
+				</ContactHalfSpace>
 				<ContactMesh name="boot">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/TheBoat</socket_frame>

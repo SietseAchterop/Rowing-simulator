@@ -218,37 +218,32 @@ courseJoint = osim.WeldJoint("courseJoint",
                              osim.Vec3(0, 0, 0))
 bbaan.addJoint(courseJoint)
 
-# later make it a custom joint with only 2 degrees of freedom. forward and up
-boatJoint = osim.FreeJoint("boatJoint",
+boattf = osim.SpatialTransform()
+bj_1 = osim.ArrayStr()
+bj_1.append("bJoint_1")
+boattf.updTransformAxis(1).setCoordinateNames(bj_1)
+boattf.updTransformAxis(1).set_function(osim.LinearFunction())
+bj_3 = osim.ArrayStr()
+bj_3.append("bJoint_3")
+boattf.updTransformAxis(3).setCoordinateNames(bj_3)
+boattf.updTransformAxis(3).set_function(osim.LinearFunction())
+bj_4 = osim.ArrayStr()
+bj_4.append("bJoint_4")
+boattf.updTransformAxis(4).setCoordinateNames(bj_4)
+boattf.updTransformAxis(4).set_function(osim.LinearFunction())
+
+boatJoint = osim.CustomJoint("boatJoint",
                            bbaan.getGround(),
                            osim.Vec3(0, boatHeight/2, 0),
                            osim.Vec3(0, 0, 0),
                            theBoat,
                            osim.Vec3(0, 0, 0),
-                           osim.Vec3(0, 0, 0))
+                           osim.Vec3(0, 0, 0),
+                           boattf)
 bbaan.addJoint(boatJoint)
 
-coord = boatJoint.upd_coordinates(0)
-coord.setName('bJoint_0')
-coord = boatJoint.upd_coordinates(1)
-coord.setName('bJoint_1')
-coord = boatJoint.upd_coordinates(2)
-coord.setName('bJoint_2')
-coord = boatJoint.upd_coordinates(3)
-coord.setName('bJoint_3')
-coord = boatJoint.upd_coordinates(4)
-coord.setName('bJoint_4')
-coord = boatJoint.upd_coordinates(5)
-coord.setName('bJoint_5')
-
-act = osim.CoordinateActuator('bJoint_0')
-act.setName('bJ_act_0')
-bbaan.addForce(act)
 act = osim.CoordinateActuator('bJoint_1')
 act.setName('bJ_act_1')
-bbaan.addForce(act)
-act = osim.CoordinateActuator('bJoint_2')
-act.setName('bJ_act_2')
 bbaan.addForce(act)
 act = osim.CoordinateActuator('bJoint_3')
 act.setName('bJ_act_3')
@@ -256,10 +251,6 @@ bbaan.addForce(act)
 act = osim.CoordinateActuator('bJoint_4')
 act.setName('bJ_act_4')
 bbaan.addForce(act)
-act = osim.CoordinateActuator('bJoint_5')
-act.setName('bJ_act_5')
-bbaan.addForce(act)
-
 
 stretcherJoint = osim.WeldJoint("stretcherJoint",
                                 theBoat,
@@ -362,7 +353,7 @@ coord = sbladeJoint.updCoordinate()
 coord.setName('sblpos')
 coord.setRangeMin(-0.4)
 coord.setRangeMax(0.1)
-coord.setDefaultValue(math.radians(2.345))
+#coord.setDefaultValue(math.radians(2.345))
 coord.set_clamped(True)
 
 act = osim.CoordinateActuator('sblpos')
@@ -431,7 +422,7 @@ coord = pbladeJoint.updCoordinate()
 coord.setName('pblpos')
 coord.setRangeMin(-0.4)
 coord.setRangeMax(0.1)
-coord.setDefaultValue(math.radians(2.345))
+#coord.setDefaultValue(math.radians(2.345))
 coord.set_clamped(True)
 
 act = osim.CoordinateActuator('pblpos')
@@ -875,12 +866,39 @@ bbaan.addConstraint(larmconstraint)
 rarmconstraint = osim.WeldConstraint("rarmconstraint", lowerar_u, osim.Transform(osim.Vec3(0, -larml/4, 0)), lowerar_l, osim.Transform(osim.Vec3(0, larml/4, 0)))
 bbaan.addConstraint(rarmconstraint)
 
+
+"""   Keep both blades level using constraints   """
+
+constraint = osim.CoordinateCouplerConstraint()
+constraint.setName("s_blade")
+independentCoords = osim.ArrayStr()
+independentCoords.append('soarinout')
+constraint.setIndependentCoordinateNames(independentCoords)
+constraint.setDependentCoordinateName('sblpos')
+constraint.setFunction(osim.LinearFunction(-1, 0))
+bbaan.addConstraint(constraint)
+
+constraint2 = osim.CoordinateCouplerConstraint()
+constraint2.setName("p_blade")
+independentCoords2 = osim.ArrayStr()
+independentCoords2.append('poarinout')
+constraint2.setIndependentCoordinateNames(independentCoords2)
+constraint2.setDependentCoordinateName('pblpos')
+constraint2.setFunction(osim.LinearFunction(-1, 0))
+bbaan.addConstraint(constraint2)
+
 """  Contact Geometry    """
 
+"""
 baan = osim.ContactMesh('box40_7_0.1_weinig.stl',
                         osim.Vec3(0, 0, 0),
                         osim.Vec3(pi/2, 0, 0),
                         theCourse)
+"""
+baan = osim.ContactHalfSpace(osim.Vec3(0, 0.0, 0),
+                             osim.Vec3(0, 0, -pi/2),
+                             theCourse)
+
 baan.setName("baan")
 bbaan.addContactGeometry(baan)
 
@@ -983,7 +1001,7 @@ bbaan.addForce(e_3)
 mboat = osim.Marker(markers[0], theBoat, osim.Vec3(0, 0, 0))
 bbaan.addMarker(mboat)
 
-mseat = osim.Marker(markers[1], seat, osim.Vec3(0, 0+seatHeight/2, 0))
+mseat = osim.Marker(markers[1], seat, osim.Vec3(0))
 bbaan.addMarker(mseat)
 
 mshoulder = osim.Marker(markers[2], shoulder, osim.Vec3(0, 0, 0))
@@ -1001,15 +1019,11 @@ bbaan.addMarker(mphandle)
 mshandle = osim.Marker(markers[6], soar, osim.Vec3(0, (outboard+inbhand)/2, 0))
 bbaan.addMarker(mshandle)
 
-mpblade = osim.Marker(markers[7], pblade, osim.Vec3(0, bladepoint/2, 0))
+mpblade = osim.Marker(markers[7], pblade, osim.Vec3(0, -bladepoint/2, 0))
 bbaan.addMarker(mpblade)
 
-msblade = osim.Marker(markers[8], sblade, osim.Vec3(0, -bladepoint/2, 0))
+msblade = osim.Marker(markers[8], sblade, osim.Vec3(0, bladepoint/2, 0))
 bbaan.addMarker(msblade)
-
-# tijdelijk
-tijdelijk = osim.Marker(markers[9], upperar, osim.Vec3(0, -uarml/2, 0))
-bbaan.addMarker(tijdelijk)
 
 
 """      The rest                                """
