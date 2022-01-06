@@ -149,14 +149,6 @@ coord = hipJoint.updCoordinate()
 coord.setName('hipangle')
 coord.setRangeMin(-0.3)
 coord.setRangeMax(pi/2+0.1)
-coord.set_clamped(True)
-osim.CoordinateLimitForce('hipangle',
-                           pi/2+0.1,
-                           10,
-                           -0.3,
-                           10,
-                           0.01,
-                           2.0)
 
 
 act = osim.CoordinateActuator('hipangle')
@@ -203,15 +195,6 @@ coord = footJoint.updCoordinate()
 coord.setName('footangle')
 coord.setRangeMin(0.0)
 coord.setRangeMax(pi/2)
-coord.set_clamped(True)
-# clamped works in IK, for use in Forward Dynamics use CoordinateLimitForce
-osim.CoordinateLimitForce('footangle',
-                           pi/2,
-                           10,
-                           0,
-                           10,
-                           0.01,
-                           2.0)
 
 act = osim.CoordinateActuator('footangle')
 act.setName('footact')
