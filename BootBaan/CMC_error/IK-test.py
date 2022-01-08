@@ -3,6 +3,20 @@ import math
 
 from bb_common import *
 
+"""
+Unclear why there are not enough d-o-f to load the model when the boatJoint is a WeldJoint?
+
+
+[error] Model unable to assemble: AssemblySolver::assemble() Failed: SimTK Exception thrown at Assembler.cpp:869:
+  Method Assembler::assemble() failed because:
+Optimizer failed with message: SimTK Exception thrown at InteriorPointOptimizer.cpp:264:
+  Optimizer failed: Ipopt: Not enough degrees of freedom (status -10)
+Assembly error tolerance achieved: 0.18559801561888681 required: 1e-10..Model relaxing constraints and trying again.
+Connected... adding peer
+
+"""
+
+
 bbaan = osim.Model()
 bbaan.setName("BootBaan")
 bbaan.setGravity(osim.Vec3(0, -9.90665, 0))
@@ -39,6 +53,7 @@ seatGeometry.setColor(osim.Vec3(0.5,0.5,1))
 bbaan.addBody(seat)
 
 """   The joints               """
+
 boattf = osim.SpatialTransform()
 bj_1 = osim.ArrayStr()
 bj_1.append("bJoint_1")
@@ -73,6 +88,18 @@ act = osim.CoordinateActuator('bJoint_4')
 act.setName('bJ_act_4')
 bbaan.addForce(act)
 
+"""       Here not enough d-o-f's?
+
+boatJoint = osim.WeldJoint("boatJoint",
+                           bbaan.getGround(),
+                           osim.Vec3(0, boatHeight/2, 0),
+                           osim.Vec3(0, 0, 0),
+                           theBoat,
+                           osim.Vec3(0, 0, 0),
+                           osim.Vec3(0, 0, 0))
+bbaan.addJoint(boatJoint)
+"""
+
 stretcherJoint = osim.WeldJoint("stretcherJoint",
                                 theBoat,
                                 osim.Vec3(0, boatHeight/2, 0),
@@ -97,7 +124,7 @@ coord = seatJoint.updCoordinate()
 coord.setName('seatpos')
 coord.setRangeMin(-(ulegl+llegl))
 coord.setRangeMax(0.0)
-coord.setDefaultValue(math.radians(0))
+#coord.setDefaultValue(math.radians(-0.00))
 
 act = osim.CoordinateActuator('seatpos')
 act.setName('seatact')
@@ -110,7 +137,6 @@ lower_l = osim.Body("Lower_leg_lower",
                   llegw/2,
                   osim.Vec3(0, 0, 0),
                   osim.Inertia(1, 1, 1))
-
 lowerGeometry_l = osim.Cylinder(0.05, llegl/4)
 lower_l.attachGeometry(lowerGeometry_l)
 lowerGeometry_l.setColor(osim.Vec3(1, 1, 1))
@@ -120,7 +146,6 @@ lower_u = osim.Body("Lower_leg_upper",
                   llegw/2,
                   osim.Vec3(0, 0, 0),
                   osim.Inertia(1, 1, 1))
-
 lowerGeometry_u = osim.Cylinder(0.05, llegl/4)
 lower_u.attachGeometry(lowerGeometry_u)
 lowerGeometry_u.setColor(osim.Vec3(1, 1, 1))
@@ -131,7 +156,6 @@ upper = osim.Body("Upper_leg",
                   ulegw,
                   osim.Vec3(0, 0, 0),
                   osim.Inertia(1, 1, 1))
-
 upperGeometry = osim.Cylinder(0.05, ulegl/2)
 upper.attachGeometry(upperGeometry)
 upperGeometry.setColor(osim.Vec3(1, 1, 1))
@@ -150,7 +174,15 @@ coord = hipJoint.updCoordinate()
 coord.setName('hipangle')
 coord.setRangeMin(-0.3)
 coord.setRangeMax(pi/2+0.1)
-coord.setDefaultValue(math.radians(85.73))
+#coord.setDefaultValue(math.radians(85.73))
+coord.set_clamped(True)
+osim.CoordinateLimitForce('hipangle',
+                           pi/2+0.1,
+                           10,
+                           -0.3,
+                           10,
+                           0.01,
+                           2.0)
 
 act = osim.CoordinateActuator('hipangle')
 act.setName('hipact')
@@ -169,7 +201,7 @@ coord = kneeJoint.updCoordinate()
 coord.setName('kneeangle')
 coord.setRangeMin(0.0)
 coord.setRangeMax(pi)
-coord.setDefaultValue(math.radians(0))
+#coord.setDefaultValue(math.radians(0))
 coord.set_clamped(True)
 osim.CoordinateLimitForce('kneeangle',
                            pi,
@@ -197,7 +229,16 @@ coord = footJoint.updCoordinate()
 coord.setName('footangle')
 coord.setRangeMin(0.0)
 coord.setRangeMax(pi/2)
-coord.setDefaultValue(math.radians(6.426))
+#coord.setDefaultValue(math.radians(6.426))
+coord.set_clamped(True)
+# clamped works in IK, for use in Forward Dynamics use CoordinateLimitForce
+osim.CoordinateLimitForce('footangle',
+                           pi/2,
+                           10,
+                           0,
+                           10,
+                           0.01,
+                           2.0)
 
 act = osim.CoordinateActuator('footangle')
 act.setName('footact')
@@ -206,48 +247,6 @@ bbaan.addForce(act)
 # close the loop in the lower leg
 legconstraint = osim.WeldConstraint("legconstraint", lower_l, osim.Transform(osim.Vec3(0, -llegl/4, 0)), lower_u, osim.Transform(osim.Vec3(0, llegl/4, 0)))
 bbaan.addConstraint(legconstraint)
-
-"""  Contact Geometry    """
-baan = osim.ContactHalfSpace(osim.Vec3(0, 0.0, 0),
-                             osim.Vec3(0, 0, -pi/2),
-                             bbaan.getGround())
-baan.setName("baan")
-bbaan.addContactGeometry(baan)
-
-boot = osim.ContactMesh('box6_0.6_0.2.stl',
-                        osim.Vec3(0, 0, 0),
-                        osim.Vec3(pi/2, 0, 0),
-                        theBoat)
-boot.setName("boot")
-bbaan.addContactGeometry(boot)
-
-# Define Contact Force Parameters
-"""
-stiffness           = 1000000;
-dissipation         = 2.0;
-staticFriction      = 0.8;
-dynamicFriction     = 0.4;
-viscousFriction     = 0.4;
-transitionVelocity  = 0.2;
-"""
-stiffness           = 1000000;
-dissipation         = 1.0;
-staticFriction      = 0.001;
-dynamicFriction     = 0.001;
-viscousFriction     = 0.001;
-transitionVelocity  = 0.02;
-
-e_1 = osim.ElasticFoundationForce()
-e_1.setName('Boot')
-e_1.addGeometry('boot')
-e_1.addGeometry('baan')
-e_1.setStiffness(stiffness)
-e_1.setDissipation(dissipation)
-e_1.setStaticFriction(staticFriction)
-e_1.setDynamicFriction(dynamicFriction)
-e_1.setViscousFriction(viscousFriction)
-e_1.setTransitionVelocity(transitionVelocity)
-bbaan.addForce(e_1)
 
 """      Markers                                 """
 mseat = osim.Marker(markers[0], seat, osim.Vec3(0, 0, 0))
