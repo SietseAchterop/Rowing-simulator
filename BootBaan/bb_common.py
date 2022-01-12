@@ -54,7 +54,7 @@ ubackl     = rowerl * 0.23
 shoulderth = rowerl * 0.05
 headl      = rowerl * 0.12
 
-shoulderl  = rowerl * 0.35
+shoulderl  = rowerl * 0.25
 uarml      = rowerl * 0.15
 larml      = rowerl * 0.14
 
@@ -67,7 +67,7 @@ if total != rowerl:
 angleinb = 0.3
 
 # Markers
-markers = ['mBoat', 'mSeat', 'mShoulder', 'mpElbow', 'msElbow', 'mpHandle', 'msHandle', 'mpBlade', 'msBlade', "tijdelijk"]
+markers = ['mBoat', 'mSeat', 'mShoulder', 'mpElbow', 'msElbow', 'mpHandle', 'msHandle', 'mpBlade', 'msBlade']
 nmbrmarkers = len(markers)
 
 

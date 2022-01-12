@@ -46,7 +46,7 @@ pi = math.pi
 
 # parameters
 nmbrstrokes = 3
-strokerate = 10
+strokerate = 30
 recover_to_stroke = 2.0
 
 Hz = 50
@@ -76,11 +76,11 @@ recsteps = 2*strsteps + 6
 rec_inc = (6.0-3.8)/recsteps
 
 # height of blade above ground
-height = 0.15
+height = 0.0
 # in recover
-recheight = 0.4
+recheight = 0.3
 
-markers = ['mbasej', 'mbladej', 'mend']
+markers = ['mbladej', 'mend']
 nmbrmarkers = len(markers)
 
 frontPos = np.zeros((len(markers), 3))
@@ -94,13 +94,12 @@ def setfrontPos(name, place):
 
 def stroke():
     global time
-    setfrontPos('mbasej', (5, 0.825, 0))
     bladepos = 3.8
     myheight = height
     while True:
         # fill frontPos
         setfrontPos('mbladej', (bladepos, myheight, 0))
-        setfrontPos('mend', (bladepos+0.6, myheight, 0))
+        setfrontPos('mend', (bladepos+0.225, myheight, 0))
         myheight -= 0 #0.1/20
         # 
         nextstring = [time, time/Hz]
@@ -122,7 +121,7 @@ def exitblade():
     def tst(x, y):
         global time
         setfrontPos('mbladej', (x, y, 0))
-        setfrontPos('mend', (x+0.6, y, 0))
+        setfrontPos('mend', (x+0.225, y, 0))
         nextstring = [time, time/Hz]
         for x in frontPos:
             nextstring.append(f'{x[0]:.4f}')
@@ -136,7 +135,6 @@ def exitblade():
     # in 6 stapjes omkeren, ad hoc
     inc = (recheight-height)/6
 
-    setfrontPos('mbasej', (5, 0.825, 0))
     tst(bladepos+0.01, height + inc)
     tst(bladepos+0.02, height + 2*inc)
     tst(bladepos+0.03, height + 3*inc)
@@ -147,12 +145,11 @@ def exitblade():
 
 def recover():
     global time
-    setfrontPos('mbasej', (5, 0.825, 0))
     bladepos = 6.0
     while True:
         # fill frontPos
         setfrontPos('mbladej', (bladepos, recheight, 0))
-        setfrontPos('mend', (bladepos+0.6, recheight, 0))
+        setfrontPos('mend', (bladepos+0.225, recheight, 0))
         # 
         nextstring = [time, time/Hz]
         for x in frontPos:
@@ -173,7 +170,7 @@ def entryblade():
     def tst(x, y):
         global time
         setfrontPos('mbladej', (x, y, 0))
-        setfrontPos('mend', (x+0.6, y, 0))
+        setfrontPos('mend', (x+0.225, y, 0))
         nextstring = [time, time/Hz]
         for x in frontPos:
             nextstring.append(f'{x[0]:.4f}')
@@ -187,7 +184,6 @@ def entryblade():
     # in 6 stapjes omkeren, ad hoc
     inc = (recheight-height)/6
 
-    setfrontPos('mbasej', (5, 0.825, 0))
     tst(bladepos-0.01, recheight - inc)
     tst(bladepos-0.02, recheight - 2*inc)
     tst(bladepos-0.03, recheight - 3*inc)

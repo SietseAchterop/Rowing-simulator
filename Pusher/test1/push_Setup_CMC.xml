@@ -68,6 +68,6 @@
 		<!--Print level for the optimizer, 0 - 3. 0=no printing, 3=detailed printing, 2=in between-->
 		<optimizer_print_level>0</optimizer_print_level>
 		<!--True-false flag indicating whether or not to turn on verbose printing for cmc.-->
-		<use_verbose_printing>true</use_verbose_printing>
+		<use_verbose_printing>false</use_verbose_printing>
 	</CMCTool>
 </OpenSimDocument>

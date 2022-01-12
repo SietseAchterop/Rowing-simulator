@@ -136,21 +136,6 @@ soarGeometry.setColor(osim.Vec3(0.5, 0.5, 1))
 bbaan.addBody(soar)
 
 
-"""   Starboard blade               """
-####################################################
-
-I_xx = 1/12*1*(math.pow(bladepoint/2, 2)+math.pow(bladepoint/2, 2))
-
-sblade = osim.Body("StarboardBlade",
-                   1.0,
-                   osim.Vec3(0, 0, 0),
-                   osim.Inertia(0.1, 0.1, 0.1))
-
-sbladeGeometry = osim.Brick(osim.Vec3(0.02, bladepoint/2, bladepoint/2))
-sblade.attachGeometry(sbladeGeometry)
-sbladeGeometry.setColor(osim.Vec3(0.5, 0.5, 1))
-bbaan.addBody(sblade)
-
 
 """   Port rigger         """
 ####################################################
@@ -194,18 +179,6 @@ poar.attachGeometry(poarGeometry)
 poarGeometry.setColor(osim.Vec3(0.5, 0.5, 1))
 bbaan.addBody(poar)
 
-"""   Port blade          """
-####################################################
-pblade = osim.Body("PortBlade",
-                   1.0,
-                   osim.Vec3(0, 0, 0),
-                   osim.Inertia(1, 1, 1))
-
-pbladeGeometry = osim.Brick(osim.Vec3(0.02, bladepoint/2, bladepoint/2))
-pblade.attachGeometry(pbladeGeometry)
-pbladeGeometry.setColor(osim.Vec3(0.5, 0.5, 1))
-bbaan.addBody(pblade)
-
 
 """   The joints               """
 ####################################################
@@ -219,10 +192,6 @@ courseJoint = osim.WeldJoint("courseJoint",
 bbaan.addJoint(courseJoint)
 
 boattf = osim.SpatialTransform()
-bj_1 = osim.ArrayStr()
-bj_1.append("bJoint_1")
-boattf.updTransformAxis(1).setCoordinateNames(bj_1)
-boattf.updTransformAxis(1).set_function(osim.LinearFunction())
 bj_3 = osim.ArrayStr()
 bj_3.append("bJoint_3")
 boattf.updTransformAxis(3).setCoordinateNames(bj_3)
@@ -242,9 +211,6 @@ boatJoint = osim.CustomJoint("boatJoint",
                            boattf)
 bbaan.addJoint(boatJoint)
 
-act = osim.CoordinateActuator('bJoint_1')
-act.setName('bJ_act_1')
-bbaan.addForce(act)
 act = osim.CoordinateActuator('bJoint_3')
 act.setName('bJ_act_3')
 bbaan.addForce(act)
@@ -341,25 +307,6 @@ act = osim.CoordinateActuator('soarinout')
 act.setName('soarinoutact')
 bbaan.addForce(act)
 
-sbladeJoint = osim.PinJoint("starboardbladeJoint",
-                            soar,
-                            osim.Vec3(0, -(inboard+outboard)/2+bladepoint,  0),
-                            osim.Vec3(0, 0, 0),
-                            sblade,
-                            osim.Vec3(0, bladepoint/2,  0),
-                            osim.Vec3(0, 0, 0))                            
-bbaan.addJoint(sbladeJoint)
-coord = sbladeJoint.updCoordinate()
-coord.setName('sblpos')
-coord.setRangeMin(-0.4)
-coord.setRangeMax(0.1)
-#coord.setDefaultValue(math.radians(2.345))
-coord.set_clamped(True)
-
-act = osim.CoordinateActuator('sblpos')
-act.setName('sblact')
-bbaan.addForce(act)
-
 """ Port joints    """
 ####################################################
 prigJoint = osim.WeldJoint("portrigJoint",
@@ -410,24 +357,6 @@ act = osim.CoordinateActuator('poarinout')
 act.setName('poarinoutact')
 bbaan.addForce(act)
 
-pbladeJoint = osim.PinJoint("portbladeJoint",
-                            poar,
-                            osim.Vec3(0, -(inboard+outboard)/2+bladepoint,  0),
-                            osim.Vec3(0, 0, pi),
-                            pblade,
-                            osim.Vec3(0, -bladepoint/2,  0),
-                            osim.Vec3(0, 0, 0))                            
-bbaan.addJoint(pbladeJoint)
-coord = pbladeJoint.updCoordinate()
-coord.setName('pblpos')
-coord.setRangeMin(-0.4)
-coord.setRangeMax(0.1)
-#coord.setDefaultValue(math.radians(2.345))
-coord.set_clamped(True)
-
-act = osim.CoordinateActuator('pblpos')
-act.setName('pblact')
-bbaan.addForce(act)
 
 """       The Rower                              """
 ####################################################
@@ -589,7 +518,7 @@ bbaan.addJoint(hipJoint)
 coord = hipJoint.updCoordinate()
 coord.setName('hipangle')
 coord.setRangeMin(-0.3)
-coord.setRangeMax(pi/2+0.1)
+coord.setRangeMax(pi/2+0.2)
 coord.setDefaultValue(math.radians(78.9))
 coord.set_clamped(True)
 
@@ -612,6 +541,16 @@ coord.setRangeMin(0.0)
 coord.setRangeMax(pi)
 coord.setDefaultValue(math.radians(10))
 coord.set_clamped(True)
+""" nodig?
+# clamped works in IK, for use in Forward Dynamics use CoordinateLimitForce
+osim.CoordinateLimitForce('kneeangle',
+                           pi,
+                           10,
+                           0,
+                           10,
+                           0.01,
+                           2.0)
+"""
 
 act = osim.CoordinateActuator('kneeangle')
 act.setName('kneeact')
@@ -632,7 +571,6 @@ coord.setRangeMin(0.0)
 coord.setRangeMax(pi/2)
 coord.setDefaultValue(math.radians(5))
 coord.set_clamped(True)
-# clamped works in IK, for use in Forward Dynamics use CoordinateLimitForce
 
 act = osim.CoordinateActuator('footangle')
 act.setName('footact')
@@ -867,37 +805,10 @@ rarmconstraint = osim.WeldConstraint("rarmconstraint", lowerar_u, osim.Transform
 bbaan.addConstraint(rarmconstraint)
 
 
-"""   Keep both blades level using constraints   """
-
-constraint = osim.CoordinateCouplerConstraint()
-constraint.setName("s_blade")
-independentCoords = osim.ArrayStr()
-independentCoords.append('soarinout')
-constraint.setIndependentCoordinateNames(independentCoords)
-constraint.setDependentCoordinateName('sblpos')
-constraint.setFunction(osim.LinearFunction(-1, 0))
-bbaan.addConstraint(constraint)
-
-constraint2 = osim.CoordinateCouplerConstraint()
-constraint2.setName("p_blade")
-independentCoords2 = osim.ArrayStr()
-independentCoords2.append('poarinout')
-constraint2.setIndependentCoordinateNames(independentCoords2)
-constraint2.setDependentCoordinateName('pblpos')
-constraint2.setFunction(osim.LinearFunction(-1, 0))
-bbaan.addConstraint(constraint2)
-
 """  Contact Geometry    """
-
-"""
-baan = osim.ContactMesh('box40_7_0.1_weinig.stl',
-                        osim.Vec3(0, 0, 0),
-                        osim.Vec3(pi/2, 0, 0),
-                        theCourse)
-"""
-baan = osim.ContactHalfSpace(osim.Vec3(0, 0.0, 0),
+baan = osim.ContactHalfSpace(osim.Vec3(0, 0, 0),
                              osim.Vec3(0, 0, -pi/2),
-                             theCourse)
+                             bbaan.getGround())
 
 baan.setName("baan")
 bbaan.addContactGeometry(baan)
@@ -905,25 +816,10 @@ bbaan.addContactGeometry(baan)
 
 boot = osim.ContactMesh('box6_0.6_0.2.stl',
                         osim.Vec3(0, 0, 0),
-                        osim.Vec3(pi/2, 0, 0),
+                        osim.Vec3(-pi/2, 0, 0),
                         theBoat)
 boot.setName("boot")
 bbaan.addContactGeometry(boot)
-
-sblgeom = osim.ContactMesh('box0.05_0.45_0.45.stl',
-                           osim.Vec3(0, 0, 0),
-                           osim.Vec3(0, -pi/2, 0),
-                           sblade)
-sblgeom.setName("sblad")
-bbaan.addContactGeometry(sblgeom)
-
-pblgeom = osim.ContactMesh('box0.05_0.45_0.45.stl',
-                           osim.Vec3(0, 0, 0),
-                           osim.Vec3(0, pi/2, 0),
-                           pblade)
-pblgeom.setName("pblad")
-bbaan.addContactGeometry(pblgeom)
-
 
 
 
@@ -963,31 +859,6 @@ dynamicFriction     = 1.0;
 viscousFriction     = 0.84;
 transitionVelocity  = 0.1;
 
-e_2 = osim.ElasticFoundationForce()
-e_2.setName('SBlad')
-e_2.addGeometry('sblad')
-e_2.addGeometry('baan')
-e_2.setStiffness(stiffness)
-e_2.setDissipation(dissipation)
-e_2.setStaticFriction(staticFriction)
-e_2.setDynamicFriction(dynamicFriction)
-e_2.setViscousFriction(viscousFriction)
-e_2.setTransitionVelocity(transitionVelocity)
-bbaan.addForce(e_2)
-
-e_3 = osim.ElasticFoundationForce()
-e_3.setName('PBlad')
-e_3.addGeometry('pblad')
-e_3.addGeometry('baan')
-e_3.setStiffness(stiffness)
-e_3.setDissipation(dissipation)
-e_3.setStaticFriction(staticFriction)
-e_3.setDynamicFriction(dynamicFriction)
-e_3.setViscousFriction(viscousFriction)
-e_3.setTransitionVelocity(transitionVelocity)
-bbaan.addForce(e_3)
-
-
 
 
 
@@ -1019,10 +890,10 @@ bbaan.addMarker(mphandle)
 mshandle = osim.Marker(markers[6], soar, osim.Vec3(0, (outboard+inbhand)/2, 0))
 bbaan.addMarker(mshandle)
 
-mpblade = osim.Marker(markers[7], pblade, osim.Vec3(0, -bladepoint/2, 0))
+mpblade = osim.Marker(markers[7], poar, osim.Vec3(0, -(inboard+outboard)/2+bladepoint, 0))
 bbaan.addMarker(mpblade)
 
-msblade = osim.Marker(markers[8], sblade, osim.Vec3(0, bladepoint/2, 0))
+msblade = osim.Marker(markers[8], soar, osim.Vec3(0, -(inboard+outboard)/2+bladepoint, 0))
 bbaan.addMarker(msblade)
 
 

@@ -5,9 +5,6 @@ from pathlib import Path, PurePath
 
 from bb_common import *
 
-# time steps
-global gltime
-
 """     Create the rowing motion and write to a trc (track row column) file
           we pretend the boat is not moving.
 
@@ -16,7 +13,7 @@ global gltime
 
 # timing parameters
 Hz = 50
-strokerate = 1
+strokerate = 3
 strokepart = 1/3  # part of time that is a stroke. 1/3 means a stroke/recover ratio of  1/2
 
 # steps of 1/Hz seconds. We calculate in steps
@@ -36,7 +33,7 @@ nmbrstrokes = 3
 blheight = 0.1
 
 """ position of the rower is determined by 4 values:
-      1. height of th blade above the water
+      1. height of the blade above the water
             determines the hand height
       2. frontangle/kneeangle
             start until stretched
@@ -44,19 +41,21 @@ blheight = 0.1
       3. backangle
              (upperleg angle-x) to 45 degrees back
       4. elbowangle
-            arm stretched to max (from backpos)
+            arm stretched to max (from frontpos to backpos)
                   first calculate backpos to determine max
             when elbow is bend:
               plane created with upper en lower arm is at 45 degrees
               but if elbow should be not lower than the handle heigth
 
-     We kiezen frontangle en elbowangle voorlopig op de gok.
+     For the moment we use the following:
 """
 frontangle_start = pi/2 - 0.2
 elbowangle_end = 3/4*pi
 
 """
    Fases in de haal
+
+    0. Inzet
 
     1. Alleen benen
         hand op bol rond schouder snijd handle cirkel
@@ -73,6 +72,7 @@ elbowangle_end = 3/4*pi
     5. armen
         als 3
 
+    6. Uitzet
 
     Dus: benen rug legt een hoop vast
          arm/handle:
@@ -86,7 +86,7 @@ l_end = 70
 b_st  = 25
 b_end = 95
 a_st  = 50
-a_end = 98
+a_end = 100
 # for recover we go backwards with (at least) a different b_end.
 
 # the current position
@@ -155,7 +155,9 @@ def pos_in_parts(t):
         ea = a_curve((t-a_st)*100/(a_end-a_st))
         
     # determine stroke phase
-    if fa < 100 and ba == 0 and ea == 0:
+    if fa < 2 and ba == 0 and ea == 0:
+        phase = 0
+    elif fa < 100 and ba == 0 and ea == 0:
         phase = 1
     elif fa < 100 and 0 < ba < 100 and ea == 0:
         phase = 2
@@ -164,19 +166,19 @@ def pos_in_parts(t):
     elif fa == 100 and ba <100:
         phase = 4
     else:
+        # also exit phase
         phase = 5
 
     return (phase, fa, ba, ea)
 
 
-def calc_pos(pos, blheight, bbaan):
-    global gltime
+def calc_pos(pos, blheight, bbaan, time):
     """ Determine all marker positions   """
 
     """ First determine handle circles   """
     # Starboard side
     #  place of (frame of) lock (0.02 higher than port side)
-    slockheight = boatHeight+seatHeight+lockHeight + 0.025 + 0.02
+    slockheight = boatHeight+seatHeight+lockHeight + 0.025 + 0.02 #   hoogteverschil geeft iets raars bij de elleboog in de uitzet 
     slockplace = np.array((place, slockheight, span/2))
     # handle height with blade  blheight above the water
     soarangle = math.asin((slockheight-blheight)/(outboard-bladepoint))
@@ -435,7 +437,7 @@ def calc_pos(pos, blheight, bbaan):
     setPosition('mpBlade', mpbladepos)
 
 def main():
-    global gltime, b_end
+    global b_end
     trfile = Path.cwd() / 'trajectory.trc'
     with open(trfile, mode='w') as report_file:
         report_writer = csv.writer(report_file, dialect='excel-tab')
@@ -462,30 +464,53 @@ def main():
         bbaan = osim.Model("BootBaan.osim")
         bbaan.setName('Trajectory')
 
-
-        # time in steps!
+        # Start rowing!
         time = 0
-        for n in range(2):  #nmbrstrokes):
+        
+        #  Entry step 1
+        pos = pos_in_parts(0)
+        # set position
+        calc_pos(pos, blheight+0.05, bbaan, time)
+        nextstring = [time, (time)/Hz]
+        for x in position:
+            nextstring.append(f'{x[0]:.3f}')
+            nextstring.append(f'{x[1]:.3f}')
+            nextstring.append(f'{x[2]:.3f}')
+        report_writer.writerow(nextstring)
+        time += 1
+
+        # Entry step 2
+        pos = pos_in_parts(1)  # tempo?
+        # set position
+        calc_pos(pos, blheight, bbaan, time)
+        nextstring = [time, (time)/Hz]
+        for x in position:
+            nextstring.append(f'{x[0]:.3f}')
+            nextstring.append(f'{x[1]:.3f}')
+            nextstring.append(f'{x[2]:.3f}')
+        report_writer.writerow(nextstring)
+        time += 1
+
+        for n in range(nmbrstrokes):
             # stroke
-            for t in range(strokeend):
-                # normalized time
+            for t in range(2, strokeend):
+                # t is normalized time from start of this stroke
                 pos = pos_in_parts(t*100/strokeend)
                 # set position
-                gltime = time+t
-                calc_pos(pos, blheight, bbaan)
-                nextstring = [gltime, gltime/Hz]
+                calc_pos(pos, blheight, bbaan, time)
+                nextstring = [time, time/Hz]
                 for x in position:
                     nextstring.append(f'{x[0]:.3f}')
                     nextstring.append(f'{x[1]:.3f}')
                     nextstring.append(f'{x[2]:.3f}')
                 report_writer.writerow(nextstring)
-                # t/m 97, dus arm nog niet af!
+                time += 1
 
-            #  Exit steps
-            time = time + strokeend
-            pos = pos_in_parts(strokeend)
+            #  Exit step 1
+            # Only vertical
+            pos = pos_in_parts(100)
             # set position
-            calc_pos(pos, blheight+0.05, bbaan)
+            calc_pos(pos, blheight+0.05, bbaan, time)
             nextstring = [time, (time)/Hz]
             for x in position:
                 nextstring.append(f'{x[0]:.3f}')
@@ -494,13 +519,26 @@ def main():
             report_writer.writerow(nextstring)
             time += 1
 
-            # recover  (voorlopig de haal achterste voren)
-            b_end -= 20
-            for t in range(strokeend, 0, -1):
-                pos = pos_in_parts(t*100/strokeend)
+            # Exit step 2
+            pos = pos_in_parts(99)
+            # set position
+            calc_pos(pos, blheight+0.10, bbaan, time)
+            nextstring = [time, (time)/Hz]
+            for x in position:
+                nextstring.append(f'{x[0]:.3f}')
+                nextstring.append(f'{x[1]:.3f}')
+                nextstring.append(f'{x[2]:.3f}')
+            report_writer.writerow(nextstring)
+            time += 1
+
+            # recover  (stroke in reverse for now)
+            b_end -= 20  # delay start of back in recover wrt stroke
+            aantal = recoverend - recoverstart
+            for t in range(aantal, 2, -1):
+                pos = pos_in_parts(t*100/aantal)
                 # set position
-                calc_pos(pos, blheight+0.10, bbaan)
-                nextstring = [time+(strokeend-t), (time+(strokeend-t))/Hz]
+                calc_pos(pos, blheight+0.10, bbaan, time)
+                nextstring = [time, (time/Hz)]
                 for x in position:
                     nextstring.append(f'{x[0]:.3f}')
                     nextstring.append(f'{x[1]:.3f}')
@@ -509,14 +547,13 @@ def main():
                     print("The position:")
                     print(nextstring, "\n")
                 report_writer.writerow(nextstring)
+                time += 1
             b_end += 20
 
-            #  Entry steps
-            time = time + strokeend
-
+            #  Entry step 1
             pos = pos_in_parts(0)
             # set position
-            calc_pos(pos, blheight+0.08, bbaan)
+            calc_pos(pos, blheight+0.05, bbaan, time)
             nextstring = [time, (time)/Hz]
             for x in position:
                 nextstring.append(f'{x[0]:.3f}')
@@ -524,6 +561,19 @@ def main():
                 nextstring.append(f'{x[2]:.3f}')
             report_writer.writerow(nextstring)
             time += 1
+
+            # Entry step 2
+            pos = pos_in_parts(1)  # tempo?
+            # set position
+            calc_pos(pos, blheight, bbaan, time)
+            nextstring = [time, (time)/Hz]
+            for x in position:
+                nextstring.append(f'{x[0]:.3f}')
+                nextstring.append(f'{x[1]:.3f}')
+                nextstring.append(f'{x[2]:.3f}')
+            report_writer.writerow(nextstring)
+            time += 1
+
         # done
 
         # Create model for testing

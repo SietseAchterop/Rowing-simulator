@@ -53,7 +53,7 @@
 				<on> true </on>
 				<!--Weight with which a task is tracked relative to other tasks. To track
 				    a task more tightly, make the weight larger.-->
-				<weight>       1.00000000       1.00000000       1.00000000 </weight>
+				<weight>       10000.00000000       1.00000000       1.00000000 </weight>
 				<!--Name of body frame with respect to which a tracking objective is
 				    specified. The special name 'center_of_mass' refers to the system
 				    center of mass. This property is not used for tracking joint angles.-->
@@ -97,7 +97,7 @@
 				<on> true </on>
 				<!--Weight with which a task is tracked relative to other tasks. To track
 				    a task more tightly, make the weight larger.-->
-				<weight>       1.00000000       1.00000000       1.00000000 </weight>
+				<weight>       1000.00000000       1.00000000       1.00000000 </weight>
 				<!--Name of body frame with respect to which a tracking objective is
 				    specified. The special name 'center_of_mass' refers to the system
 				    center of mass. This property is not used for tracking joint angles.-->
@@ -113,7 +113,7 @@
 			<active> true false false </active>
 				<!--Position error feedback gain (stiffness). To achieve critical damping
 				    of errors, choose kv = 2*sqrt(kp).-->
-				<kp>     100.00000000       1.00000000       1.00000000 </kp>
+				<kp>     1000.00000000       1.00000000       1.00000000 </kp>
 				<!--Velocity error feedback gain (damping). To achieve critical damping of
 				    errors, choose kv = 2*sqrt(kp).-->
 				<kv>      20.00000000       1.00000000       1.00000000 </kv>
@@ -141,7 +141,7 @@
 				<on> true </on>
 				<!--Weight with which a task is tracked relative to other tasks. To track
 				    a task more tightly, make the weight larger.-->
-				<weight>       1.00000000       1.00000000       1.00000000 </weight>
+				<weight>       1000.00000000       1.00000000       1.00000000 </weight>
 				<!--Name of body frame with respect to which a tracking objective is
 				    specified. The special name 'center_of_mass' refers to the system
 				    center of mass. This property is not used for tracking joint angles.-->
