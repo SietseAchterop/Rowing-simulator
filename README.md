@@ -11,9 +11,7 @@ Contains the simplest version of a "leg" pushing a boat through the water. Well,
 to simulate the water.
 Both IK-tool and CMC-tool work, the video is the CMC tool in action.
 
-[//]: #  <img src="Pusher/pusher_snapshot.png" alt="pusher_image" width="800"/>
-
-https://github.com/SietseAchterop/Rowing-simulator/puser_CMC_video.webm
+https://github.com/SietseAchterop/Rowing-simulator/pusher_CMC_video.webm
 
 This version does not have muscles yet.
 
