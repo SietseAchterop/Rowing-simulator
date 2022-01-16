@@ -1,0 +1,74 @@
+#!/bin/bash
+#   Ad hoc script to build opensim from source
+
+#   Version that assumes that dependencies are already build
+
+#   Assume that the following prerequisites are met
+#     Installed the following
+#       On debian 11:
+#          sudo apt-get update && sudo apt-get install --yes liblapack-dev freeglut3-dev libxi-dev libxmu-dev doxygen python3 python3-dev python3-numpy python3-setuptools swig ant
+#       On Ubuntu 20.04
+#          swig 4.0.2  has to be installed  --> /usr/local
+#     Install and select java 1.8 from debian/ubuntu
+#     Install Netbeans 12.5 from netbeans site.
+#     Tested only with python 3.8 or 3.9 on Debian
+#     Get sources   
+#         git clone             https://github.com/opensim-org/opensim-core.git
+#         git clone --recursive https://github.com/opensim-org/opensim-gui.git
+
+#   I install Simbody from source because of the changes for BladeForce
+#     See Waterwerk directory for changes files
+
+# to test debian or ubuntu:
+VERSION=`awk -F= '/^VERSION_ID/{print $2}' /etc/os-release`
+
+# helps a bit.
+set -e
+
+OPENSIM_DIR=/home/sietse/Software/OpenSim
+cd ${OPENSIM_DIR}
+
+# to completely cleanup do:
+#   rm -rf build  build_core  build_deps  opensim  opensim-core  opensim-core-install  opensim_dependencies_install  opensim-gui
+
+# test for previous install
+if [ -d ${OPENSIM_DIR}/opensim ]
+then
+    echo "Directory ${OPENSIM_DIR}/opensim exists on your filesystem."
+    echo "   Please remove before continuing."
+    exit 1
+fi
+
+cd ${OPENSIM_DIR}
+
+# assume build dirs are present.
+
+export SIMBODY_HOME=/usr/local
+# dependancies, including simbody are already build/installed.
+
+cd ${OPENSIM_DIR}/build_core
+cmake  ../opensim-core -DOPENSIM_DEPENDENCIES_DIR=${OPENSIM_DIR}/opensim_dependencies_install -DBUILD_JAVA_WRAPPING=on -DBUILD_PYTHON_WRAPPING=on -DOPENSIM_C3D_PARSER=ezc3d -DBUILD_TESTING=off -DCMAKE_INSTALL_PREFIX=${OPENSIM_DIR}/opensim-core-install -DOPENSIM_INSTALL_UNIX_FHS=OFF
+cmake . -LAH
+cmake --build . --config Release 
+cmake --install .
+
+cd ${OPENSIM_DIR}/build
+cmake  ../opensim-gui -DCMAKE_PREFIX_PATH=${OPENSIM_DIR}/opensim-core-install -DANT_ARGS="-Dnbplatform.default.netbeans.dest.dir=/usr/local/netbeans-12.5/netbeans;-Dnbplatform.default.harness.dir=/usr/local/netbeans-12.5/netbeans/harness"
+make CopyOpenSimCore
+make PrepareInstaller
+
+# voor testen
+cd ${OPENSIM_DIR}
+tar xf opensim-gui/Gui/opensim/dist/OpenSim-4.*
+chmod 755 opensim/bin/*
+
+# ad hoc
+pushd opensim/sdk/lib
+ln -s libadolc.so.2.1.0 libadolc.so.2
+cp ../../../opensim_dependencies_install/ipopt/lib/libipopt.so.1.10.8 .
+ln -s libipopt.so.1.10.8 libipopt.so.1
+popd
+cd ${OPENSIM_DIR}
+
+echo ==== done  ====
+

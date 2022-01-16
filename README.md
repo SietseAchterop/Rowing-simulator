@@ -23,3 +23,12 @@ Contains a first version of a boat with a rower. No muscles yet, only actuators 
 
   - Osim and trc files are created via the python scripts.
   - The mot file is created using the IK tool.
+
+
+## Patches-opensim
+
+To model a blade in water a new force, BladeForce, was created, a variant of the ElasticFoundationForce of Simbody.
+With BladeForce friction is dependant upon the angle between the blade and the speed of the blade in the water.
+The parameters set the friction perpendicular to the blade and friction in line with the blade is set very low in BladeForce.
+
+Also a script to create opensim from source on debian and ubuntu is included.

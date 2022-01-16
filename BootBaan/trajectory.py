@@ -13,7 +13,7 @@ from bb_common import *
 
 # timing parameters
 Hz = 50
-strokerate = 3
+strokerate = 30
 strokepart = 1/3  # part of time that is a stroke. 1/3 means a stroke/recover ratio of  1/2
 
 # steps of 1/Hz seconds. We calculate in steps
@@ -338,7 +338,7 @@ def calc_pos(pos, blheight, bbaan, time):
         b = math.sqrt(re*re - h*h)
         deze = (deze[0], p_0[1], elcenter[2]+b)
         setPosition('msElbow', deze)
-    
+
     """
     (x, y, z) = deze
     mkmarker = osim.Marker("PORTCIRCLE", bbaan.getGround(), osim.Vec3(x, y, z))
@@ -435,6 +435,7 @@ def calc_pos(pos, blheight, bbaan, time):
     z = -span/2 - outer*math.cos(horoarangle)
     mpbladepos = (x, blheight, z)
     setPosition('mpBlade', mpbladepos)
+
 
 def main():
     global b_end
