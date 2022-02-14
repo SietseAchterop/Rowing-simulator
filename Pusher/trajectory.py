@@ -45,7 +45,7 @@ pi = math.pi
         """
 
 # parameters
-nmbrstrokes = 3
+nmbrstrokes = 6
 strokerate = 30
 recover_to_stroke = 2.0
 

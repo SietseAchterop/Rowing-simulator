@@ -1,39 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<OpenSimDocument Version="30000">
-	<InverseKinematicsTool name="eerstetest">
-		<!--Name of the .osim file used to construct a model.-->
-		<model_file>Pusher.osim</model_file>
-		<!--A positive scalar that is used to weight the importance of satisfying constraints.A weighting of 'Infinity' or if it is unassigned results in the constraints being strictly enforced.-->
-		<!-- <constraint_weight>20</constraint_weight>  -->
-		<!--The accuracy of the solution in absolute terms. I.e. the number of significantdigits to which the solution can be trusted.-->
-		<accuracy>1e-005</accuracy>
-		<!--Markers and coordinates to be considered (tasks) and their weightings.-->
+<OpenSimDocument Version="40000">
+	<InverseKinematicsTool>
+		<!--Name/path to the xml .osim file.-->
+		<model_file></model_file>
+		<!--The accuracy of the solution in absolute terms, i.e. the number of significant digits to which the solution can be trusted. Default 1e-5.-->
+		<accuracy>1.0000000000000001e-05</accuracy>
+		<!--The time range for the study.-->
+		<time_range>0 11.98</time_range>
+		<!--Name of the resulting inverse kinematics motion (.mot) file.-->
+		<output_motion_file>trajectory.mot</output_motion_file>
+		<!--Markers and coordinates to be considered (tasks) and their weightings. The sum of weighted-squared task errors composes the cost function.-->
 		<IKTaskSet name="push_IK">
 			<objects>
 				<IKMarkerTask name="mbladej">
-					<weight>1.0</weight>
+					<!--Weight given to the task when solving inverse kinematics problems, default is 0.-->
+					<weight>1</weight>
 				</IKMarkerTask>
 				<IKMarkerTask name="mend">
-					<weight>1.0</weight>
+					<!--Weight given to the task when solving inverse kinematics problems, default is 0.-->
+					<weight>1</weight>
 				</IKMarkerTask>
-
 				<IKCoordinateTask name="bJoint_3">
-					<weight>100000.0</weight>
+					<!--Weight given to the task when solving inverse kinematics problems, default is 0.-->
+					<weight>100000</weight>
+					<!--Indicates the source of the coordinate value for this task.  Possible values are default_value (use default value of coordinate, as specified in the model file, as the fixed target value), manual_value (use the value specified in the value property of this task as the fixed target value), or from_file (use the coordinate values from the coordinate data specified by the coordinates_file property).-->
+					<value_type>default_value</value_type>
+					<!--This value will be used as the desired (or prescribed) coordinate value if value_type is set to manual_value.-->
 					<value>0</value>
 				</IKCoordinateTask>
 				<IKCoordinateTask name="bJoint_4">
-					<weight>100000.0</weight>
+					<!--Weight given to the task when solving inverse kinematics problems, default is 0.-->
+					<weight>100000</weight>
+					<!--Indicates the source of the coordinate value for this task.  Possible values are default_value (use default value of coordinate, as specified in the model file, as the fixed target value), manual_value (use the value specified in the value property of this task as the fixed target value), or from_file (use the coordinate values from the coordinate data specified by the coordinates_file property).-->
+					<value_type>default_value</value_type>
+					<!--This value will be used as the desired (or prescribed) coordinate value if value_type is set to manual_value.-->
 					<value>0</value>
 				</IKCoordinateTask>
-
-
 			</objects>
 			<groups />
 		</IKTaskSet>
+		<!--TRC file (.trc) containing the time history of observations of marker positions obtained during a motion capture experiment. Markers in this file that have a corresponding task and model marker are included.-->
 		<marker_file>trajectory.trc</marker_file>
-		<coordinate_file></coordinate_file>
-		<time_range> 0.0 20.0</time_range>
-		<output_motion_file>trajectory.mot</output_motion_file>
-		<report_marker_locations>true</report_marker_locations>
+		<!--The name of the storage (.sto or .mot) file containing the time history of coordinate observations. Coordinate values from this file are included if there is a corresponding model coordinate and task. -->
+		<coordinate_file>Unassigned</coordinate_file>
+		<!--Flag indicating whether or not to report model marker locations. Note, model marker locations are expressed in Ground.-->
+		<report_marker_locations>false</report_marker_locations>
 	</InverseKinematicsTool>
 </OpenSimDocument>

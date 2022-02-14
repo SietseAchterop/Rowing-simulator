@@ -5,7 +5,7 @@ pi = math.pi
 
 bbaan = osim.Model()
 
-bbaan.setName("Pusher_noC")
+bbaan.setName("Pusher_C")
 bbaan.setGravity(osim.Vec3(0, -9.90665, 0))
 
 """   The bodies with geometry   """
@@ -110,12 +110,16 @@ coord = baseJoint.updCoordinate()
 coord.setName('baseangle')
 coord.setRangeMin(-1.4)
 coord.set_range(1,  1.0)
-coord.setDefaultValue(math.radians(7.395))
 bbaan.addJoint(baseJoint)
 
 act_1 = osim.CoordinateActuator('baseangle')
 act_1.setName('baseact')
 bbaan.addForce(act_1)
+
+controller = osim.PrescribedController()
+
+controller.addActuator(act_1)
+controller.prescribeControlForActuator('baseact', osim.Constant(0.0))
 
 lowerJoint = osim.PinJoint("lowerJoint",
                            upper,
@@ -131,12 +135,14 @@ coord = lowerJoint.updCoordinate()
 coord.setName('kneeangle')
 coord.set_range(0, -1.2)
 coord.set_range(1,  pi/2)
-coord.setDefaultValue(math.radians(-54.096))
+# coord.setDefaultValue(math.radians(-50.0))
 
 act_2 = osim.CoordinateActuator('kneeangle')
 act_2.setName('kneeact')
 bbaan.addForce(act_2)
 
+controller.addActuator(act_2)
+controller.prescribeControlForActuator('kneeact', osim.Constant(0.0))
 
 bladeJoint = osim.PinJoint("bladeJoint",
                            lower,
@@ -151,11 +157,15 @@ coord = bladeJoint.updCoordinate()
 coord.setName('bladeangle')
 coord.set_range(0,  0)
 coord.set_range(1,  pi/2)
-coord.setDefaultValue(math.radians(46.7))
+# coord.setDefaultValue(math.radians(55.0))
 
 act_3 = osim.CoordinateActuator('bladeangle')
 act_3.setName('bladeact')
 bbaan.addForce(act_3)
+
+controller.addActuator(act_3)
+controller.prescribeControlForActuator('bladeact', osim.Constant(0.0))
+bbaan.addController(controller)
 
 """ contact geometry  """
 baan = osim.ContactHalfSpace(osim.Vec3(0, 0, 0),
@@ -239,5 +249,5 @@ reporter.set_report_time_interval(1.0)
 bbaan.addComponent(reporter)
 
 bbaan.finalizeConnections()
-bbaan.printToXML("Pusher_noC.osim")
+bbaan.printToXML("Pusher_C.osim")
 
