@@ -142,7 +142,7 @@
 							<!--Default appearance attributes for this Geometry-->
 							<Appearance>
 								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-								<color>1 0 1</color>
+								<color>0.5 0.5 1</color>
 							</Appearance>
 							<!--Radius of cylinder.-->
 							<radius>0.10000000000000001</radius>
@@ -531,9 +531,9 @@
 						</Appearance>
 					</GeometryPath>
 					<!--Maximum isometric force that the fibers can generate-->
-					<max_isometric_force>5000</max_isometric_force>
+					<max_isometric_force>15000</max_isometric_force>
 					<!--Optimal length of the muscle fibers-->
-					<optimal_fiber_length>1.2</optimal_fiber_length>
+					<optimal_fiber_length>2.2999999999999998</optimal_fiber_length>
 					<!--Resting length of the tendon-->
 					<tendon_slack_length>0.29999999999999999</tendon_slack_length>
 					<!--Active-force-length curve.-->
@@ -597,9 +597,9 @@
 						</Appearance>
 					</GeometryPath>
 					<!--Maximum isometric force that the fibers can generate-->
-					<max_isometric_force>5000</max_isometric_force>
+					<max_isometric_force>10000</max_isometric_force>
 					<!--Optimal length of the muscle fibers-->
-					<optimal_fiber_length>0.69999999999999996</optimal_fiber_length>
+					<optimal_fiber_length>1.3999999999999999</optimal_fiber_length>
 					<!--Resting length of the tendon-->
 					<tendon_slack_length>0.20000000000000001</tendon_slack_length>
 					<!--Active-force-length curve.-->

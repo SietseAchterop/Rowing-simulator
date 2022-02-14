@@ -48,7 +48,7 @@ bbaan.addBody(lower)
 
 lowerGeometry = osim.Cylinder(0.1, 1.5)
 lower.attachGeometry(lowerGeometry)
-lowerGeometry.setColor(osim.Vec3(1, 0, 1))
+lowerGeometry.setColor(osim.Vec3(0.5, 0.5, 1))
 
 # the foot
 blade = osim.Body()
@@ -71,7 +71,7 @@ courseJoint = osim.WeldJoint("courseJoint",
                              osim.Vec3(0, 0, 0),
                              osim.Vec3(0, 0, 0))
 bbaan.addJoint(courseJoint)
-                        
+
 boattf = osim.SpatialTransform()
 bj_3 = osim.ArrayStr()
 bj_3.append("bJoint_3")
@@ -116,12 +116,6 @@ act_1 = osim.CoordinateActuator('baseangle')
 act_1.setName('baseact')
 bbaan.addForce(act_1)
 
-"""
-controller = osim.PrescribedController()
-
-controller.addActuator(act_1)
-controller.prescribeControlForActuator('baseact', osim.Constant(0.0))
-"""
 lowerJoint = osim.PinJoint("lowerJoint",
                            upper,
                            osim.Vec3(0, 1, 0),
@@ -137,15 +131,6 @@ coord.setName('kneeangle')
 coord.set_range(0, -1.2)
 coord.set_range(1,  pi/2)
 # coord.setDefaultValue(math.radians(-50.0))
-
-"""
-act_2 = osim.CoordinateActuator('kneeangle')
-act_2.setName('kneeact')
-bbaan.addForce(act_2)
-
-controller.addActuator(act_2)
-controller.prescribeControlForActuator('kneeact', osim.Constant(0.0))
-"""
 
 """
   Muscles and knee cap
@@ -165,10 +150,10 @@ dikteH = 0.1
 vastus = osim.Millard2012EquilibriumMuscle()
 #    Check parameter values!
 vastus.setName('vastus')
-vastus.setMaxIsometricForce(5000)
-vastus.setOptimalFiberLength(1.2)
+vastus.setMaxIsometricForce(15000)
+vastus.setOptimalFiberLength(2.3)
 vastus.setTendonSlackLength(0.3)
-#  hoe minimum activation op 0.02 zetten?  (CMC lost het op)
+#  how to set minimum activation to 0.02?  (CMC solves it)
 # vastus.setMinimumActivation(0.02)
 
 """
@@ -205,17 +190,13 @@ vastus.addNewPathPoint('insertion', lower, insertion)
 
 bbaan.addForce(vastus)
 
-"""
-controller.addActuator(vastus)
-controller.prescribeControlForActuator('vastus', osim.Constant(0.0))
-"""
 
 # Muscle "backside
 # backside = osim.DeGrooteFregly2016Muscle()
 backside = osim.Millard2012EquilibriumMuscle()
 backside.setName('backside')
-backside.setMaxIsometricForce(5000)
-backside.setOptimalFiberLength(0.7)
+backside.setMaxIsometricForce(10000)
+backside.setOptimalFiberLength(1.4)
 backside.setTendonSlackLength(0.2)
 
 # backside.setMinimumActivation(0.02)
@@ -233,11 +214,6 @@ insertion = osim.Vec3(dikteH, 0, 0)
 backside.addNewPathPoint('insertion', lower, insertion)
 
 bbaan.addForce(backside)
-
-"""
-controller.addActuator(backside)
-controller.prescribeControlForActuator('backside', osim.Constant(0.0))
-"""
 
 patella = osim.WrapCylinder()
 patella.setName('patella')
@@ -266,12 +242,6 @@ coord.set_range(1,  pi/2)
 act_3 = osim.CoordinateActuator('bladeangle')
 act_3.setName('bladeact')
 bbaan.addForce(act_3)
-
-"""
-controller.addActuator(act_3)
-controller.prescribeControlForActuator('bladeact', osim.Constant(0.0))
-bbaan.addController(controller)
-"""
 
 """ contact geometry  """
 baan = osim.ContactHalfSpace(osim.Vec3(0, 0, 0),
