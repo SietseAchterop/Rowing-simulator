@@ -485,44 +485,6 @@
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>bladeangle</coordinate>
 				</CoordinateActuator>
-				<ElasticFoundationForce name="Course">
-					<!--Material properties.-->
-					<ElasticFoundationForce::ContactParametersSet name="contact_parameters">
-						<objects>
-							<ElasticFoundationForce::ContactParameters>
-								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>bootje baantje</geometry>
-								<stiffness>1000000</stiffness>
-								<dissipation>0.10000000000000001</dissipation>
-								<static_friction>0.001</static_friction>
-								<dynamic_friction>0.001</dynamic_friction>
-								<viscous_friction>0.001</viscous_friction>
-							</ElasticFoundationForce::ContactParameters>
-						</objects>
-						<groups />
-					</ElasticFoundationForce::ContactParametersSet>
-					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.002</transition_velocity>
-				</ElasticFoundationForce>
-				<ElasticFoundationForce name="Blad">
-					<!--Material properties.-->
-					<ElasticFoundationForce::ContactParametersSet name="contact_parameters">
-						<objects>
-							<ElasticFoundationForce::ContactParameters>
-								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>bladje baantje</geometry>
-								<stiffness>50000</stiffness>
-								<dissipation>1</dissipation>
-								<static_friction>0.10000000000000001</static_friction>
-								<dynamic_friction>0.10000000000000001</dynamic_friction>
-								<viscous_friction>0.40000000000000002</viscous_friction>
-							</ElasticFoundationForce::ContactParameters>
-						</objects>
-						<groups />
-					</ElasticFoundationForce::ContactParametersSet>
-					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.10000000000000001</transition_velocity>
-				</ElasticFoundationForce>
 			</objects>
 			<groups />
 		</ForceSet>
@@ -544,39 +506,5 @@
 			</objects>
 			<groups />
 		</MarkerSet>
-		<!--Geometry to be used in contact forces.-->
-		<ContactGeometrySet name="contactgeometryset">
-			<objects>
-				<ContactHalfSpace name="baantje">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/ground</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0 0 0</location>
-					<!--Orientation of geometry in the PhysicalFrame (body-fixed XYZ Euler angles).-->
-					<orientation>0 0 -1.5707963267948966</orientation>
-				</ContactHalfSpace>
-				<ContactMesh name="bootje">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/bodyset/TheBoat</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0 0 0</location>
-					<!--Orientation of geometry in the PhysicalFrame (body-fixed XYZ Euler angles).-->
-					<orientation>1.5707963267948966 0 0</orientation>
-					<!--Path to mesh geometry file (supports .obj, .stl, .vtp). Mesh should be closed and water-tight.-->
-					<filename>box6_0.6_0.2.stl</filename>
-				</ContactMesh>
-				<ContactMesh name="bladje">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/bodyset/TheBlade</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0 0 0</location>
-					<!--Orientation of geometry in the PhysicalFrame (body-fixed XYZ Euler angles).-->
-					<orientation>0 -1.5707963267948966 0</orientation>
-					<!--Path to mesh geometry file (supports .obj, .stl, .vtp). Mesh should be closed and water-tight.-->
-					<filename>box0.05_0.45_0.45.stl</filename>
-				</ContactMesh>
-			</objects>
-			<groups />
-		</ContactGeometrySet>
 	</Model>
 </OpenSimDocument>
