@@ -190,6 +190,14 @@ vastus.addNewPathPoint('insertion', lower, insertion)
 
 bbaan.addForce(vastus)
 
+patella = osim.WrapCylinder()
+patella.setName('patella')
+patella.set_translation(osim.Vec3(0, upperHlength, 0))
+patella.set_radius(0.1)
+patella.set_length(0.1)
+patella.set_quadrant('y')
+upper.addWrapObject(patella)
+vastus.updGeometryPath().addPathWrap(patella)
 
 # Muscle "backside
 # backside = osim.DeGrooteFregly2016Muscle()
@@ -209,20 +217,11 @@ backside.set_tendon_compliance_dynamics_mode("implicit")
 backside.set_max_contraction_velocity(10)
 backside.set_pennation_angle_at_optimal(0.10)
 """
-backside.addNewPathPoint('origin', upper, osim.Vec3(dikteH, lowerHlength/3, 0))
+backside.addNewPathPoint('origin2', upper, osim.Vec3(dikteH, lowerHlength/3, 0))
 insertion = osim.Vec3(dikteH, 0, 0)
-backside.addNewPathPoint('insertion', lower, insertion)
+backside.addNewPathPoint('insertion2', lower, insertion)
 
 bbaan.addForce(backside)
-
-patella = osim.WrapCylinder()
-patella.setName('patella')
-patella.set_translation(osim.Vec3(0, upperHlength, 0))
-patella.set_radius(0.1)
-patella.set_length(0.1)
-patella.set_quadrant('y')
-upper.addWrapObject(patella)
-vastus.updGeometryPath().addPathWrap(patella)
 
 bladeJoint = osim.PinJoint("bladeJoint",
                            lower,
