@@ -3,8 +3,11 @@ import opensim as osim
 def muscleDrivenStateTracking():
     track = osim.MocoTrack()
     track.setName("muscle_driven_state_tracking")
-    modelProcessor = osim.ModelProcessor("Pusher.osim")
+    modelProcessor = osim.ModelProcessor("Pusher_muscle.osim")
     track.setModel(modelProcessor)
+
+    # modelProcessor.append(osim.ModOpRemoveMuscles())
+    # modelProcessor.append(osim.ModOpAddReserves(250))
 
     tableProcessor = osim.TableProcessor("trajectory.mot")
     tableProcessor.append(osim.TabOpUseAbsoluteStateNames())
