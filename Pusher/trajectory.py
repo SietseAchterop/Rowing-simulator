@@ -76,7 +76,7 @@ recsteps = 2*strsteps + 6
 rec_inc = (6.0-3.8)/recsteps
 
 # height of blade above ground
-height = 0.0
+height = -0.01
 # in recover
 recheight = 0.3
 

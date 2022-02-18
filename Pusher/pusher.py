@@ -92,13 +92,15 @@ boatJoint = osim.CustomJoint("boatJoint",
                            boattf)
 bbaan.addJoint(boatJoint)
 
+"""
 act = osim.CoordinateActuator('bJoint_3')
 act.setName('bJ_act_3')
 bbaan.addForce(act)
 act = osim.CoordinateActuator('bJoint_4')
 act.setName('bJ_act_4')
 bbaan.addForce(act)
-                        
+"""
+
 baseJoint = osim.PinJoint("baseJoint",
                           theBoat,
                           osim.Vec3(2, 0.1, 0),
