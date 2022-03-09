@@ -70,91 +70,6 @@ seat.attachGeometry(seatGeometry)
 seatGeometry.setColor(osim.Vec3(0.5,0.5,1))
 bbaan.addBody(seat)
 
-"""   Bow                     """
-####################################################
-bow = osim.Body("Bow",
-                 0.1,
-                 osim.Vec3(0, 0, 0),
-                 osim.Inertia(1, 1, 1))
-
-bowGeometry = osim.Sphere(0.05)
-bow.attachGeometry(bowGeometry)
-bowGeometry.setColor(osim.Vec3(0.5,0.5,1))
-bbaan.addBody(bow)
-
-"""   Starboard rigger              """
-####################################################
-"""
- - Zero for height is center of the boat.
- - Connection rigger to the boat (in boat coordinates)
-        x=place, y =0, z= +boatWidth/2
- - Place of lock (lockHeight above seat)
-        x=place, boatHeight/2+seatHeight+lockHeight, span/2
- - Length of rigger body
-     sqrt(a^2 + b^2)
- - heigth difference port and starboard 2 cm
-"""
-a = span/2 - boatWidth/2
-b = boatHeight/2+seatHeight+lockHeight+0.02
-rigslength = math.sqrt(math.pow(a, 2)+math.pow(b, 2))
-rigsangle = math.atan(b/a)
-srigger = osim.Body("StarboardRigger",
-                    1.0,
-                    osim.Vec3(0, 0, 0),
-                    osim.Inertia(1, 1, 1))
-
-srigGeometry = osim.Cylinder(0.02, rigslength/2)
-srigger.attachGeometry(srigGeometry)
-srigGeometry.setColor(osim.Vec3(0.5, 0.5, 1))
-bbaan.addBody(srigger)
-
-
-"""   Starboard lock                """
-####################################################
-slock = osim.Body("StarboardLock",
-                  1.0,
-                  osim.Vec3(0, 0, 0),
-                  osim.Inertia(1, 1, 1))
-
-slockGeometry = osim.Cylinder(0.01, 0.025)
-slock.attachGeometry(slockGeometry)
-slockGeometry.setColor(osim.Vec3(1, 1, 1))
-bbaan.addBody(slock)
-
-
-
-
-
-"""   Port rigger         """
-####################################################
-a = span/2 - boatWidth/2
-b = boatHeight/2+seatHeight+lockHeight
-rigplength = math.sqrt(math.pow(a, 2)+math.pow(b, 2))
-rigpangle = math.atan(b/a)
-prigger = osim.Body("PortRigger",
-                    1.0,
-                    osim.Vec3(0, 0, 0),
-                    osim.Inertia(1, 1, 1))
-
-prigGeometry = osim.Cylinder(0.02, rigplength/2)
-prigger.attachGeometry(prigGeometry)
-prigGeometry.setColor(osim.Vec3(0.5, 0.5, 1))
-bbaan.addBody(prigger)
-
-
-"""   Port lock          """
-####################################################
-plock = osim.Body("PortLock",
-                  1.0,
-                  osim.Vec3(0, 0, 0),
-                  osim.Inertia(1, 1, 1))
-
-plockGeometry = osim.Cylinder(0.01, 0.025)
-plock.attachGeometry(plockGeometry)
-plockGeometry.setColor(osim.Vec3(1, 1, 1))
-bbaan.addBody(plock)
-
-
 
 """   The joints               """
 ####################################################
@@ -172,6 +87,7 @@ bj_3 = osim.ArrayStr()
 bj_3.append("bJoint_3")
 boattf.updTransformAxis(3).setCoordinateNames(bj_3)
 boattf.updTransformAxis(3).set_function(osim.LinearFunction())
+
 bj_4 = osim.ArrayStr()
 bj_4.append("bJoint_4")
 boattf.updTransformAxis(4).setCoordinateNames(bj_4)
@@ -225,77 +141,6 @@ coord.setDefaultValue(math.radians(-0.4226))
 act = osim.CoordinateActuator('seatpos')
 act.setName('seatact')
 bbaan.addForce(act)
-
-bowJoint = osim.WeldJoint("bowJoint",
-                          theBoat,
-                          osim.Vec3(boatLength/2, boatHeight/2, 0),
-                          osim.Vec3(0, 0, 0),
-                          bow,
-                          osim.Vec3(0, 0, 0),
-                          osim.Vec3(0, 0, 0))
-bbaan.addJoint(bowJoint)
-
-"""  Starboard joints     """
-####################################################
-srigJoint = osim.WeldJoint("starboardrigJoint",
-                           theBoat,
-                           osim.Vec3(place, 0, boatWidth/2),
-                           osim.Vec3(-pi/2-rigsangle, 0, 0),
-                           srigger,
-                           osim.Vec3(0, rigslength/2, 0),
-                           osim.Vec3(0, 0, 0))
-bbaan.addJoint(srigJoint)
-
-
-slocJoint = osim.PinJoint("starboardlockJoint",
-                          srigger,
-                          osim.Vec3(0, -rigslength/2, 0),
-                          osim.Vec3(rigsangle, 0, 0),
-                          slock,
-                          osim.Vec3(0, 0.025, 0),
-                          osim.Vec3(pi/2, 0, 0))
-bbaan.addJoint(slocJoint)
-coord = slocJoint.updCoordinate()
-coord.setName('slocangle')
-coord.setRangeMin(-pi/2)
-coord.setRangeMax(pi/2)
-coord.setDefaultValue(math.radians(-20.657))
-coord.set_clamped(True)
-
-act = osim.CoordinateActuator('slocangle')
-act.setName('slocact')
-bbaan.addForce(act)
-
-""" Port joints    """
-####################################################
-prigJoint = osim.WeldJoint("portrigJoint",
-                           theBoat,
-                           osim.Vec3(place, 0, -boatWidth/2),
-                           osim.Vec3(pi/2+rigsangle, 0, 0),
-                           prigger,
-                           osim.Vec3(0, rigslength/2, 0),
-                           osim.Vec3(0, 0, 0))
-bbaan.addJoint(prigJoint)
-
-plocJoint = osim.PinJoint("portlockJoint",
-                          prigger,
-                          osim.Vec3(0, -rigslength/2, 0),
-                          osim.Vec3(-rigsangle, 0, 0),
-                          plock,
-                          osim.Vec3(0, 0.025, 0),
-                          osim.Vec3(-pi/2, 0, 0))
-bbaan.addJoint(plocJoint)
-coord = plocJoint.updCoordinate()
-coord.setName('plocangle')
-coord.setRangeMin(-pi/2)
-coord.setRangeMax(pi/2)
-coord.setDefaultValue(math.radians(-20.657))
-coord.set_clamped(True)
-
-act = osim.CoordinateActuator('plocangle')
-act.setName('plocact')
-bbaan.addForce(act)
-
 
 
 """       The Rower                              """
@@ -499,8 +344,6 @@ headJoint = osim.WeldJoint("headJoint",
 bbaan.addJoint(headJoint)
 
 
-
-
 # close the loop in the lower leg
 legconstraint = osim.WeldConstraint("legconstraint", lower_l, osim.Transform(osim.Vec3(0, -llegl/4, 0)), lower_u, osim.Transform(osim.Vec3(0, llegl/4, 0)))
 bbaan.addConstraint(legconstraint)
@@ -568,9 +411,6 @@ viscousFriction     = 0.84;
 transitionVelocity  = 0.1;
 
 
-
-
-
 # ook voor de handles om handles van elkaar te houden?
 #   en de knie, back?
 
@@ -597,21 +437,3 @@ bbaan.addComponent(reporter)
 
 bbaan.finalizeConnections()
 bbaan.printToXML("BootBaan.osim")
-
-# uncomment the rest to directly get the simulation
-"""
-bbaan.setUseVisualizer(True)
-state = bbaan.initSystem()
-
-print(state.getY())
-finalState = osim.simulate(bbaan, state, 5)
-
-
-# Analyze a simulation.
-print(coord.getValue(finalState))
-bbaan.realizePosition(finalState)
-print(bbaan.calcMassCenterPosition(finalState))
-bbaan.realizeAcceleration(finalState)
-print(uarmlJoint.calcReactionOnParentExpressedInGround(finalState))
-"""
-
