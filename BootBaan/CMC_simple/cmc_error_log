@@ -1,0 +1,232 @@
+new OPENSIM_HOME =/home/sietse/Software/OpenSim/opensim-OK
+Web Root URI: %s%nfile:/home/sietse/Software/OpenSim/opensim-OK/
+Loading plugins from directory /home/sietse/.opensim/plugins
+[info] Loaded model BootBaan from file /home/sietse/Roeien/Modelling/Rowing/BootBaan/CMC_simple/BootBaan.osim
+Connected... adding peer
+[info] Running tool 'CMC_row_subject'.
+[info] No external loads will be applied (external loads file not specified).
+[info] TaskSet size = 11.
+[warning] A desired points file was not specified.
+[info] Loading desired kinematics from file '/home/sietse/Roeien/Modelling/Rowing/BootBaan/CMC_simple/trajectory.mot'...
+[info] Storage: read data file = /home/sietse/Roeien/Modelling/Rowing/BootBaan/CMC_simple/trajectory.mot (nr=593 nc=13)
+[info] Not filtering the desired kinematics.
+MODEL: BootBaan
+
+numStates = 26
+numCoordinates = 12
+numSpeeds = 12
+numActuators = 12
+numBodies = 14
+numConstraints = 1
+numProbes = 0
+
+ANALYSES (total: 3)
+analysis[0] = MetabolicsReporter
+analysis[1] = Un-named analysis.
+analysis[2] = Un-named analysis.
+
+BODIES (total: 14)
+body[0] = Rowing_course. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[1] = TheBoat. mass: 10
+              moments of inertia:  ~[7.50833,7.50833,45]
+              products of inertia: ~[0,0,0]
+body[2] = Stretcher. mass: 1
+              moments of inertia:  ~[0.0108333,0.0108333,0.045]
+              products of inertia: ~[0,0,0]
+body[3] = Seat. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[4] = Bow. mass: 0.1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[5] = Lower_leg_lower. mass: 4
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[6] = Lower_leg_upper. mass: 4
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[7] = Upper_leg. mass: 8
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[8] = Lower_back. mass: 16
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[9] = Upper_back. mass: 16
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[10] = Shoulder. mass: 8
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[11] = Head. mass: 8
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[12] = Upper_Arm_Left. mass: 4
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[13] = Upper_Arm_Right. mass: 4
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+
+JOINTS (total: 14)
+joint[0] = courseJoint. parent: ground_offset, child: Rowing_course_offset
+joint[1] = boatJoint. parent: ground_offset, child: TheBoat_offset
+joint[2] = stretcherJoint. parent: TheBoat_offset, child: Stretcher_offset
+joint[3] = seatJoint. parent: TheBoat_offset, child: Seat_offset
+joint[4] = bowJoint. parent: TheBoat_offset, child: Bow_offset
+joint[5] = hipJoint. parent: Seat_offset, child: Upper_leg_offset
+joint[6] = knee_Joint. parent: Upper_leg_offset, child: Lower_leg_upper_offset
+joint[7] = foot_Joint. parent: Stretcher_offset, child: Lower_leg_lower_offset
+joint[8] = lbackJoint. parent: Seat_offset, child: Lower_back_offset
+joint[9] = ubackJoint. parent: Lower_back_offset, child: Upper_back_offset
+joint[10] = shoulderJoint. parent: Upper_back_offset, child: Shoulder_offset
+joint[11] = headJoint. parent: Shoulder_offset, child: Head_offset
+joint[12] = upper_arm_left_Joint. parent: Shoulder_offset, child: Upper_Arm_Left_offset
+joint[13] = upper_arm_right_Joint. parent: Shoulder_offset, child: Upper_Arm_Right_offset
+
+ACTUATORS (total: 12)
+actuator[0] = bJ_act_3
+actuator[1] = seatact
+actuator[2] = hipact
+actuator[3] = kneeact
+actuator[4] = footact
+actuator[5] = lbackact
+actuator[6] = ualo_act
+actuator[7] = ualt_act
+actuator[8] = ualu_act
+actuator[9] = uaro_act
+actuator[10] = uart_act
+actuator[11] = uaru_act
+
+STATES (total: 24)
+y[0] = /jointset/boatJoint/bJoint_3/value
+y[1] = /jointset/boatJoint/bJoint_3/speed
+y[2] = /jointset/seatJoint/seatpos/value
+y[3] = /jointset/seatJoint/seatpos/speed
+y[4] = /jointset/hipJoint/hipangle/value
+y[5] = /jointset/hipJoint/hipangle/speed
+y[6] = /jointset/knee_Joint/kneeangle/value
+y[7] = /jointset/knee_Joint/kneeangle/speed
+y[8] = /jointset/foot_Joint/footangle/value
+y[9] = /jointset/foot_Joint/footangle/speed
+y[10] = /jointset/lbackJoint/lbackangle/value
+y[11] = /jointset/lbackJoint/lbackangle/speed
+y[12] = /jointset/upper_arm_left_Joint/uarmleft_out/value
+y[13] = /jointset/upper_arm_left_Joint/uarmleft_out/speed
+y[14] = /jointset/upper_arm_left_Joint/uarmleft_trn/value
+y[15] = /jointset/upper_arm_left_Joint/uarmleft_trn/speed
+y[16] = /jointset/upper_arm_left_Joint/uarmleft_up/value
+y[17] = /jointset/upper_arm_left_Joint/uarmleft_up/speed
+y[18] = /jointset/upper_arm_right_Joint/uarmright_out/value
+y[19] = /jointset/upper_arm_right_Joint/uarmright_out/speed
+y[20] = /jointset/upper_arm_right_Joint/uarmright_trn/value
+y[21] = /jointset/upper_arm_right_Joint/uarmright_trn/speed
+y[22] = /jointset/upper_arm_right_Joint/uarmright_up/value
+y[23] = /jointset/upper_arm_right_Joint/uarmright_up/speed
+
+[info] AssemblySolver::track() attempt Failed: SimTK Exception thrown at Assembler.cpp:971:
+  Method Assembler::track() failed because:
+Unable to achieve required assembly error tolerance.
+Assembly error tolerance achieved: 1.5682095300458139e-08 required: 1e-10.
+[error] Model unable to assemble: AssemblySolver::assemble() Failed: SimTK Exception thrown at Assembler.cpp:895:
+  Method Assembler::assemble() failed because:
+Unable to achieve required assembly error tolerance.
+Assembly error tolerance achieved: 1.5682080701025365e-08 required: 1e-10..Model relaxing constraints and trying again.
+[info] Constructing function set for tracking desired kinematics...
+[info] No Actuation analysis found in analysis set -- adding one...
+[info] No Kinematics analysis found in analysis set -- adding one...
+[info] Using the generalized coordinates specified in /home/sietse/Roeien/Modelling/Rowing/BootBaan/CMC_simple/trajectory.mot to set the initial configuration.
+[info] Using IPOPT optimizer algorithm.
+[info] Setting optimizer print level to 3.
+[info] Setting optimizer convergence tolerance to 1.0e-05.
+[info] Setting optimizer maximum iterations to 1000.
+[info] Setting cmc controller to use verbose printing.
+
+[info] CMC::computeControls, t = 0.0
+[info]  -- step size = 1.0e-08, target time = 1.0e-08
+[info] ------------------------------
+[info] CMC::computeControls, summary:
+[info] ------------------------------
+[info]  -- Q = ~[5.73972e-42 -0.656532 0.41083 1.37093 0.199706 2.5309 0.663378 -0.504364 -0.0993496 4.23457e-32 0.656969 -0.460442 -0.0353807 1.28321e-33]
+[info]  -- U = ~[-6.71959e-24 0.706071 0.542015 -0.994904 0.00301259 -1.53692 0.760848 1.53081 -6.32736 0.916102 1.21376 -6.46196]
+[info]  -- Z = ~[]
+[info]  -- Qdesired =  5.73972e-42 -0.656533 0.410829 2.5309 1.37093 0.199706 0.663378 -0.504364 -0.0993496 0.65697 -0.460442 -0.0353806
+[info]  -- Udesired =  -6.71961e-24 0.704209 0.551872 -1.54136 -0.989947 0.0030162 0.760862 1.53074 -6.32765 0.91614 1.21368 -6.46225
+[info]  -- Qcorrection =  2.17634e-49 5.35037e-07 7.46902e-07 -4.61961e-07 -6.35618e-09 -3.80285e-09 -6.06432e-08 6.61633e-08 -1.50523e-08 -6.16565e-08 6.51038e-08 -1.50301e-08
+[info]  -- Ucorrection =  2.28052e-29 0.00186202 -0.00985754 0.00444144 -0.0049571 -3.61482e-06 -1.34788e-05 7.21129e-05 0.000289815 -3.7365e-05 7.17767e-05 0.000281073
+[info] ------------------------------
+[info] 
+[info] Errors at time 0.0: 
+[warning] Task 'seatpos': pErr = -5.35037e-07, vErr = 0.0.
+[info] 
+[warning] Task 'hipangle': pErr = -7.46902e-07, vErr = 0.0.
+[info] 
+[warning] Task 'kneeangle': pErr = 4.61961e-07, vErr = 0.0.
+[info] 
+[warning] Task 'footangle': pErr = 6.35618e-09, vErr = 0.0.
+[info] 
+[warning] Task 'lbackangle': pErr = 3.80285e-09, vErr = 0.0.
+[info] 
+[warning] Task 'uarmleft_out': pErr = 6.06432e-08, vErr = 0.0.
+[info] 
+[warning] Task 'uarmleft_trn': pErr = -6.61633e-08, vErr = 0.0.
+[info] 
+[warning] Task 'uarmleft_up': pErr = 1.50523e-08, vErr = 0.0.
+[info] 
+[warning] Task 'uarmright_out': pErr = 6.16565e-08, vErr = 0.0.
+[info] 
+[warning] Task 'uarmright_trn': pErr = -6.51038e-08, vErr = 0.0.
+[info] 
+[warning] Task 'uarmright_up': pErr = 1.50301e-08, vErr = 0.0.
+[info] 
+[info] xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+[info] xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+[info] 
+[info] tiReal = 0.0, tfReal = 1.0e-08
+[info] Min forces:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+[info] Max forces:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+[info] 
+Total number of variables............................:       12
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:       12
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:       11
+Total number of inequality constraints...............:        0
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:        0
+
+
+Number of Iterations....: 224
+
+                                   (scaled)                 (unscaled)
+Objective...............:   1.3206253192025302e+04    1.3206253192025302e+04
+Dual infeasibility......:   2.2112779757943107e+02    2.2112779757943107e+02
+Constraint violation....:   9.9613298614424525e+02    2.7842054820207704e+03
+Complementarity.........:   9.0909092501173333e-07    9.0909092501173333e-07
+Overall NLP error.......:   9.9613298614424525e+02    2.7842054820207704e+03
+
+
+Number of objective function evaluations             = 1489
+Number of objective gradient evaluations             = 220
+Number of equality constraint evaluations            = 1489
+Number of inequality constraint evaluations          = 0
+Number of equality constraint Jacobian evaluations   = 271
+Number of inequality constraint Jacobian evaluations = 0
+Number of Lagrangian Hessian evaluations             = 0
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.619
+Total CPU secs in NLP function evaluations           =      0.016
+
+EXIT: Converged to a point of local infeasibility. Problem may be infeasible.
+[error] SimTK Exception thrown at InteriorPointOptimizer.cpp:264:
+  Optimizer failed: Ipopt: Infeasible problem detected (status 2)
+[error] OPTIMIZATION FAILED...
+[error] CMC::computeControls: Optimizer could not find a solution.
+Unable to find a feasible solution at time = 0.
+Model cannot generate the forces necessary to achieve the target acceleration.
+Possible issues: 1. not all model degrees-of-freedom are actuated, 
+2. there are tracking tasks for locked coordinates, and/or
+3. there are unnecessary control constraints on reserve/residual actuators.
+
+
