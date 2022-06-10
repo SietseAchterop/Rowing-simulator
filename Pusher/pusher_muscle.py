@@ -116,16 +116,16 @@ act_1 = osim.CoordinateActuator('baseangle')
 act_1.setName('baseact')
 bbaan.addForce(act_1)
 
-lowerJoint = osim.PinJoint("lowerJoint",
+kneeJoint = osim.PinJoint("kneeJoint",
                            upper,
                            osim.Vec3(0, 1, 0),
                            osim.Vec3(0, 0, 0),
                            lower,
                            osim.Vec3(0, -1.5, 0),
                            osim.Vec3(0, 0, pi/2))
-bbaan.addJoint(lowerJoint)
+bbaan.addJoint(kneeJoint)
 
-coord = lowerJoint.updCoordinate()
+coord = kneeJoint.updCoordinate()
 
 coord.setName('kneeangle')
 coord.set_range(0, -1.2)
@@ -150,13 +150,13 @@ dikteH = 0.1
 vastus = osim.Millard2012EquilibriumMuscle()
 #    Check parameter values!
 vastus.setName('vastus')
-vastus.setMaxIsometricForce(15000)
+vastus.setMaxIsometricForce(150000)
 vastus.setOptimalFiberLength(2.3)
 vastus.setTendonSlackLength(0.3)
 #  how to set minimum activation to 0.02?  (CMC solves it)
 # vastus.setMinimumActivation(0.02)
 
-"""
+""" don't understand what these do
 vastus.set_tendon_strain_at_one_norm_force(0.10)
 vastus.set_ignore_activation_dynamics(False)
 vastus.set_ignore_tendon_compliance(False)
@@ -164,24 +164,6 @@ vastus.set_fiber_damping(0.01)
 vastus.set_tendon_compliance_dynamics_mode("implicit")
 vastus.set_max_contraction_velocity(10)
 vastus.set_pennation_angle_at_optimal(0.10)
-"""
-
-"""
-    actu->setName("muscle");
-    actu->set_max_isometric_force(30.0);
-    actu->set_optimal_fiber_length(0.10);
-    actu->set_tendon_slack_length(0.05);
-    actu->set_tendon_strain_at_one_norm_force(0.10);
-    actu->set_ignore_activation_dynamics(ignoreActivationDynamics);
-    actu->set_ignore_tendon_compliance(ignoreTendonCompliance);
-    actu->set_fiber_damping(0.01);
-    // The DeGrooteFregly2016Muscle is the only muscle model in OpenSim that
-    // can express its tendon compliance dynamics using an implicit
-    // differential equation.
-    actu->set_tendon_compliance_dynamics_mode("implicit");
-    actu->set_max_contraction_velocity(10);
-    actu->set_pennation_angle_at_optimal(0.10);
-
 """
 
 vastus.addNewPathPoint('origin', upper, osim.Vec3(-dikteH, 0, 0))
@@ -203,20 +185,11 @@ vastus.updGeometryPath().addPathWrap(patella)
 # backside = osim.DeGrooteFregly2016Muscle()
 backside = osim.Millard2012EquilibriumMuscle()
 backside.setName('backside')
-backside.setMaxIsometricForce(10000)
-backside.setOptimalFiberLength(1.4)
+backside.setMaxIsometricForce(100000)
+backside.setOptimalFiberLength(1.2)
 backside.setTendonSlackLength(0.2)
 
-# backside.setMinimumActivation(0.02)
-"""
-backside.set_tendon_strain_at_one_norm_force(0.10)
-backside.set_ignore_activation_dynamics(False)
-backside.set_ignore_tendon_compliance(False)
-backside.set_fiber_damping(0.01)
-backside.set_tendon_compliance_dynamics_mode("implicit")
-backside.set_max_contraction_velocity(10)
-backside.set_pennation_angle_at_optimal(0.10)
-"""
+#  names here in a new namespace per muscle?
 backside.addNewPathPoint('origin2', upper, osim.Vec3(dikteH, lowerHlength/3, 0))
 insertion = osim.Vec3(dikteH, 0, 0)
 backside.addNewPathPoint('insertion2', lower, insertion)
@@ -312,14 +285,11 @@ e_2.setViscousFriction(viscousFriction)
 e_2.setTransitionVelocity(transitionVelocity)
 bbaan.addForce(e_2)
 
-
-
 # markers
 marker = osim.Marker('mbladej', lower, osim.Vec3(0, 1.5, 0))
 bbaan.addMarker(marker)
 marker = osim.Marker('mend', blade, osim.Vec3(0, 0.225, 0))
 bbaan.addMarker(marker)
-
 
 reporter = osim.ConsoleReporter()
 reporter.set_report_time_interval(1.0)

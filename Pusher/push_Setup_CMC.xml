@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <OpenSimDocument Version="40000">
-	<CMCTool>
+	<CMCTool name=CMC>
 		<!--Name of the .osim file used to construct a model.-->
-		<model_file />
+		<model_file>Pusher.osim</model_file>
 		<!--Replace the model's force set with sets specified in <force_set_files>? If false, the force set is appended to.-->
 		<replace_force_set>false</replace_force_set>
 		<!--List of xml files used to construct a force set for the model.-->
@@ -14,7 +14,7 @@
 		<!--Initial time for the simulation.-->
 		<initial_time>0.02</initial_time>
 		<!--Final time for the simulation.-->
-		<final_time>3</final_time>
+		<final_time>2</final_time>
 		<!--Flag indicating whether or not to compute equilibrium values for states other than the coordinates or speeds.  For example, equilibrium muscle fiber lengths or muscle forces.-->
 		<solve_for_equilibrium_for_auxiliary_states>true</solve_for_equilibrium_for_auxiliary_states>
 		<!--Maximum number of integrator steps.-->
@@ -41,6 +41,8 @@
 		</ControllerSet>
 		<!--XML file (.xml) containing the forces applied to the model as ExternalLoads.-->
 		<external_loads_file />
+		<!--List of individual Actuators by individual or user-defined group name  to be excluded from CMC's control.-->
+		<actuators_to_exclude> bJ_act_3 bJ_act_4</actuators_to_exclude>
 		<!--Motion (.mot) or storage (.sto) file containing the desired point trajectories.-->
 		<desired_points_file />
 		<!--Motion (.mot) or storage (.sto) file containing the desired kinematic trajectories.-->
@@ -66,8 +68,9 @@
 		<!--Maximum number of iterations for the optimizer.-->
 		<optimizer_max_iterations>1000</optimizer_max_iterations>
 		<!--Print level for the optimizer, 0 - 3. 0=no printing, 3=detailed printing, 2=in between-->
-		<optimizer_print_level>0</optimizer_print_level>
+		<optimizer_print_level>3</optimizer_print_level>
 		<!--True-false flag indicating whether or not to turn on verbose printing for cmc.-->
-		<use_verbose_printing>false</use_verbose_printing>
+		<use_verbose_printing>true</use_verbose_printing>
+
 	</CMCTool>
 </OpenSimDocument>

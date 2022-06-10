@@ -47,12 +47,7 @@
 		    <weight>       100000.00000000       1.00000000       1.00000000 </weight>
 		    <coordinate>baseangle</coordinate>
 		  </CMC_Joint>
-		  <CMC_Joint name="vastus">
-		    <on>true</on>
-		    <weight>       10000.00000000       1.00000000       1.00000000 </weight>
-		    <coordinate>kneeangle</coordinate>
-		  </CMC_Joint>
-		  <CMC_Joint name="backside">
+		  <CMC_Joint name="kneeangle">
 		    <on>true</on>
 		    <weight>       10000.00000000       1.00000000       1.00000000 </weight>
 		    <coordinate>kneeangle</coordinate>

@@ -92,14 +92,14 @@ boatJoint = osim.CustomJoint("boatJoint",
                            boattf)
 bbaan.addJoint(boatJoint)
 
-"""
+
 act = osim.CoordinateActuator('bJoint_3')
 act.setName('bJ_act_3')
 bbaan.addForce(act)
 act = osim.CoordinateActuator('bJoint_4')
 act.setName('bJ_act_4')
 bbaan.addForce(act)
-"""
+
 
 baseJoint = osim.PinJoint("baseJoint",
                           theBoat,
@@ -119,16 +119,16 @@ act_1 = osim.CoordinateActuator('baseangle')
 act_1.setName('baseact')
 bbaan.addForce(act_1)
 
-lowerJoint = osim.PinJoint("lowerJoint",
+kneeJoint = osim.PinJoint("kneeJoint",
                            upper,
                            osim.Vec3(0, 1, 0),
                            osim.Vec3(0, 0, 0),
                            lower,
                            osim.Vec3(0, -1.5, 0),
                            osim.Vec3(0, 0, pi/2))
-bbaan.addJoint(lowerJoint)
+bbaan.addJoint(kneeJoint)
 
-coord = lowerJoint.updCoordinate()
+coord = kneeJoint.updCoordinate()
 
 coord.setName('kneeangle')
 coord.set_range(0, -1.2)
