@@ -13,7 +13,19 @@ Both IK-tool and CMC-tool work, the video is the CMC tool in action.
 
 https://github.com/SietseAchterop/Rowing-simulator/blob/master/Pusher/pusher_CMC_video.mp4
 
-This version does not have muscles yet.
+There also is a version with muscles.
+
+## BootBaan0
+
+First working version with partial person.
+
+## BootBaan1
+
+First complete person without friction in the blades
+
+## BootBaan2
+
+Firt complete person with friction in the blade. Our first rower in action!
 
 ## BootBaan
 
