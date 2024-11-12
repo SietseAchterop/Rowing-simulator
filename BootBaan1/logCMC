@@ -1,0 +1,1737 @@
+Model unable to assemble: AssemblySolver::assemble() Failed: SimTK Exception thrown at Assembler.cpp:895:
+  Method Assembler::assemble() failed because:
+Unable to achieve required assembly error tolerance.
+Assembly error tolerance achieved: 9.5168259384159626e-09 required: 1e-10..Model relaxing constraints and trying again.
+Model unable to assemble: AssemblySolver::assemble() Failed: SimTK Exception thrown at Assembler.cpp:895:
+  Method Assembler::assemble() failed because:
+Unable to achieve required assembly error tolerance.
+Assembly error tolerance achieved: 9.5168259384159626e-09 required: 1e-10..Model relaxing constraints and trying again.
+Running tool 'CMC_row_subject'.
+No external loads will be applied (external loads file not specified).
+TaskSet size = 5.
+Model unable to assemble: AssemblySolver::assemble() Failed: SimTK Exception thrown at Assembler.cpp:895:
+  Method Assembler::assemble() failed because:
+Unable to achieve required assembly error tolerance.
+Assembly error tolerance achieved: 9.5168259384159626e-09 required: 1e-10..Model relaxing constraints and trying again.
+A desired points file was not specified.
+Loading desired kinematics from file '/home/sietse/Roeien/Modelling/OpenSim/MyCode/BootBaan1/trajectory.mot'...
+Storage: read data file = /home/sietse/Roeien/Modelling/OpenSim/MyCode/BootBaan1/trajectory.mot (nr=1399 nc=21)
+Not filtering the desired kinematics.
+MODEL: BootBaan
+
+numStates = 41
+numCoordinates = 20
+numSpeeds = 20
+numActuators = 16
+numBodies = 23
+numConstraints = 4
+numProbes = 0
+
+ANALYSES (total: 3)
+analysis[0] = MetabolicsReporter
+analysis[1] = Un-named analysis.
+analysis[2] = Un-named analysis.
+
+BODIES (total: 23)
+body[0] = Rowing_course. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[1] = TheBoat. mass: 10
+              moments of inertia:  ~[7.50833,7.50833,45]
+              products of inertia: ~[0,0,0]
+body[2] = Stretcher. mass: 1
+              moments of inertia:  ~[0.0108333,0.0108333,0.045]
+              products of inertia: ~[0,0,0]
+body[3] = Seat. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[4] = Bow. mass: 0.1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[5] = StarboardRigger. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[6] = StarboardLock. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[7] = StarboardOar. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[8] = StarboardBlade. mass: 1
+              moments of inertia:  ~[0.1,0.1,0.1]
+              products of inertia: ~[0,0,0]
+body[9] = PortRigger. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[10] = PortLock. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[11] = PortOar. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[12] = PortBlade. mass: 1
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[13] = Lower_leg_lower. mass: 4
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[14] = Lower_leg_upper. mass: 4
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[15] = Upper_leg. mass: 8
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[16] = Lower_back. mass: 16
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[17] = Upper_back. mass: 16
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[18] = Shoulder. mass: 8
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[19] = Head. mass: 8
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[20] = Upper_Arm_Left. mass: 4
+              moments of inertia:  ~[0.1,0.1,0.1]
+              products of inertia: ~[0,0,0]
+body[21] = Lower_Arm_Left_Upper. mass: 2
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+body[22] = Lower_Arm_Left_Lower. mass: 2
+              moments of inertia:  ~[1,1,1]
+              products of inertia: ~[0,0,0]
+
+JOINTS (total: 23)
+joint[0] = courseJoint. parent: ground_offset, child: Rowing_course_offset
+joint[1] = boatJoint. parent: ground_offset, child: TheBoat_offset
+joint[2] = stretcherJoint. parent: TheBoat_offset, child: Stretcher_offset
+joint[3] = seatJoint. parent: TheBoat_offset, child: Seat_offset
+joint[4] = bowJoint. parent: TheBoat_offset, child: Bow_offset
+joint[5] = starboardrigJoint. parent: TheBoat_offset, child: StarboardRigger_offset
+joint[6] = starboardlockJoint. parent: StarboardRigger_offset, child: StarboardLock_offset
+joint[7] = starboardoarJoint. parent: StarboardLock_offset, child: StarboardOar_offset
+joint[8] = starboardbladeJoint. parent: StarboardOar_offset, child: StarboardBlade_offset
+joint[9] = portrigJoint. parent: TheBoat_offset, child: PortRigger_offset
+joint[10] = portlockJoint. parent: PortRigger_offset, child: PortLock_offset
+joint[11] = portoarJoint. parent: PortLock_offset, child: PortOar_offset
+joint[12] = portbladeJoint. parent: PortOar_offset, child: PortBlade_offset
+joint[13] = hipJoint. parent: Seat_offset, child: Upper_leg_offset
+joint[14] = knee_Joint. parent: Upper_leg_offset, child: Lower_leg_upper_offset
+joint[15] = foot_Joint. parent: Stretcher_offset, child: Lower_leg_lower_offset
+joint[16] = lbackJoint. parent: Seat_offset, child: Lower_back_offset
+joint[17] = ubackJoint. parent: Lower_back_offset, child: Upper_back_offset
+joint[18] = shoulderJoint. parent: Upper_back_offset, child: Shoulder_offset
+joint[19] = headJoint. parent: Shoulder_offset, child: Head_offset
+joint[20] = upper_arm_left_Joint. parent: Shoulder_offset, child: Upper_Arm_Left_offset
+joint[21] = lower_arm_left_Joint. parent: Upper_Arm_Left_offset, child: Lower_Arm_Left_Upper_offset
+joint[22] = handle_left_Joint. parent: StarboardOar_offset, child: Lower_Arm_Left_Lower_offset
+
+ACTUATORS (total: 16)
+actuator[0] = slocact
+actuator[1] = soarinoutact
+actuator[2] = sblact
+actuator[3] = plocact
+actuator[4] = poarinoutact
+actuator[5] = pblact
+actuator[6] = hipact
+actuator[7] = lbackact
+actuator[8] = ualo_act
+actuator[9] = ualt_act
+actuator[10] = ualu_act
+actuator[11] = sinout_act
+actuator[12] = supdown_act
+actuator[13] = hlout_act
+actuator[14] = hltrn_act
+actuator[15] = hlup_act
+
+STATES (total: 40)
+y[0] = /jointset/boatJoint/bJoint_3/value
+y[1] = /jointset/boatJoint/bJoint_3/speed
+y[2] = /jointset/seatJoint/seatpos/value
+y[3] = /jointset/seatJoint/seatpos/speed
+y[4] = /jointset/starboardlockJoint/slocangle/value
+y[5] = /jointset/starboardlockJoint/slocangle/speed
+y[6] = /jointset/starboardoarJoint/soarinout/value
+y[7] = /jointset/starboardoarJoint/soarinout/speed
+y[8] = /jointset/starboardbladeJoint/sblpos/value
+y[9] = /jointset/starboardbladeJoint/sblpos/speed
+y[10] = /jointset/portlockJoint/plocangle/value
+y[11] = /jointset/portlockJoint/plocangle/speed
+y[12] = /jointset/portoarJoint/poarinout/value
+y[13] = /jointset/portoarJoint/poarinout/speed
+y[14] = /jointset/portbladeJoint/pblpos/value
+y[15] = /jointset/portbladeJoint/pblpos/speed
+y[16] = /jointset/hipJoint/hipangle/value
+y[17] = /jointset/hipJoint/hipangle/speed
+y[18] = /jointset/knee_Joint/kneeangle/value
+y[19] = /jointset/knee_Joint/kneeangle/speed
+y[20] = /jointset/foot_Joint/footangle/value
+y[21] = /jointset/foot_Joint/footangle/speed
+y[22] = /jointset/lbackJoint/lbackangle/value
+y[23] = /jointset/lbackJoint/lbackangle/speed
+y[24] = /jointset/upper_arm_left_Joint/uarmleft_out/value
+y[25] = /jointset/upper_arm_left_Joint/uarmleft_out/speed
+y[26] = /jointset/upper_arm_left_Joint/uarmleft_trn/value
+y[27] = /jointset/upper_arm_left_Joint/uarmleft_trn/speed
+y[28] = /jointset/upper_arm_left_Joint/uarmleft_up/value
+y[29] = /jointset/upper_arm_left_Joint/uarmleft_up/speed
+y[30] = /jointset/lower_arm_left_Joint/se_inout/value
+y[31] = /jointset/lower_arm_left_Joint/se_inout/speed
+y[32] = /jointset/lower_arm_left_Joint/se_updown/value
+y[33] = /jointset/lower_arm_left_Joint/se_updown/speed
+y[34] = /jointset/handle_left_Joint/handleleft_out/value
+y[35] = /jointset/handle_left_Joint/handleleft_out/speed
+y[36] = /jointset/handle_left_Joint/handleleft_trn/value
+y[37] = /jointset/handle_left_Joint/handleleft_trn/speed
+y[38] = /jointset/handle_left_Joint/handleleft_up/value
+y[39] = /jointset/handle_left_Joint/handleleft_up/speed
+
+Constructing function set for tracking desired kinematics...
+No Actuation analysis found in analysis set -- adding one...
+No Kinematics analysis found in analysis set -- adding one...
+Using the generalized coordinates specified in /home/sietse/Roeien/Modelling/OpenSim/MyCode/BootBaan1/trajectory.mot to set the initial configuration.
+Using IPOPT optimizer algorithm.
+Setting optimizer print level to 0.
+Setting optimizer convergence tolerance to 1.0e-05.
+Setting optimizer maximum iterations to 1000.
+Setting cmc controller to use verbose printing.
+
+CMC::computeControls, t = 0.02
+ -- step size = 1.0e-08, target time = 0.02
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-5.99982e-08 -0.788261 0.865697 7.72544e-05 0.311311 1.56165 0.3 0.109549 0.180425 2.82149 -0.109547 -0.180424 2.65199 -2.63596 -3.4864 0 0.885975 -0.158183 -4.35641 -0.424463 4.80968]
+ -- U = ~[-1.54407e-21 0.240049 -0.112026 0.00932742 0.195891 -0.331951 0.217739 -0.0354271 4.03562e-06 -0.527842 0.0354271 -4.03562e-06 0.0403828 0.101552 0.0712005 -0.555043 0.383935 0.344508 -0.274975 0.338718]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.857912 1.06553 0.0751345 -0.0751349 7.72552e-05 0.180425 -0.180425 0.294701 2.84489 1.5708 0.3 0.541437 -0.229505 -3.77055 -0.0131808 5.11875 1.99002 -2.3599 -3.17848
+ -- Udesired =  -1.54407e-21 0.282795 -0.52008 -0.116089 0.11582 0.00934332 1.95118e-06 -6.3976e-06 0.543334 -0.555642 -4.49376e-06 1.85037e-15 -0.516827 1.16288 -0.790309 -1.14321 0.10636 -0.774388 0.116298 0.736658
+ -- Qcorrection =  1.75635e-12 0.0696513 -0.199834 0.0344144 -0.0344118 -7.53815e-10 2.67992e-07 2.76901e-07 0.0166099 -0.0233999 -0.00914815 5.55112e-17 0.344539 0.0713218 -0.585863 -0.411282 -0.309072 0.661968 -0.27606 -0.307921
+ -- Ucorrection =  9.59203e-36 -0.042746 0.408054 0.080662 -0.0803932 -1.59031e-05 2.08444e-06 2.36198e-06 -0.347442 0.0277993 -0.331947 0.217739 -0.038216 -0.77894 1.13482 0.868234 0.232358 0.814771 -0.0147462 -0.665458
+------------------------------
+
+Errors at time 0.02: 
+Task 'hipangle': pErr = -0.0166099, vErr = 0.0.
+
+Task 'lbackangle': pErr = -5.55112e-17, vErr = 0.0.
+
+Task 'handleleft_out': pErr = -0.661968, vErr = 0.0.
+
+Task 'handleleft_trn': pErr = 0.276060, vErr = 0.0.
+
+Task 'handleleft_up': pErr = 0.307921, vErr = 0.0.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.02, tfReal = 0.02
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 4.84452e-08
+Desired actuator forces:  -7.63732 -164.952 164.952 9.19978 -0.000201522 0.000201522 -34.791 406.398 -148.535 47.4501 -123.158 -144.332 -94.0829 -214.7 -84.2223 304.502
+
+CMC::computeControls, root solve (tFinal = 0.02):
+ -- controls = 0.02
+
+--------------------------------------------
+Using CMC to track the specified kinematics:
+--------------------------------------------
+ -- Integrating from 0.02 to 0.1
+ -- Start time = Tue Nov 12 15:22:28 2024
+--------------------------------------------
+
+CMC::computeControls, t = 0.02
+ -- step size = 0.00200000, target time = 0.022
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-5.99982e-08 -0.795901 0.903858 7.72544e-05 0.349278 1.6011 0.303276 0.0916782 0.180425 2.82262 -0.0916782 -0.180425 2.68968 -2.65207 -3.47501 0 0.874937 -0.14688 -4.39489 -0.455781 4.81908]
+ -- U = ~[-1.54407e-21 0.237443 -0.149428 0.00932742 -0.0536205 -0.515962 0.142081 -0.0632205 4.03562e-06 -0.462342 0.0632205 -4.03562e-06 0.158933 0.100249 0.0297549 -0.43504 0.373279 0.232714 -0.310986 0.249566]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.857912 1.06553 0.0751345 -0.0751349 7.72552e-05 0.180425 -0.180425 0.294701 2.84489 1.5708 0.3 0.541437 -0.229505 -3.77055 -0.0131808 5.11875 1.99002 -2.3599 -3.17848
+ -- Udesired =  -1.54407e-21 0.282795 -0.52008 -0.116089 0.11582 0.00934332 1.95118e-06 -6.3976e-06 0.543334 -0.555642 -4.49376e-06 1.85037e-15 -0.516827 1.16288 -0.790309 -1.14321 0.10636 -0.774388 0.116298 0.736658
+ -- Qcorrection =  1.75635e-12 0.0620108 -0.161674 0.0165437 -0.0165433 -7.53815e-10 3.30784e-09 1.22173e-08 0.0545767 -0.0222751 0.0303004 0.00327566 0.3335 0.082625 -0.624343 -0.4426 -0.299665 0.699664 -0.292165 -0.296532
+ -- Ucorrection =  9.59203e-36 -0.0453512 0.370653 0.0528685 -0.0525997 -1.59031e-05 2.08444e-06 2.36198e-06 -0.596954 0.0933001 -0.515958 0.142081 0.0817873 -0.789596 1.02302 0.832223 0.143206 0.933321 -0.0160496 -0.706903
+------------------------------
+
+Errors at time 0.02: 
+Task 'hipangle': pErr = -0.0545767, vErr = 0.249512.
+
+Task 'lbackangle': pErr = -0.00327566, vErr = 0.0756579.
+
+Task 'handleleft_out': pErr = -0.699664, vErr = -0.118551.
+
+Task 'handleleft_trn': pErr = 0.292165, vErr = 0.00130345.
+
+Task 'handleleft_up': pErr = 0.296532, vErr = 0.0414456.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.02, tfReal = 0.022
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 1.37546e-07
+Desired actuator forces:  -101.747 55.2304 -55.2304 70.156 -0.00168316 0.00168316 -54.4853 -102.65 -796.295 236.435 -68.1935 -485.341 -131.387 -269.038 410.929 -119.727
+
+CMC::computeControls, root solve (tFinal = 0.022):
+ -- controls = 0.022
+
+CMC::computeControls, t = 0.022
+ -- step size = 0.00200000, target time = 0.024
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.000101809 -0.795271 0.903645 0.000142063 0.349139 1.59973 0.303583 0.0915737 0.180436 2.82139 -0.0915737 -0.180436 2.6899 -2.65196 -3.47461 0 0.873363 -0.146346 -4.39431 -0.457261 4.81884]
+ -- U = ~[-0.131405 0.429091 -0.0346877 0.0694282 -0.0921864 -0.928603 0.140718 -0.0211714 0.0111289 -0.836417 0.0211714 -0.0111289 -0.10919 -0.0322693 0.298153 -1.34834 0.087768 0.418898 -1.32587 -0.621412]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.857133 1.0638 0.0745967 -0.0745972 8.57248e-05 0.180425 -0.180425 0.296086 2.84348 1.5708 0.3 0.540256 -0.225733 -3.77391 -0.0168542 5.11996 1.98697 -2.36006 -3.17577
+ -- Udesired =  1.03373e-21 0.44506 -1.0815 -0.374575 0.374701 -0.000291 -1.01821e-06 1.2e-06 0.759485 -0.773614 -3.50668e-06 2.86882e-15 -0.587332 2.32393 -2.27159 -2.23773 0.988184 -2.00291 -0.243252 1.7592
+ -- Qcorrection =  -0.000101749 0.0618615 -0.160152 0.016977 -0.0169765 5.6338e-05 1.11372e-05 -1.11163e-05 0.0530529 -0.0220904 0.0289335 0.00358297 0.333106 0.0793871 -0.620405 -0.440407 -0.301124 0.702934 -0.291898 -0.298836
+ -- Ucorrection =  -0.131405 -0.0159685 1.04681 0.353404 -0.35353 0.0697192 0.0111299 -0.0111301 -0.851671 -0.0628032 -0.9286 0.140718 -0.761003 -2.23616 2.69048 0.911861 -1.6096 1.89372 0.210982 -1.46105
+------------------------------
+
+Errors at time 0.022: 
+Task 'hipangle': pErr = -0.0530529, vErr = 0.242874.
+
+Task 'lbackangle': pErr = -0.00358297, vErr = 0.049736.
+
+Task 'handleleft_out': pErr = -0.702934, vErr = 0.0573385.
+
+Task 'handleleft_trn': pErr = 0.291898, vErr = -0.12743.
+
+Task 'handleleft_up': pErr = 0.298836, vErr = 0.044896.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.022, tfReal = 0.024
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.87188e-07
+Desired actuator forces:  -146.819 272.024 -272.024 88.8527 -0.00240894 0.00240894 -38.6963 -626.918 -933.868 307.344 0.804938 -518.877 -103.311 -200.454 703.643 -480.569
+
+CMC::computeControls, root solve (tFinal = 0.024):
+ -- controls = 0.024
+
+CMC::computeControls, t = 0.024
+ -- step size = 0.00200000, target time = 0.026
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.000598081 -0.794103 0.903782 0.000389574 0.3489 1.59721 0.303757 0.0916524 0.180469 2.81911 -0.0916524 -0.180469 2.6898 -2.65159 -3.47401 0 0.869047 -0.146691 -4.39305 -0.461372 4.81637]
+ -- U = ~[-0.3714 0.743871 0.17426 0.181435 -0.144911 -1.59779 0.0168612 0.109422 0.0222434 -1.45288 -0.109422 -0.0222434 -0.244575 -0.0358721 0.28018 -3.00622 -0.441535 0.856208 -2.77182 -1.8282]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.856376 1.06187 0.0738866 -0.0738868 8.05582e-05 0.180425 -0.180425 0.297362 2.84218 1.5708 0.3 0.539405 -0.221619 -3.7781 -0.0207123 5.122 1.98338 -2.36066 -3.17253
+ -- Udesired =  2.77015e-21 0.254379 -0.688119 -0.27205 0.272145 -0.00355234 2.20299e-06 7.36862e-06 0.43102 -0.438824 5.6955e-06 -1.39444e-15 -0.198638 1.4507 -1.53882 -1.2843 0.862542 -1.24677 -0.285202 1.2154
+ -- Qcorrection =  -0.000598021 0.0622734 -0.158085 0.0177658 -0.0177656 0.000309016 4.45118e-05 -4.45004e-05 0.0515374 -0.0230703 0.026415 0.00375686 0.329642 0.0749278 -0.614949 -0.440659 -0.305628 0.706421 -0.290937 -0.301484
+ -- Ucorrection =  -0.3714 0.489492 0.862379 0.381472 -0.381567 0.184987 0.0222412 -0.0222507 -0.575931 -1.01405 -1.59779 0.0168612 -2.80758 -1.89224 2.39502 -1.48753 -2.69074 1.00219 0.24933 -0.935224
+------------------------------
+
+Errors at time 0.024: 
+Task 'hipangle': pErr = -0.0515374, vErr = 0.220302.
+
+Task 'lbackangle': pErr = -0.00375686, vErr = 0.00185268.
+
+Task 'handleleft_out': pErr = -0.706421, vErr = 0.268014.
+
+Task 'handleleft_trn': pErr = 0.290937, vErr = -0.286615.
+
+Task 'handleleft_up': pErr = 0.301484, vErr = 0.0751528.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.024, tfReal = 0.026
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 1.82448e-07
+Desired actuator forces:  -114.232 303.516 -303.516 54.3388 -0.00592863 0.00592863 -0.878965 -722.008 -497.028 223.477 17.7422 -247.37 -43.5685 -91.2722 577.086 -467.708
+
+CMC::computeControls, root solve (tFinal = 0.026):
+ -- controls = 0.026
+
+CMC::computeControls, t = 0.026
+ -- step size = 0.00200000, target time = 0.028
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.00156104 -0.79234 0.904298 0.000856598 0.348582 1.59345 0.303628 0.0920153 0.180525 2.81566 -0.0920153 -0.180525 2.68944 -2.65152 -3.47365 0 0.861561 -0.148007 -4.39098 -0.46801 4.81182]
+ -- U = ~[-0.571748 0.991209 0.317698 0.276603 -0.163888 -2.10549 -0.140671 0.245503 0.0333383 -1.9416 -0.245503 -0.0333383 -0.292781 0.132312 0.0214348 -4.32961 -0.813632 1.16193 -3.7107 -2.58849]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.856244 1.06144 0.0736788 -0.0736791 7.56792e-05 0.180425 -0.180425 0.297624 2.84191 1.5708 0.3 0.539574 -0.220751 -3.77907 -0.0212055 5.12286 1.98281 -2.36098 -3.17162
+ -- Udesired =  2.4421e-21 -0.118389 0.259216 0.0728864 -0.0731329 -0.000863859 6.08031e-06 7.06471e-06 -0.158325 0.160066 1.19442e-05 -6.27646e-15 0.344212 -0.581557 0.604972 0.77608 -0.054552 0.67787 0.000563947 -0.341607
+ -- Qcorrection =  -0.00156098 0.0639041 -0.157138 0.0183366 -0.0183362 0.000780919 0.000100087 -0.000100101 0.0509584 -0.0262504 0.0226501 0.00362818 0.321986 0.0727437 -0.611905 -0.446805 -0.311037 0.706628 -0.290538 -0.302021
+ -- Ucorrection =  -0.571748 1.1096 0.0584829 0.172617 -0.17237 0.277466 0.0333322 -0.0333454 -0.00556343 -2.10166 -2.1055 -0.140671 -4.67382 -0.232075 0.556961 -4.48678 -2.53394 -0.970651 0.131748 0.363042
+------------------------------
+
+Errors at time 0.026: 
+Task 'hipangle': pErr = -0.0509584, vErr = 0.192903.
+
+Task 'lbackangle': pErr = -0.00362818, vErr = -0.0171559.
+
+Task 'handleleft_out': pErr = -0.706628, vErr = 0.423653.
+
+Task 'handleleft_trn': pErr = 0.290538, vErr = -0.317020.
+
+Task 'handleleft_up': pErr = 0.302021, vErr = -0.0124623.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.026, tfReal = 0.028
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.06221e-08
+Desired actuator forces:  -37.2845 117.677 -117.677 5.36427 -0.00130473 0.00130473 11.1446 -292.868 19.6815 69.8473 -33.6702 58.3011 -3.68746 -42.1019 201.477 -135.685
+
+CMC::computeControls, root solve (tFinal = 0.028):
+ -- controls = 0.028
+
+CMC::computeControls, t = 0.028
+ -- step size = 0.00200000, target time = 0.03
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.00279564 -0.790253 0.904954 0.00145482 0.348273 1.58904 0.303247 0.0925838 0.180603 2.81157 -0.0925838 -0.180603 2.68879 -2.65208 -3.47363 0 0.852384 -0.149699 -4.38865 -0.475616 4.80652]
+ -- U = ~[-0.637924 1.06553 0.313565 0.310014 -0.140224 -2.23438 -0.219257 0.305237 0.0444287 -2.09415 -0.305237 -0.0444287 -0.375649 0.379317 -0.230463 -4.67001 -0.814967 1.09634 -3.75139 -2.60409]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.856691 1.06253 0.0740719 -0.0740729 7.64154e-05 0.180425 -0.180425 0.296994 2.84255 1.5708 0.3 0.540493 -0.223126 -3.77641 -0.0184983 5.12196 1.98533 -2.36062 -3.17341
+ -- Udesired =  4.65692e-22 -0.266035 0.680229 0.269977 -0.270262 0.00101422 4.47972e-07 -2.3294e-06 -0.371241 0.376006 -9.74198e-07 -6.03961e-15 0.475103 -1.45833 1.72592 1.57844 -0.732914 1.52403 0.342504 -1.21369
+ -- Qcorrection =  -0.00279558 0.0664376 -0.157576 0.0185118 -0.0185108 0.0013784 0.000177844 -0.000177872 0.0512789 -0.0309836 0.0182456 0.00324692 0.31189 0.0734272 -0.612237 -0.457117 -0.315444 0.703461 -0.291458 -0.300227
+ -- Ucorrection =  -0.637924 1.33157 -0.366664 0.0352602 -0.0349749 0.309 0.0444283 -0.0444264 0.231017 -2.47016 -2.23438 -0.219257 -5.14511 0.643362 -0.629575 -5.32983 -1.87117 -1.89968 0.0368133 0.983227
+------------------------------
+
+Errors at time 0.028: 
+Task 'hipangle': pErr = -0.0512789, vErr = 0.180873.
+
+Task 'lbackangle': pErr = -0.00324692, vErr = -0.00953987.
+
+Task 'handleleft_out': pErr = -0.703461, vErr = 0.536592.
+
+Task 'handleleft_trn': pErr = 0.291458, vErr = -0.219055.
+
+Task 'handleleft_up': pErr = 0.300227, vErr = -0.241964.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.028, tfReal = 0.03
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.70498e-08
+Desired actuator forces:  29.038 -113.167 113.167 -21.5832 0.00982839 -0.00982839 3.79344 253.973 231.824 -50.4868 -87.4135 168.599 -4.51937 -54.1094 -126.453 201.773
+
+CMC::computeControls, root solve (tFinal = 0.03):
+ -- controls = 0.03
+
+CMC::computeControls, t = 0.03
+ -- step size = 0.00200000, target time = 0.032
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.00404063 -0.78816 0.905494 0.00206255 0.348032 1.58468 0.302832 0.0931764 0.180703 2.80744 -0.0931764 -0.180703 2.68785 -2.65318 -3.47371 0 0.843366 -0.151115 -4.38676 -0.482682 4.80166]
+ -- U = ~[-0.596002 1.01751 0.222163 0.292292 -0.100682 -2.10693 -0.175969 0.275368 0.0555418 -2.00625 -0.275368 -0.0555418 -0.543318 0.554746 -0.269387 -4.28206 -0.588473 0.778228 -3.29044 -2.24222]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.857058 1.06352 0.0745395 -0.0745407 7.72421e-05 0.180425 -0.180425 0.29654 2.84301 1.5708 0.3 0.541097 -0.225214 -3.77356 -0.0163058 5.12047 1.9876 -2.35973 -3.1755
+ -- Udesired =  -1.87494e-21 -0.0528007 0.185521 0.151238 -0.151092 -0.000596344 -1.14163e-05 -1.36089e-05 -0.00681062 0.00524062 -2.42388e-05 1.77494e-29 0.0622928 -0.362758 0.842935 0.346176 -0.627976 0.491336 0.506555 -0.675156
+ -- Qcorrection =  -0.00404057 0.0688983 -0.158027 0.0186368 -0.0186357 0.00198531 0.000277821 -0.000277821 0.0514921 -0.0355634 0.0138834 0.00283226 0.302269 0.0740989 -0.613201 -0.466376 -0.318812 0.700248 -0.293449 -0.29821
+ -- Ucorrection =  -0.596002 1.07031 0.0366417 0.12413 -0.124277 0.292888 0.0555532 -0.0555282 -0.0938712 -2.01149 -2.1069 -0.175969 -4.34435 -0.225715 -0.0647065 -3.63662 -1.61424 -1.03465 0.0481903 0.405769
+------------------------------
+
+Errors at time 0.03: 
+Task 'hipangle': pErr = -0.0514921, vErr = 0.195206.
+
+Task 'lbackangle': pErr = -0.00283226, vErr = 0.00285921.
+
+Task 'handleleft_out': pErr = -0.700248, vErr = 0.645981.
+
+Task 'handleleft_trn': pErr = 0.293449, vErr = -0.179455.
+
+Task 'handleleft_up': pErr = 0.29821, vErr = -0.401089.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.03, tfReal = 0.032
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 4.89975e-08
+Desired actuator forces:  36.7114 -198.191 198.191 -10.8514 0.00635071 -0.00635071 -9.20739 472.293 43.9388 -53.8223 -78.1405 30.3207 -35.5149 -82.5454 -184.003 289.868
+
+CMC::computeControls, root solve (tFinal = 0.032):
+ -- controls = 0.032
+
+CMC::computeControls, t = 0.032
+ -- step size = 0.00200000, target time = 0.034
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.00517533 -0.786176 0.905868 0.00262071 0.347865 1.5806 0.302588 0.0936674 0.180825 2.80353 -0.0936674 -0.180825 2.68665 -2.65438 -3.47353 0 0.835225 -0.15211 -4.38547 -0.488924 4.79739]
+ -- U = ~[-0.547655 0.980419 0.16835 0.26967 -0.0677144 -2.00657 -0.0655871 0.219094 0.0666664 -1.93886 -0.219094 -0.0666664 -0.723647 0.558273 -0.0845632 -3.93977 -0.448144 0.567841 -3.04937 -2.11824]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.856841 1.06311 0.0745922 -0.0745926 7.44952e-05 0.180425 -0.180425 0.297057 2.84248 1.5708 0.3 0.540699 -0.224234 -3.77351 -0.0174021 5.11977 1.98698 -2.35878 -3.17571
+ -- Udesired =  -2.80668e-21 0.250832 -0.555297 -0.092256 0.0927796 -0.00152862 -9.38319e-06 -9.35819e-06 0.491482 -0.501631 -1.89146e-05 6.02777e-15 -0.415814 1.23782 -0.728684 -1.31142 -0.0561686 -1.00294 0.402252 0.441234
+ -- Qcorrection =  -0.00517527 0.0706648 -0.157238 0.0190752 -0.0190748 0.00254621 0.000400056 -0.000400004 0.0508079 -0.0389507 0.00979978 0.00258761 0.294527 0.0721241 -0.611957 -0.471522 -0.322377 0.699674 -0.2956 -0.297818
+ -- Ucorrection =  -0.547655 0.729587 0.723647 0.31135 -0.311874 0.271199 0.0666758 -0.0666571 -0.559197 -1.43723 -2.00655 -0.0655871 -3.52395 -1.68597 1.29653 -1.73796 -2.06207 0.279292 0.156021 -0.525797
+------------------------------
+
+Errors at time 0.032: 
+Task 'hipangle': pErr = -0.0508079, vErr = 0.221699.
+
+Task 'lbackangle': pErr = -0.00258761, vErr = 0.0215806.
+
+Task 'handleleft_out': pErr = -0.699674, vErr = 0.74152.
+
+Task 'handleleft_trn': pErr = 0.2956, vErr = -0.312226.
+
+Task 'handleleft_up': pErr = 0.297818, vErr = -0.318194.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.032, tfReal = 0.034
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 1.37004e-07
+Desired actuator forces:  -45.1529 -146.282 146.282 62.2144 -0.0480558 0.0480558 -25.763 419.134 -845.83 135.474 -48.238 -407.554 -99.8082 -192.768 237.448 47.7645
+
+CMC::computeControls, root solve (tFinal = 0.034):
+ -- controls = 0.034
+
+CMC::computeControls, t = 0.034
+ -- step size = 0.00200000, target time = 0.036
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.00632695 -0.784101 0.906288 0.0031847 0.347753 1.57637 0.302557 0.094105 0.180969 2.79942 -0.094105 -0.180969 2.68536 -2.65522 -3.47294 0 0.826865 -0.153209 -4.38413 -0.495565 4.79256]
+ -- U = ~[-0.642948 1.14985 0.29455 0.312278 -0.0446773 -2.32544 0.0257108 0.241676 0.0777176 -2.28077 -0.241676 -0.0777176 -0.832763 0.411051 0.186927 -4.71147 -0.759252 0.890432 -3.83661 -2.93591]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.856213 1.06169 0.0742672 -0.0742667 7.41613e-05 0.180425 -0.180425 0.298243 2.84127 1.5708 0.3 0.539736 -0.221129 -3.77576 -0.0205658 5.12016 1.98443 -2.35826 -3.17414
+ -- Udesired =  -1.43731e-21 0.329025 -0.738775 -0.198905 0.199253 0.00179826 1.53986e-05 1.54664e-05 0.615547 -0.628418 3.07209e-05 6.08698e-15 -0.461951 1.60286 -1.2921 -1.56222 0.394722 -1.28889 0.0913393 0.985619
+ -- Qcorrection =  -0.00632689 0.0721122 -0.155403 0.0198378 -0.0198383 0.00311053 0.00054446 -0.000544416 0.0495101 -0.0418509 0.00557742 0.00255694 0.287129 0.0679206 -0.608371 -0.474999 -0.327599 0.700928 -0.296956 -0.298795
+ -- Ucorrection =  -0.642948 0.820825 1.03332 0.440581 -0.440929 0.31048 0.0777022 -0.0777331 -0.660224 -1.65235 -2.32547 0.0257108 -4.24952 -2.36211 2.18254 -2.27439 -3.33063 0.456123 0.319712 -0.798692
+------------------------------
+
+Errors at time 0.034: 
+Task 'hipangle': pErr = -0.0495101, vErr = 0.231774.
+
+Task 'lbackangle': pErr = -0.00255694, vErr = 0.0409110.
+
+Task 'handleleft_out': pErr = -0.700928, vErr = 0.825184.
+
+Task 'handleleft_trn': pErr = 0.296956, vErr = -0.490995.
+
+Task 'handleleft_up': pErr = 0.298795, vErr = -0.154041.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.034, tfReal = 0.036
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.06898e-06
+Desired actuator forces:  -284.254 -100.184 100.184 275.864 -0.242019 0.242019 -53.4663 528.512 -3477.53 707.58 -93.3877 -1481.88 -251.929 -594.85 1605.29 -607.271
+
+CMC::computeControls, root solve (tFinal = 0.036):
+ -- controls = 0.036
+
+CMC::computeControls, t = 0.036
+ -- step size = 0.00200000, target time = 0.038
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.00804043 -0.781153 0.907343 0.00400621 0.3477 1.57046 0.302657 0.094798 0.181135 2.79356 -0.094798 -0.181135 2.68406 -2.65553 -3.47201 0 0.814233 -0.155899 -4.38108 -0.505961 4.78405]
+ -- U = ~[-1.17858 1.95614 0.864514 0.5596 0.00449164 -3.89154 0.0693441 0.512669 0.088434 -3.89603 -0.512669 -0.088434 -0.900243 0.2358 0.388398 -8.70424 -2.19616 2.46396 -7.15965 -6.1461]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.855682 1.06055 0.0739211 -0.0739203 8.17471e-05 0.180425 -0.180425 0.299264 2.84022 1.5708 0.3 0.539101 -0.218684 -3.77787 -0.0227443 5.12108 1.98264 -2.3584 -3.17232
+ -- Udesired =  8.92032e-22 0.182229 -0.355174 -0.126388 0.126262 0.00496726 3.26539e-05 3.1254e-05 0.373534 -0.38316 6.44257e-05 4.36688e-16 -0.151382 0.734376 -0.690637 -0.51818 0.460216 -0.41338 -0.206364 0.738041
+ -- Qcorrection =  -0.00804037 0.0745288 -0.153204 0.0208769 -0.0208777 0.00392446 0.00071065 -0.000710712 0.0484361 -0.0466662 -0.000334966 0.0026574 0.275132 0.0627856 -0.60321 -0.483217 -0.337028 0.701427 -0.297123 -0.299688
+ -- Ucorrection =  -1.17858 1.77391 1.21969 0.639058 -0.638931 0.554632 0.0884013 -0.0884652 -0.369042 -3.51287 -3.89161 0.0693441 -8.55286 -2.93054 3.1546 -6.64147 -6.60631 -0.486864 0.442164 -0.349643
+------------------------------
+
+Errors at time 0.036: 
+Task 'hipangle': pErr = -0.0484361, vErr = 0.178010.
+
+Task 'lbackangle': pErr = -0.00265740, vErr = 0.0204845.
+
+Task 'handleleft_out': pErr = -0.701427, vErr = 0.963861.
+
+Task 'handleleft_trn': pErr = 0.297123, vErr = -0.528287.
+
+Task 'handleleft_up': pErr = 0.299688, vErr = -0.190022.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.036, tfReal = 0.038
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 0.000591764
+Desired actuator forces:  4741.79 1471.22 -1471.22 -4650.54 5.38486 -5.38486 -162.805 -8866.14 59005.4 -11800.3 1316.62 23722.6 3526.61 9146.9 -27987.8 11575.8
+
+CMC::computeControls, root solve (tFinal = 0.038):
+ -- controls = 0.038
+
+CMC::computeControls, t = 0.038
+ -- step size = 0.00200000, target time = 0.04
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.00620597 -0.783428 0.904735 0.00317622 0.34773 1.57502 0.302794 0.093781 0.181327 2.79808 -0.093781 -0.181327 2.6827 -2.6555 -3.47092 0 0.827652 -0.14938 -4.3875 -0.496144 4.79504]
+ -- U = ~[5.52563 -7.91183 -6.13784 -2.55867 0.231676 15.94 0.135523 -2.6426 0.104837 15.7084 2.6426 -0.104837 -1.05918 0.0730225 0.424766 40.6438 15.3639 -15.3551 31.7111 31.1191]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.855471 1.06024 0.0737879 -0.0737875 8.81439e-05 0.180425 -0.180425 0.299764 2.83971 1.5708 0.3 0.539038 -0.218109 -3.77847 -0.0228353 5.12178 1.98264 -2.35889 -3.17134
+ -- Udesired =  1.55554e-21 0.0499148 -0.000646755 -0.0122357 0.012064 -0.000202507 -2.25721e-06 -3.08395e-06 0.161309 -0.167675 -5.25471e-06 -5.78056e-15 0.0348043 -0.0419022 0.0176875 0.271104 0.205669 0.292012 -0.216079 0.252187
+ -- Qcorrection =  -0.00620591 0.0720426 -0.155507 0.0199931 -0.0199934 0.00308808 0.000902107 -0.000902246 0.0479665 -0.0416271 0.00421888 0.00279356 0.288614 0.0687289 -0.609029 -0.473309 -0.326743 0.700057 -0.296617 -0.299581
+ -- Ucorrection =  5.52563 -7.96175 -6.13719 -2.63037 2.63054 -2.55847 0.104839 -0.104834 0.0703676 15.876 15.94 0.135523 40.609 15.4058 -15.3728 31.44 30.9134 -1.35119 0.289101 0.172579
+------------------------------
+
+Errors at time 0.038: 
+Task 'hipangle': pErr = -0.0479665, vErr = -0.0734428.
+
+Task 'lbackangle': pErr = -0.00279356, vErr = -0.0953623.
+
+Task 'handleleft_out': pErr = -0.700057, vErr = 1.21456.
+
+Task 'handleleft_trn': pErr = 0.296617, vErr = -0.326415.
+
+Task 'handleleft_up': pErr = 0.299581, vErr = -0.406841.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.038, tfReal = 0.04
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 0.00502374
+Desired actuator forces:  -13677 -5012.97 5012.97 13577 -11.054 11.054 -2530.27 25656.8 -171646 34044.3 -4719.71 -69161 -10308.8 -27209.2 81931.4 -33779.5
+
+CMC::computeControls, root solve (tFinal = 0.04):
+ -- controls = 0.04
+
+CMC::computeControls, t = 0.04
+ -- step size = 0.00200000, target time = 0.042
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[0.000614588 -0.792971 0.897257 4.09193e-05 0.34869 1.59479 0.303065 0.0909837 0.181546 2.8169 -0.0909837 -0.181546 2.68121 -2.65497 -3.47003 0 0.876805 -0.130817 -4.40507 -0.457528 4.83156]
+ -- U = ~[-7.73556 11.2946 9.17802 3.65286 -1.98543 -24.0867 -0.910551 3.08477 0.112004 -22.1013 -3.08477 -0.112004 0.51448 1.16873 1.05504 -59.2546 -22.6221 19.2416 -47.7626 -46.4454]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.855372 1.06026 0.0738192 -0.0738188 7.69709e-05 0.180425 -0.180425 0.300093 2.83937 1.5708 0.3 0.539001 -0.218216 -3.77825 -0.0224317 5.12185 1.98316 -2.35906 -3.17112
+ -- Udesired =  -1.10291e-22 0.0768794 -0.052663 0.0254754 -0.025111 -0.0107853 -6.56406e-05 -6.37506e-05 0.213057 -0.219841 -0.000130741 -8.32667e-15 -0.122266 0.0990879 0.075493 -0.050401 -0.117747 0.0627183 0.0778787 0.0384417
+ -- Qcorrection =  0.000614648 0.0624001 -0.163005 0.0171645 -0.017165 -3.60517e-05 0.00112161 -0.00112161 0.0485972 -0.0224712 0.0239931 0.00306498 0.337804 0.0873988 -0.626821 -0.435096 -0.29029 0.698057 -0.295914 -0.298907
+ -- Ucorrection =  -7.73556 11.2177 9.23069 3.0593 -3.05966 3.66365 0.11207 -0.111941 -2.19849 -21.8814 -24.0866 -0.910551 -59.1323 -22.7212 19.1661 -47.7122 -46.3276 0.451762 1.09085 1.0166
+------------------------------
+
+Errors at time 0.04: 
+Task 'hipangle': pErr = -0.0485972, vErr = 2.13332.
+
+Task 'lbackangle': pErr = -0.00306498, vErr = 0.907291.
+
+Task 'handleleft_out': pErr = -0.698057, vErr = -0.380757.
+
+Task 'handleleft_trn': pErr = 0.295914, vErr = -1.24185.
+
+Task 'handleleft_up': pErr = 0.298907, vErr = -1.24749.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.04, tfReal = 0.042
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 0.000771802
+Desired actuator forces:  -5169.37 -3094.38 3094.38 5329.94 -0.0256645 0.025671 -4187.38 11040.7 -67037.9 12975.8 -2763.6 -26896.7 -3794.57 -11128.3 32117.8 -13007.9
+
+CMC::computeControls, root solve (tFinal = 0.042):
+ -- controls = 0.042
+
+CMC::computeControls, t = 0.042
+ -- step size = 0.00200000, target time = 0.044
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.0481314 -0.717976 0.945081 0.0228148 0.368012 1.46064 0.309242 0.127453 0.18173 2.66343 -0.127453 -0.18173 2.67034 -2.64527 -3.47736 0 0.507017 -0.256597 -4.22464 -0.733098 4.53165]
+ -- U = ~[-36.4582 58.8328 29.2414 17.0387 32.8543 -91.5921 12.1274 39.4071 0.0530296 -124.446 -39.4071 -0.0530296 -15.9189 -20.3897 -5.84773 -282.782 -83.7774 185.507 -192.976 -245.826]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.855088 1.05982 0.073815 -0.0738132 5.29321e-05 0.180425 -0.180425 0.300734 2.83871 1.5708 0.3 0.538472 -0.217242 -3.7786 -0.0234784 5.12151 1.9825 -2.35858 -3.17087
+ -- Udesired =  -1.97094e-21 0.213185 -0.419207 -0.0463052 0.0470978 -0.0096728 -5.1383e-05 -4.94526e-05 0.437455 -0.44727 -0.000102023 -5.78056e-15 -0.391429 0.92892 -0.500013 -1.01793 -0.150911 -0.74919 0.360713 0.290439
+ -- Qcorrection =  -0.0481313 0.137112 -0.114735 0.053638 -0.0536398 0.0227618 0.00130562 -0.00130535 0.0672778 -0.17528 -0.110151 0.00924227 -0.0314558 -0.0393551 -0.44604 -0.70962 -0.589855 0.687844 -0.286691 -0.30649
+ -- Ucorrection =  -36.4582 58.6196 29.6606 39.4534 -39.4542 17.0483 0.053081 -0.0529801 32.4168 -123.999 -91.592 12.1274 -282.391 -84.7063 186.007 -191.958 -245.675 -15.1697 -20.7504 -6.13817
+------------------------------
+
+Errors at time 0.042: 
+Task 'hipangle': pErr = -0.0672778, vErr = -32.6892.
+
+Task 'lbackangle': pErr = -0.00924227, vErr = -12.121.
+
+Task 'handleleft_out': pErr = -0.687844, vErr = 15.8978.
+
+Task 'handleleft_trn': pErr = 0.286691, vErr = 20.4645.
+
+Task 'handleleft_up': pErr = 0.306490, vErr = 5.6783.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.042, tfReal = 0.044
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 0.00502218
+Desired actuator forces:  16292.6 -1089.8 1089.8 -12647.1 82.3929 -82.3928 -35440.1 -37593.2 171022 -41206.4 -805.831 69621.6 5483.15 24055.8 -69126.9 30349.3
+
+CMC::computeControls, root solve (tFinal = 0.044):
+ -- controls = 0.044
+
+CMC::computeControls, t = 0.044
+ -- step size = 0.00200000, target time = 0.046
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.11274 -0.609249 0.981585 0.053683 0.452078 1.30697 0.34452 0.226517 0.181836 2.42569 -0.226517 -0.181836 2.58488 -2.61007 -3.53281 0 -0.0391998 -0.38395 -3.68757 -1.0368 3.93922]
+ -- U = ~[-19.0419 32.7339 7.20846 9.58926 30.4033 -43.3848 12.6785 41.6041 0.124105 -73.7881 -41.6041 -0.124105 -23.4035 -22.2694 -9.62749 -186.161 -36.4631 269.029 -67.3048 -271.24]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.854536 1.05859 0.0735924 -0.0735893 5.41268e-05 0.180425 -0.180425 0.301806 2.83761 1.5708 0.3 0.537582 -0.214536 -3.78034 -0.0262925 5.12155 1.98031 -2.35783 -3.16975
+ -- Udesired =  -1.6886e-21 0.325064 -0.773509 -0.177815 0.178278 0.0142763 8.37558e-05 8.00925e-05 0.610221 -0.622554 0.000165705 4.36688e-16 -0.450666 1.70803 -1.20521 -1.68386 0.239586 -1.3514 0.342031 0.842942
+ -- Qcorrection =  -0.11274 0.245287 -0.0770084 0.152925 -0.152928 0.0536289 0.0014113 -0.00141106 0.150271 -0.411924 -0.263825 0.0445202 -0.576782 -0.169414 0.0927661 -1.0105 -1.18232 0.604577 -0.252248 -0.363057
+ -- Ucorrection =  -19.0419 32.4088 7.98197 41.7819 -41.7823 9.57498 0.124021 -0.124185 29.7931 -73.1655 -43.3849 12.6785 -185.711 -38.1712 270.234 -65.621 -271.48 -22.0521 -22.6115 -10.4704
+------------------------------
+
+Errors at time 0.044: 
+Task 'hipangle': pErr = -0.150271, vErr = -30.2186.
+
+Task 'lbackangle': pErr = -0.0445202, vErr = -12.6531.
+
+Task 'handleleft_out': pErr = -0.604577, vErr = 23.2712.
+
+Task 'handleleft_trn': pErr = 0.252248, vErr = 22.3836.
+
+Task 'handleleft_up': pErr = 0.363057, vErr = 9.61441.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.044, tfReal = 0.046
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 6.66463e-05
+Desired actuator forces:  -4062.38 5411.02 -5411.02 164.678 -2.53137 2.53137 -3159.86 -13020.7 10723.8 8624.53 3863.76 6259.59 -949.14 9153.57 482.799 4097.44
+
+CMC::computeControls, root solve (tFinal = 0.046):
+ -- controls = 0.046
+
+CMC::computeControls, t = 0.046
+ -- step size = 0.00200000, target time = 0.048
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.124672 -0.591471 0.993929 0.0607626 0.468919 1.28354 0.342974 0.27496 0.182299 2.38542 -0.27496 -0.182299 2.59256 -2.56781 -3.53692 0 -0.20266 -0.439452 -3.34631 -1.03242 3.60318]
+ -- U = ~[0.424698 -3.24443 6.33954 0.581568 -3.13158 4.25509 -8.87327 15.9655 0.289057 7.38667 -15.9655 -0.289057 23.1814 -20.1095 24.112 -29.5587 -25.3233 114.649 40.2031 -109.448]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.853875 1.05695 0.0731483 -0.073145 0.00011589 0.180425 -0.180425 0.303031 2.83637 1.5708 0.3 0.53685 -0.210912 -3.78305 -0.0296143 5.12248 1.9776 -2.35737 -3.16766
+ -- Udesired =  6.78685e-22 0.30763 -0.793795 -0.24048 0.240121 0.046183 0.000176403 0.00016716 0.569526 -0.581431 0.000347505 6.08698e-15 -0.248278 1.73897 -1.3488 -1.46597 0.632725 -1.19725 0.110044 1.13753
+ -- Qcorrection =  -0.124672 0.262404 -0.0630174 0.201812 -0.201815 0.0606468 0.00187394 -0.00187428 0.165888 -0.450949 -0.287258 0.0429736 -0.73951 -0.22854 0.436743 -1.00281 -1.5193 0.614954 -0.210447 -0.369254
+ -- Ucorrection =  0.424698 -3.55206 7.13334 16.206 -16.2056 0.535385 0.288881 -0.289225 -3.7011 7.9681 4.25474 -8.87327 -29.3105 -27.0622 115.998 41.6691 -110.08 24.3787 -20.2196 22.9745
+------------------------------
+
+Errors at time 0.046: 
+Task 'hipangle': pErr = -0.165888, vErr = 3.30706.
+
+Task 'lbackangle': pErr = -0.0429736, vErr = 8.86092.
+
+Task 'handleleft_out': pErr = -0.614954, vErr = -23.1969.
+
+Task 'handleleft_trn': pErr = 0.210447, vErr = 20.1766.
+
+Task 'handleleft_up': pErr = 0.369254, vErr = -24.0975.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.046, tfReal = 0.048
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 6.93754e-07
+Desired actuator forces:  -373.248 130.12 -130.12 99.2273 -1.73232 1.73232 418.132 90.148 -905.539 952.884 -1090.1 -73.1956 1108.47 498.237 1137.69 -429.936
+
+CMC::computeControls, root solve (tFinal = 0.048):
+ -- controls = 0.048
+
+CMC::computeControls, t = 0.048
+ -- step size = 0.00200000, target time = 0.05
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.123513 -0.599377 1.0056 0.0618597 0.46135 1.29393 0.322568 0.308097 0.182887 2.40338 -0.308097 -0.182887 2.66547 -2.50061 -3.50385 0 -0.259549 -0.489338 -3.13667 -0.930426 3.4079]
+ -- U = ~[0.647899 -4.30058 5.28633 0.543126 -4.08318 5.66458 -10.8158 16.763 0.299164 9.74777 -16.763 -0.299164 28.5445 -23.6425 30.188 -27.8464 -24.2223 90.6683 58.231 -82.2289]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.853421 1.05578 0.0727736 -0.0727716 0.000223161 0.180425 -0.180424 0.303907 2.83547 1.5708 0.3 0.536641 -0.208358 -3.78496 -0.0315097 5.1236 1.97613 -2.35729 -3.16582
+ -- Udesired =  3.17743e-21 0.122403 -0.294278 -0.0970539 0.0962646 0.0555589 -1.1388e-05 -1.65479e-05 0.270495 -0.278149 -2.83434e-05 6.02777e-15 0.0332512 0.642344 -0.380779 -0.305716 0.351018 -0.157347 0.0077534 0.541173
+ -- Qcorrection =  -0.123513 0.254044 -0.0501752 0.235323 -0.235325 0.0616365 0.00246234 -0.00246309 0.157443 -0.432093 -0.276868 0.0225675 -0.79619 -0.280981 0.648296 -0.898916 -1.71571 0.689344 -0.143319 -0.338028
+ -- Ucorrection =  0.647899 -4.42298 5.58061 16.8601 -16.8593 0.487567 0.299175 -0.299147 -4.35368 10.0259 5.66461 -10.8158 -27.8797 -24.8647 91.0491 58.5368 -82.5799 28.7019 -23.6502 29.6468
+------------------------------
+
+Errors at time 0.048: 
+Task 'hipangle': pErr = -0.157443, vErr = 4.22786.
+
+Task 'lbackangle': pErr = -0.0225675, vErr = 10.7232.
+
+Task 'handleleft_out': pErr = -0.689344, vErr = -28.2789.
+
+Task 'handleleft_trn': pErr = 0.143319, vErr = 23.6373.
+
+Task 'handleleft_up': pErr = 0.338028, vErr = -30.3398.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.048, tfReal = 0.05
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 7.56349e-07
+Desired actuator forces:  -213.991 5.76778 -5.76778 86.4028 -1.50371 1.50371 478.625 455.114 -1286.53 578.006 -1037.02 -266.827 1146.77 244.224 1109.48 -758.991
+
+CMC::computeControls, root solve (tFinal = 0.05):
+ -- controls = 0.05
+
+CMC::computeControls, t = 0.05
+ -- step size = 0.00200000, target time = 0.052
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.122183 -0.608027 1.01514 0.0629638 0.453215 1.30535 0.301204 0.341114 0.183495 2.42293 -0.341114 -0.183495 2.74928 -2.43428 -3.45957 0 -0.314957 -0.535955 -2.98476 -0.808709 3.27369]
+ -- U = ~[0.689475 -4.35119 4.28546 0.557734 -4.05278 5.76223 -10.5289 16.2314 0.30869 9.81501 -16.2314 -0.30869 27.5787 -21.8264 29.0248 -27.5817 -22.4383 63.2221 62.6857 -54.0387]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.853428 1.05594 0.0728599 -0.0728593 0.000316334 0.180425 -0.180425 0.304057 2.83531 1.5708 0.3 0.536897 -0.208707 -3.78414 -0.0306639 5.12345 1.97717 -2.35716 -3.16594
+ -- Udesired =  4.19105e-21 -0.120028 0.443994 0.186965 -0.187454 0.0333759 -0.000352471 -0.000346057 -0.10349 0.101373 -0.000705204 -8.77608e-29 0.186253 -0.95951 1.1931 1.08594 -0.546154 1.14939 0.160256 -0.678904
+ -- Qcorrection =  -0.122183 0.245401 -0.0407983 0.268254 -0.268255 0.0626474 0.00307049 -0.00307049 0.149158 -0.412375 -0.265444 0.00120379 -0.851854 -0.327248 0.799376 -0.778045 -1.84976 0.772107 -0.0771188 -0.293626
+ -- Ucorrection =  0.689475 -4.23116 3.84147 16.0445 -16.044 0.524359 0.309043 -0.308344 -3.94929 9.71364 5.76293 -10.5289 -27.7679 -21.4788 62.029 61.5998 -53.4925 26.4293 -21.9867 29.7038
+------------------------------
+
+Errors at time 0.05: 
+Task 'hipangle': pErr = -0.149158, vErr = 4.18798.
+
+Task 'lbackangle': pErr = -0.00120379, vErr = 10.4050.
+
+Task 'handleleft_out': pErr = -0.772107, vErr = -27.1487.
+
+Task 'handleleft_trn': pErr = 0.0771188, vErr = 21.7815.
+
+Task 'handleleft_up': pErr = 0.293626, vErr = -29.3541.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.05, tfReal = 0.052
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 5.66271e-07
+Desired actuator forces:  -56.4637 -149.984 149.984 57.2985 -1.0421 1.0421 427.068 706.415 -1219.17 255.838 -667.888 -488.077 774.07 140.088 945.989 -783.411
+
+CMC::computeControls, root solve (tFinal = 0.052):
+ -- controls = 0.052
+
+CMC::computeControls, t = 0.052
+ -- step size = 0.00200000, target time = 0.054
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.120755 -0.616749 1.02288 0.0640861 0.445173 1.31694 0.28053 0.373101 0.184123 2.44256 -0.373101 -0.184123 2.83898 -2.3758 -3.40675 0 -0.3705 -0.579422 -2.87626 -0.681712 3.18406]
+ -- U = ~[0.732892 -4.35552 3.48188 0.565012 -3.97358 5.80389 -10.1271 15.8064 0.318608 9.77747 -15.8064 -0.318608 26.5479 -19.9249 27.7314 -28.2202 -21.1274 46.9567 64.0428 -37.2705]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.853762 1.05718 0.0734082 -0.073408 0.000350334 0.180424 -0.180425 0.303721 2.83564 1.57079 0.3 0.537194 -0.21139 -3.78093 -0.0279826 5.12169 1.97999 -2.35663 -3.16804
+ -- Udesired =  3.16896e-21 -0.157156 0.638058 0.304322 -0.304292 0.00183459 -0.000279346 -0.000271005 -0.142055 0.14073 -0.000550301 -6.02777e-15 0.0561813 -1.37609 1.6748 1.27549 -1.04299 1.3696 0.348084 -1.17036
+ -- Qcorrection =  -0.120755 0.237012 -0.0343029 0.299692 -0.299693 0.0637357 0.00369849 -0.003697 0.141453 -0.393082 -0.253856 -0.0194701 -0.907694 -0.368032 0.904673 -0.653729 -1.93763 0.858992 -0.0191736 -0.238707
+ -- Ucorrection =  0.732892 -4.19836 2.84382 15.5021 -15.5021 0.563177 0.318887 -0.318337 -3.83153 9.63674 5.80444 -10.1271 -28.2764 -19.7513 45.2819 62.7673 -36.2275 25.1783 -20.273 28.9018
+------------------------------
+
+Errors at time 0.052: 
+Task 'hipangle': pErr = -0.141453, vErr = 4.14675.
+
+Task 'lbackangle': pErr = 0.0194701, vErr = 10.0803.
+
+Task 'handleleft_out': pErr = -0.858992, vErr = -26.2567.
+
+Task 'handleleft_trn': pErr = 0.0191736, vErr = 19.9004.
+
+Task 'handleleft_up': pErr = 0.238707, vErr = -28.0764.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.052, tfReal = 0.054
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 4.8721e-07
+Desired actuator forces:  48.0115 -194.822 194.822 36.3664 -0.674974 0.674974 368.681 794.366 -1198.74 -4.20988 -469.166 -534.207 523.513 -40.238 852.584 -770.287
+
+CMC::computeControls, root solve (tFinal = 0.054):
+ -- controls = 0.054
+
+CMC::computeControls, t = 0.054
+ -- step size = 0.00200000, target time = 0.056
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.119263 -0.625405 1.02916 0.065223 0.437362 1.32851 0.26076 0.404537 0.18477 2.46195 -0.404537 -0.18477 2.93426 -2.32489 -3.34574 0 -0.42884 -0.620806 -2.7919 -0.553101 3.11956]
+ -- U = ~[0.758303 -4.29447 2.81302 0.570823 -3.83194 5.76264 -9.62804 15.6756 0.328861 9.59459 -15.6756 -0.328861 25.2594 -18.5882 26.6443 -30.3616 -20.3317 38.3361 64.5165 -28.1668]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.853813 1.05779 0.0738152 -0.0738148 0.000335545 0.180424 -0.180425 0.303873 2.83548 1.5708 0.3 0.536928 -0.212692 -3.77894 -0.0269106 5.1201 1.98139 -2.35591 -3.16947
+ -- Udesired =  5.4316e-22 0.156703 -0.18177 0.0443907 -0.0442182 -0.0127517 0.000447517 0.000438826 0.374154 -0.383038 0.000893792 -6.08698e-15 -0.355661 0.399927 -0.00784322 -0.483681 -0.358556 -0.229629 0.330043 -0.000710837
+ -- Qcorrection =  -0.119263 0.228408 -0.0286314 0.330721 -0.330722 0.0648874 0.00434579 -0.0043445 0.133489 -0.373536 -0.242283 -0.0392396 -0.965768 -0.408114 0.98704 -0.526191 -2.00054 0.952873 0.0310201 -0.176271
+ -- Ucorrection =  0.758303 -4.45118 2.99479 15.6312 -15.6314 0.583575 0.328413 -0.329299 -4.2061 9.97762 5.76175 -9.62804 -30.0059 -20.7316 38.344 65.0002 -27.8082 25.4891 -18.9182 26.645
+------------------------------
+
+Errors at time 0.054: 
+Task 'hipangle': pErr = -0.133489, vErr = 4.06584.
+
+Task 'lbackangle': pErr = 0.0392396, vErr = 9.72012.
+
+Task 'handleleft_out': pErr = -0.952873, vErr = -25.291.
+
+Task 'handleleft_trn': pErr = -0.0310201, vErr = 18.6303.
+
+Task 'handleleft_up': pErr = 0.176271, vErr = -26.8747.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.054, tfReal = 0.056
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 4.05985e-07
+Desired actuator forces:  43.1308 -164.984 164.984 32.0821 -0.608087 0.608087 325.506 718.764 -1101.02 -1.79504 -324.516 -534.369 455 7.41678 762.789 -762.844
+
+CMC::computeControls, root solve (tFinal = 0.056):
+ -- controls = 0.056
+
+CMC::computeControls, t = 0.056
+ -- step size = 0.00200000, target time = 0.058
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.117717 -0.633921 1.03415 0.0663652 0.429851 1.33998 0.242046 0.435925 0.185438 2.48093 -0.435925 -0.185438 3.03456 -2.28098 -3.27695 0 -0.492693 -0.660883 -2.72019 -0.423776 3.06872]
+ -- U = ~[0.789781 -4.2244 2.1686 0.570438 -3.68134 5.7126 -9.08662 15.7275 0.339395 9.39394 -15.7275 -0.339395 23.8383 -17.606 25.6446 -33.6166 -19.7379 33.8594 64.7769 -23.1416]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.853051 1.05619 0.0734735 -0.0734728 0.000313318 0.180426 -0.180424 0.305342 2.83398 1.5708 0.3 0.53575 -0.209221 -3.78155 -0.0303682 5.12065 1.97863 -2.35541 -3.16755
+ -- Udesired =  -2.37169e-21 0.583815 -1.36248 -0.370245 0.370282 -0.00714085 0.000978521 0.000954968 1.05896 -1.07907 0.00187439 -4.34467e-16 -0.792182 2.95402 -2.49453 -2.85455 0.866379 -2.41731 0.166396 1.84551
+ -- Qcorrection =  -0.117717 0.21913 -0.0220446 0.362452 -0.362453 0.0660518 0.00501244 -0.00501428 0.124509 -0.353055 -0.230815 -0.0579536 -1.02844 -0.451662 1.06136 -0.393408 -2.05193 1.05593 0.0744294 -0.109399
+ -- Ucorrection =  0.789781 -4.80821 3.53109 16.0977 -16.0978 0.577579 0.338417 -0.34035 -4.7403 10.473 5.71073 -9.08662 -32.8244 -22.6919 36.3539 67.6315 -24.008 26.2557 -17.7724 23.7991
+------------------------------
+
+Errors at time 0.056: 
+Task 'hipangle': pErr = -0.124509, vErr = 3.95259.
+
+Task 'lbackangle': pErr = 0.0579536, vErr = 9.28194.
+
+Task 'handleleft_out': pErr = -1.05593, vErr = -24.1085.
+
+Task 'handleleft_trn': pErr = -0.0744294, vErr = 17.72.
+
+Task 'handleleft_up': pErr = 0.109399, vErr = -25.7777.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.056, tfReal = 0.058
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 3.11332e-07
+Desired actuator forces:  -72.3828 -82.9759 82.9759 45.8618 -0.887957 0.887957 305.928 500.062 -875.967 287.207 -183.465 -511.085 524.437 304.146 610.263 -743.361
+
+CMC::computeControls, root solve (tFinal = 0.058):
+ -- controls = 0.058
+
+CMC::computeControls, t = 0.058
+ -- step size = 0.00200000, target time = 0.06
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.116099 -0.642321 1.03777 0.0675037 0.422622 1.35139 0.224374 0.467437 0.186127 2.49956 -0.467437 -0.186127 3.13927 -2.24389 -3.20122 0 -0.563516 -0.699559 -2.65509 -0.294198 3.02571]
+ -- U = ~[0.829081 -4.18164 1.42562 0.568749 -3.55278 5.70321 -8.60588 15.7642 0.349871 9.25598 -15.7642 -0.349871 22.5478 -16.786 24.593 -37.1743 -18.8473 31.461 64.722 -20.0698]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.851717 1.053 0.0725626 -0.0725618 0.000310153 0.180427 -0.180423 0.307719 2.83156 1.5708 0.3 0.534005 -0.2023 -3.78753 -0.037002 5.12289 1.97295 -2.35516 -3.1631
+ -- Udesired =  -3.89635e-21 0.668591 -1.60298 -0.459776 0.459948 0.00350978 -5.96612e-06 -6.84782e-06 1.18585 -1.21093 -0.000152904 5.96042e-15 -0.873212 3.47476 -3.00758 -3.32632 1.12766 -2.85011 0.118682 2.24488
+ -- Qcorrection =  -0.116099 0.209396 -0.0152323 0.394875 -0.394875 0.0671936 0.00570048 -0.00570483 0.114903 -0.331995 -0.21941 -0.0756261 -1.09752 -0.49726 1.13245 -0.257196 -2.09718 1.16632 0.111269 -0.0381175
+ -- Ucorrection =  0.829081 -4.85023 3.0286 16.224 -16.2241 0.565239 0.349877 -0.349864 -4.73863 10.4669 5.70336 -8.60588 -36.3011 -22.3221 34.4686 68.0484 -21.1974 25.3979 -16.9047 22.3481
+------------------------------
+
+Errors at time 0.058: 
+Task 'hipangle': pErr = -0.114903, vErr = 3.81916.
+
+Task 'lbackangle': pErr = 0.0756261, vErr = 8.81622.
+
+Task 'handleleft_out': pErr = -1.16632, vErr = -22.8261.
+
+Task 'handleleft_trn': pErr = -0.111269, vErr = 16.9342.
+
+Task 'handleleft_up': pErr = 0.0381175, vErr = -24.7324.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.058, tfReal = 0.06
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.80710e-07
+Desired actuator forces:  -209.204 -10.3891 10.3891 65.5816 -1.29616 1.29616 305.258 280.746 -589.775 651.604 -60.9801 -461.333 574.425 631.434 399.544 -654.846
+
+CMC::computeControls, root solve (tFinal = 0.06):
+ -- controls = 0.06
+
+CMC::computeControls, t = 0.06
+ -- step size = 0.00200000, target time = 0.062
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.114405 -0.650669 1.03975 0.068645 0.415625 1.36283 0.207529 0.498877 0.186837 2.518 -0.498877 -0.186837 3.24768 -2.21358 -3.11992 0 -0.64111 -0.735858 -2.59372 -0.165217 2.98779]
+ -- U = ~[0.862721 -4.17082 0.532194 0.574439 -3.44716 5.74237 -8.26605 15.6431 0.359932 9.18953 -15.6431 -0.359932 21.5569 -16.0535 23.4817 -40.3018 -17.336 29.9946 64.1723 -17.9681]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.850683 1.05063 0.071938 -0.0719365 0.000322541 0.180425 -0.180425 0.309594 2.82964 1.5708 0.3 0.532553 -0.197169 -3.79178 -0.0419785 5.12424 1.9688 -2.3548 -3.15992
+ -- Udesired =  -3.5293e-21 0.312681 -0.615035 -0.113107 0.113743 0.00728513 -0.00221013 -0.00215655 0.605659 -0.62513 -0.00380366 9.71445e-15 -0.525147 1.3384 -0.925186 -1.35618 0.0762826 -1.02249 0.257144 0.705279
+ -- Qcorrection =  -0.114404 0.200014 -0.0108848 0.426939 -0.426941 0.0683225 0.00641253 -0.00641262 0.10603 -0.311638 -0.207967 -0.0924709 -1.17366 -0.538689 1.19806 -0.123238 -2.13645 1.27888 0.14122 0.0400079
+ -- Ucorrection =  0.862721 -4.48351 1.14723 15.7562 -15.7568 0.567154 0.362142 -0.357775 -4.05282 9.81466 5.74617 -8.26605 -39.7766 -18.6744 30.9198 65.5285 -18.0444 22.5794 -16.3106 22.7765
+------------------------------
+
+Errors at time 0.06: 
+Task 'hipangle': pErr = -0.106030, vErr = 3.6844.
+
+Task 'lbackangle': pErr = 0.0924709, vErr = 8.41847.
+
+Task 'handleleft_out': pErr = -1.27888, vErr = -21.6662.
+
+Task 'handleleft_trn': pErr = -0.14122, vErr = 16.1718.
+
+Task 'handleleft_up': pErr = -0.0400079, vErr = -23.6983.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.06, tfReal = 0.062
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.42491e-07
+Desired actuator forces:  -247.823 7.48372 -7.48372 70.6156 -1.42518 1.42518 290.306 196.063 -386.797 767.864 -4.84563 -404.351 507.82 705.467 228.849 -531.5
+
+CMC::computeControls, root solve (tFinal = 0.062):
+ -- controls = 0.062
+
+CMC::computeControls, t = 0.062
+ -- step size = 0.00200000, target time = 0.064
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.112654 -0.659018 1.03983 0.0698065 0.408826 1.37438 0.191224 0.529907 0.187567 2.53635 -0.529907 -0.187567 3.35895 -2.18991 -3.03456 0 -0.724342 -0.768546 -2.53485 -0.0377593 2.95329]
+ -- U = ~[0.886888 -4.18114 -0.466815 0.587493 -3.35233 5.81715 -8.0543 15.3688 0.369628 9.16948 -15.3688 -0.369628 20.7699 -15.4223 22.4179 -42.8609 -15.2869 28.9143 63.2486 -16.6952]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.850491 1.0506 0.0721234 -0.0721203 0.000333346 0.180419 -0.18043 0.310109 2.8291 1.57079 0.3 0.531965 -0.197073 -3.79113 -0.0422744 5.1232 1.96898 -2.35416 -3.16035
+ -- Udesired =  -2.32369e-21 -0.0805305 0.457794 0.25344 -0.252672 0.00237335 -0.00327349 -0.00319269 -0.0241425 0.0163972 -0.00296767 1.08632e-14 -0.0867876 -0.986961 1.31638 0.841186 -0.969402 0.991848 0.359851 -0.931869
+ -- Qcorrection =  -0.112654 0.191473 -0.0107698 0.457784 -0.457787 0.0694731 0.00714803 -0.00713645 0.0987177 -0.292743 -0.196405 -0.108776 -1.25631 -0.571473 1.25628 0.00451514 -2.16991 1.38997 0.164248 0.125789
+ -- Ucorrection =  0.886888 -4.10061 -0.924608 15.1153 -15.1161 0.58512 0.372901 -0.366435 -3.32819 9.15309 5.82012 -8.0543 -42.7741 -14.3 27.5979 62.4074 -15.7258 19.778 -15.7821 23.3498
+------------------------------
+
+Errors at time 0.062: 
+Task 'hipangle': pErr = -0.0987177, vErr = 3.56077.
+
+Task 'lbackangle': pErr = 0.108776, vErr = 8.10909.
+
+Task 'handleleft_out': pErr = -1.38997, vErr = -20.6652.
+
+Task 'handleleft_trn': pErr = -0.164248, vErr = 15.4503.
+
+Task 'handleleft_up': pErr = -0.125789, vErr = -22.7004.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.062, tfReal = 0.064
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 1.84755e-07
+Desired actuator forces:  -208.031 -12.7323 12.7323 64.409 -1.3268 1.3268 275.096 248.198 -373.439 674.444 -9.59153 -396.343 381.704 569.484 199.302 -465.317
+
+CMC::computeControls, root solve (tFinal = 0.064):
+ -- controls = 0.064
+
+CMC::computeControls, t = 0.064
+ -- step size = 0.00200000, target time = 0.066
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.110856 -0.6674 1.03786 0.0709946 0.402217 1.38611 0.175287 0.56032 0.188316 2.55469 -0.56032 -0.188316 3.47177 -2.17259 -2.94662 0 -0.812476 -0.796842 -2.47796 0.0877184 2.92032]
+ -- U = ~[0.912837 -4.20058 -1.50734 0.599726 -3.25603 5.91261 -7.87946 15.0463 0.379318 9.16864 -15.0463 -0.379318 19.9368 -14.8755 21.4368 -45.3137 -12.9907 27.9982 62.2369 -16.4761]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.850747 1.05172 0.0726742 -0.0726701 0.000329625 0.180414 -0.180436 0.309921 2.82928 1.57079 0.3 0.532019 -0.199507 -3.78811 -0.0400284 5.12127 1.97143 -2.35353 -3.16243
+ -- Udesired =  -1.43431e-21 -0.104208 0.461875 0.22281 -0.222758 -0.00603534 -0.00140073 -0.0013657 -0.048615 0.0503188 0.00482063 1.01526e-14 0.0862021 -1.00869 1.27147 1.01469 -0.717732 1.09434 0.228276 -0.82345
+ -- Qcorrection =  -0.110856 0.183347 -0.013863 0.487646 -0.48765 0.0706649 0.0079021 -0.00788034 0.0922955 -0.274589 -0.184678 -0.124713 -1.3445 -0.597335 1.31015 0.127747 -2.20096 1.50033 0.180942 0.215809
+ -- Ucorrection =  0.912837 -4.09638 -1.96921 14.8235 -14.8235 0.605761 0.380718 -0.377952 -3.20742 9.11832 5.90779 -7.87946 -45.3999 -11.982 26.7267 61.2222 -15.7584 18.8424 -15.1037 22.2603
+------------------------------
+
+Errors at time 0.064: 
+Task 'hipangle': pErr = -0.0922955, vErr = 3.44355.
+
+Task 'lbackangle': pErr = 0.124713, vErr = 7.8112.
+
+Task 'handleleft_out': pErr = -1.50033, vErr = -19.6714.
+
+Task 'handleleft_trn': pErr = -0.180942, vErr = 14.7918.
+
+Task 'handleleft_up': pErr = -0.215809, vErr = -21.7171.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.064, tfReal = 0.066
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 1.79051e-07
+Desired actuator forces:  -169.513 -42.0169 42.0169 61.5343 -1.29407 1.29407 288.591 368.243 -489.518 591.98 -53.0986 -438.927 285.424 443.807 278.07 -463.916
+
+CMC::computeControls, root solve (tFinal = 0.066):
+ -- controls = 0.066
+
+CMC::computeControls, t = 0.066
+ -- step size = 0.00200000, target time = 0.068
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.108996 -0.675817 1.03377 0.072202 0.395812 1.39804 0.159739 0.590109 0.189084 2.57302 -0.590109 -0.189084 3.58411 -2.16131 -2.85789 0 -0.905823 -0.820429 -2.42292 0.211215 2.88657]
+ -- U = ~[0.948847 -4.21506 -2.5849 0.606893 -3.1457 6.01016 -7.65517 14.7488 0.389155 9.15587 -14.7488 -0.389155 18.9201 -14.3178 20.4413 -48.1094 -10.5751 26.9893 61.2648 -17.4769]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.85071 1.05187 0.0728109 -0.0728078 0.000312781 0.180414 -0.180435 0.310231 2.82897 1.57081 0.3 0.53214 -0.199871 -3.78724 -0.0393351 5.12094 1.97232 -2.35331 -3.16275
+ -- Udesired =  -6.67038e-22 0.153818 -0.34509 -0.0962246 0.0952109 -0.0090057 0.00201774 0.0019681 0.375911 -0.374457 0.0101021 6.32753e-15 0.0166748 0.723669 -0.467224 -0.402732 0.402995 -0.284724 0.00246812 0.544108
+ -- Qcorrection =  -0.108996 0.174892 -0.0180994 0.517298 -0.517301 0.0718893 0.0086699 -0.00864942 0.0855806 -0.255955 -0.172771 -0.140261 -1.43796 -0.620558 1.36432 0.25055 -2.23437 1.61179 0.192002 0.304859
+ -- Ucorrection =  0.948847 -4.36888 -2.23981 14.8451 -14.8441 0.615899 0.387137 -0.391123 -3.52161 9.53032 6.00006 -7.65517 -48.1261 -11.2988 27.4565 61.6676 -17.8799 19.2048 -14.3203 19.8972
+------------------------------
+
+Errors at time 0.066: 
+Task 'hipangle': pErr = -0.0855806, vErr = 3.31743.
+
+Task 'lbackangle': pErr = 0.140261, vErr = 7.45655.
+
+Task 'handleleft_out': pErr = -1.61179, vErr = -18.5916.
+
+Task 'handleleft_trn': pErr = -0.192002, vErr = 14.1646.
+
+Task 'handleleft_up': pErr = -0.304859, vErr = -20.6641.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.066, tfReal = 0.068
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.12070e-07
+Desired actuator forces:  -139.833 -69.962 69.962 60.9054 -1.30771 1.30771 309.387 498.042 -630.857 537.183 -110.208 -469.584 256.761 404.133 385.677 -484.366
+
+CMC::computeControls, root solve (tFinal = 0.068):
+ -- controls = 0.068
+
+CMC::computeControls, t = 0.068
+ -- step size = 0.00200000, target time = 0.07
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.107048 -0.684258 1.02747 0.0734172 0.389643 1.41016 0.144724 0.61933 0.189873 2.59131 -0.61933 -0.189873 3.69339 -2.15568 -2.77071 0 -1.00519 -0.839039 -2.37036 0.332792 2.84956]
+ -- U = ~[1.00396 -4.22694 -3.72777 0.606625 -3.02224 6.11404 -7.34498 14.4722 0.399155 9.13628 -14.4722 -0.399155 17.7725 -13.6565 19.3283 -51.3175 -8.00267 25.4414 60.3114 -19.7585]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.850236 1.05064 0.0724179 -0.0724174 0.000302774 0.18042 -0.180429 0.311239 2.82796 1.57082 0.3 0.53212 -0.197255 -3.78928 -0.0411313 5.12238 1.9708 -2.35334 -3.16084
+ -- Udesired =  9.56441e-22 0.269003 -0.739623 -0.2376 0.236294 0.00115159 0.00356418 0.00347595 0.54657 -0.558021 -0.000837348 -2.31741e-15 -0.0121469 1.57773 -1.24082 -1.13294 0.814976 -0.979336 0.0294331 1.1084
+ -- Qcorrection =  -0.107048 0.165978 -0.0231674 0.546912 -0.546912 0.0731144 0.00945208 -0.00944365 0.0784032 -0.236648 -0.160662 -0.155276 -1.53731 -0.641783 1.41892 0.373923 -2.27282 1.72259 0.197663 0.390126
+ -- Ucorrection =  1.00396 -4.49595 -2.98815 14.7098 -14.7085 0.605473 0.395591 -0.402631 -3.56881 9.6943 6.11488 -7.34498 -51.3054 -9.5804 26.6822 61.4443 -20.5735 18.7519 -13.6859 18.2199
+------------------------------
+
+Errors at time 0.068: 
+Task 'hipangle': pErr = -0.0784032, vErr = 3.18684.
+
+Task 'lbackangle': pErr = 0.155276, vErr = 7.06788.
+
+Task 'handleleft_out': pErr = -1.72259, vErr = -17.4828.
+
+Task 'handleleft_trn': pErr = -0.197663, vErr = 13.5436.
+
+Task 'handleleft_up': pErr = -0.390126, vErr = -19.5375.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.068, tfReal = 0.07
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.30555e-07
+Desired actuator forces:  -123.808 -88.5748 88.5748 61.9829 -1.35991 1.35991 323.232 595.881 -716.544 516.784 -171.209 -420.687 221.182 420.823 428.347 -429.293
+
+CMC::computeControls, root solve (tFinal = 0.07):
+ -- controls = 0.07
+
+CMC::computeControls, t = 0.07
+ -- step size = 0.00200000, target time = 0.072
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.104959 -0.692738 1.0188 0.0746207 0.383723 1.42252 0.130414 0.647987 0.190681 2.60959 -0.647987 -0.190681 3.79716 -2.15507 -2.6875 0 -1.11126 -0.852286 -2.32191 0.45247 2.80655]
+ -- U = ~[1.09198 -4.2579 -4.96503 0.594578 -2.89875 6.25743 -6.95265 14.1779 0.409391 9.15618 -14.1779 -0.409391 16.5947 -12.8973 18.1171 -54.769 -5.19917 22.756 59.3666 -23.5415]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.849837 1.04952 0.0721022 -0.0721036 0.000321401 0.180427 -0.180423 0.31208 2.82708 1.5708 0.3 0.532178 -0.194854 -3.79087 -0.0427971 5.12334 1.96944 -2.35297 -3.15938
+ -- Udesired =  3.08814e-21 0.0958703 -0.274008 -0.0336596 0.0331594 0.0166548 0.00202486 0.00197457 0.238844 -0.265117 -0.0204468 -1.249e-14 0.0764424 0.589409 -0.109265 -0.343505 -0.0142387 -0.194352 0.377533 0.156393
+ -- Qcorrection =  -0.104958 0.157099 -0.0307187 0.575885 -0.575883 0.0742993 0.0102546 -0.010258 0.0716423 -0.217487 -0.148279 -0.169586 -1.64344 -0.657433 1.46896 0.495267 -2.31679 1.82773 0.197899 0.471884
+ -- Ucorrection =  1.09198 -4.35377 -4.69102 14.2115 -14.211 0.577923 0.407366 -0.411365 -3.1376 9.4213 6.27787 -6.95265 -54.8455 -5.78857 22.8652 59.7101 -23.5273 16.7891 -13.2748 17.9607
+------------------------------
+
+Errors at time 0.07: 
+Task 'hipangle': pErr = -0.0716423, vErr = 3.07504.
+
+Task 'lbackangle': pErr = 0.169586, vErr = 6.72341.
+
+Task 'handleleft_out': pErr = -1.82773, vErr = -16.4233.
+
+Task 'handleleft_trn': pErr = -0.197899, vErr = 12.9646.
+
+Task 'handleleft_up': pErr = -0.471884, vErr = -18.4647.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.07, tfReal = 0.072
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.22693e-07
+Desired actuator forces:  -142.772 -95.4019 95.4019 71.2839 -1.59661 1.59661 348.72 666.758 -699.762 591.56 -254.305 -275.193 122.762 484.245 313.526 -257.9
+
+CMC::computeControls, root solve (tFinal = 0.072):
+ -- controls = 0.072
+
+CMC::computeControls, t = 0.072
+ -- step size = 0.00200000, target time = 0.074
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.102658 -0.70131 1.00753 0.0757885 0.378046 1.43523 0.116944 0.67599 0.19151 2.62798 -0.67599 -0.19151 3.89386 -2.15868 -2.60989 0 -1.22415 -0.859603 -2.28071 0.570209 2.75403]
+ -- U = ~[1.21346 -4.31946 -6.33128 0.572134 -2.77746 6.46145 -6.51393 13.8063 0.419759 9.23891 -13.8063 -0.419759 15.4335 -12.1429 16.9595 -58.033 -2.04905 17.9888 58.3416 -29.3827]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.849847 1.04959 0.0723093 -0.0723106 0.000355959 0.180428 -0.180422 0.312225 2.82688 1.57075 0.3 0.532337 -0.194986 -3.78964 -0.0424885 5.12222 1.97007 -2.35184 -3.16028
+ -- Udesired =  3.58507e-21 -0.0676943 0.254018 0.207948 -0.207392 0.0125196 -0.000475326 -0.000463694 -0.0232983 0.00470299 -0.0156861 -1.49769e-14 0.0330169 -0.525584 1.13144 0.467117 -0.983039 0.656955 0.71227 -0.891116
+ -- Qcorrection =  -0.102658 0.148536 -0.0420615 0.603681 -0.603679 0.0754325 0.0110823 -0.0110886 0.0658207 -0.198906 -0.135527 -0.183056 -1.75648 -0.664617 1.50893 0.612698 -2.36819 1.92379 0.19316 0.550385
+ -- Ucorrection =  1.21346 -4.25177 -6.5853 13.5984 -13.5989 0.559615 0.420234 -0.419295 -2.75416 9.2342 6.47713 -6.51393 -58.0661 -1.52346 16.8574 57.8745 -28.3996 14.7766 -12.8551 17.8507
+------------------------------
+
+Errors at time 0.072: 
+Task 'hipangle': pErr = -0.0658207, vErr = 2.98505.
+
+Task 'lbackangle': pErr = 0.183056, vErr = 6.46094.
+
+Task 'handleleft_out': pErr = -1.92379, vErr = -15.4181.
+
+Task 'handleleft_trn': pErr = -0.19316, vErr = 12.4603.
+
+Task 'handleleft_up': pErr = -0.550385, vErr = -17.546.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.072, tfReal = 0.074
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.34044e-07
+Desired actuator forces:  -204.883 -89.9497 89.9497 90.9588 -2.04969 2.04969 404.101 697.389 -572.816 775.215 -345.812 -91.3751 -15.2478 574.27 45.3883 -34.833
+
+CMC::computeControls, root solve (tFinal = 0.074):
+ -- controls = 0.074
+
+CMC::computeControls, t = 0.074
+ -- step size = 0.00200000, target time = 0.076
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.100097 -0.710026 0.993376 0.0769096 0.372623 1.44839 0.104347 0.703104 0.19236 2.64657 -0.703104 -0.19236 3.98303 -2.16571 -2.53831 0 -1.34272 -0.860189 -2.25232 0.68552 2.6871]
+ -- U = ~[1.34568 -4.39638 -7.84082 0.550447 -2.64131 6.70883 -6.09292 13.2739 0.429862 9.35014 -13.2739 -0.429862 14.3104 -11.5175 15.9985 -60.2882 1.53419 9.66458 56.8364 -38.1014]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.849882 1.04996 0.0727172 -0.0727169 0.000350859 0.180426 -0.180424 0.312385 2.82672 1.57076 0.3 0.53208 -0.195715 -3.78765 -0.0420453 5.12017 1.97103 -2.35037 -3.16192
+ -- Udesired =  1.01573e-21 0.091227 -0.0429108 0.138854 -0.137968 -0.0208459 -0.00135482 -0.00132129 0.283324 -0.267332 0.025796 -4.25956e-15 -0.33875 0.13543 0.500681 -0.320358 -0.848213 0.0179542 0.692883 -0.470786
+ -- Qcorrection =  -0.100097 0.139856 -0.0565804 0.630387 -0.630387 0.0765588 0.0119342 -0.0119361 0.060238 -0.180152 -0.122367 -0.195653 -1.8748 -0.664474 1.53533 0.727565 -2.43307 2.01201 0.184656 0.623615
+ -- Ucorrection =  1.34568 -4.4876 -7.79791 13.135 -13.1359 0.571292 0.431217 -0.428541 -2.92463 9.61747 6.68303 -6.09292 -59.9494 1.39876 9.16389 57.1568 -37.2531 14.2924 -12.2104 16.4693
+------------------------------
+
+Errors at time 0.074: 
+Task 'hipangle': pErr = -0.0602380, vErr = 2.88249.
+
+Task 'lbackangle': pErr = 0.195653, vErr = 6.231.
+
+Task 'handleleft_out': pErr = -2.01201, vErr = -14.4378.
+
+Task 'handleleft_trn': pErr = -0.184656, vErr = 11.9763.
+
+Task 'handleleft_up': pErr = -0.623615, vErr = -16.6582.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.074, tfReal = 0.076
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 2.62216e-07
+Desired actuator forces:  -234.502 -86.0398 86.0398 105.127 -2.44475 2.44475 410.78 757.907 -350.974 845.076 -434.59 88.7844 -89.7104 602.362 -342.839 115.783
+
+CMC::computeControls, root solve (tFinal = 0.076):
+ -- controls = 0.076
+
+CMC::computeControls, t = 0.076
+ -- step size = 0.00200000, target time = 0.078
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.0972855 -0.718894 0.97612 0.0779977 0.367502 1.46207 0.0925088 0.72891 0.193229 2.66537 -0.72891 -0.193229 4.06512 -2.17547 -2.47227 0 -1.4639 -0.853275 -2.24555 0.796709 2.59918]
+ -- U = ~[1.46126 -4.46883 -9.41036 0.540155 -2.47254 6.97409 -5.76818 12.4799 0.439383 9.44664 -12.4799 -0.439383 13.2925 -11.1143 15.2406 -60.4559 5.39401 -3.89194 54.0572 -50.4655]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.849325 1.04896 0.0726797 -0.072678 0.000277518 0.180424 -0.180426 0.313603 2.82556 1.57085 0.3 0.530911 -0.193481 -3.78867 -0.0445659 5.11952 1.96935 -2.34928 -3.16133
+ -- Udesired =  -2.84321e-21 0.471781 -0.983726 -0.194481 0.194905 -0.0453594 -0.000464725 -0.000453158 0.931562 -0.902982 0.049871 1.1926e-14 -0.80366 2.16461 -1.61052 -2.23254 0.279272 -1.74251 0.369186 1.1284
+ -- Qcorrection =  -0.0972855 0.130431 -0.0728426 0.65623 -0.656232 0.0777202 0.0128055 -0.0128036 0.0538995 -0.160187 -0.108772 -0.207491 -1.99482 -0.659794 1.54312 0.841274 -2.52034 2.09577 0.173806 0.689061
+ -- Ucorrection =  1.46126 -4.94062 -8.42664 12.6743 -12.6748 0.585514 0.439848 -0.43893 -3.40411 10.3496 6.92422 -5.76818 -59.6522 3.2294 -2.28142 56.2898 -50.7448 15.035 -11.4835 14.1122
+------------------------------
+
+Errors at time 0.076: 
+Task 'hipangle': pErr = -0.0538995, vErr = 2.72918.
+
+Task 'lbackangle': pErr = 0.207491, vErr = 5.97581.
+
+Task 'handleleft_out': pErr = -2.09577, vErr = -13.5080.
+
+Task 'handleleft_trn': pErr = -0.173806, vErr = 11.4533.
+
+Task 'handleleft_up': pErr = -0.689061, vErr = -15.5951.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.076, tfReal = 0.078
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 1.48083e-07
+Desired actuator forces:  -139.577 -68.8165 68.8165 69.8728 -1.65564 1.65564 263.461 554.344 -225.565 519.765 -340.577 265.376 -113.955 449.309 -390.761 217.221
+
+CMC::computeControls, root solve (tFinal = 0.078):
+ -- controls = 0.078
+
+CMC::computeControls, t = 0.078
+ -- step size = 0.00200000, target time = 0.08
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.094252 -0.727923 0.955837 0.0790679 0.362745 1.47634 0.0811756 0.752819 0.194118 2.68439 -0.752819 -0.194118 4.14101 -2.18731 -2.41106 0 -1.58286 -0.83878 -2.27196 0.900328 2.48249]
+ -- U = ~[1.57628 -4.57222 -10.8237 0.526712 -2.28344 7.31842 -5.593 11.377 0.449135 9.60186 -11.377 -0.449135 12.4654 -10.9169 14.5331 -58.0907 9.0054 -23.5205 49.1305 -66.901]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.848113 1.04624 0.071994 -0.0719921 0.000217354 0.180424 -0.180426 0.315838 2.82331 1.57089 0.3 0.52914 -0.187558 -3.79364 -0.0503963 5.12118 1.9645 -2.34886 -3.15774
+ -- Udesired =  -4.22669e-21 0.687524 -1.61861 -0.453909 0.45373 -0.000812789 0.000488532 0.000476374 1.19347 -1.24766 -0.0304112 1.7788e-14 -0.876062 3.49711 -3.09852 -3.33127 1.27021 -2.88179 0.0760639 2.27761
+ -- Qcorrection =  -0.0942519 0.12019 -0.0904059 0.680825 -0.680827 0.0788505 0.0136937 -0.013692 0.0469072 -0.13892 -0.0945443 -0.218824 -2.112 -0.651221 1.52167 0.950724 -2.63869 2.17651 0.161554 0.746679
+ -- Ucorrection =  1.57628 -5.25974 -9.20508 11.8309 -11.8308 0.527525 0.448647 -0.449612 -3.47691 10.8495 7.34883 -5.593 -57.2146 5.50829 -20.422 52.4618 -68.1712 15.3472 -10.993 12.2554
+------------------------------
+
+Errors at time 0.078: 
+Task 'hipangle': pErr = -0.0469072, vErr = 2.53555.
+
+Task 'lbackangle': pErr = 0.218824, vErr = 5.71929.
+
+Task 'handleleft_out': pErr = -2.17651, vErr = -12.6993.
+
+Task 'handleleft_trn': pErr = -0.161554, vErr = 10.9147.
+
+Task 'handleleft_up': pErr = -0.746679, vErr = -14.3786.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.078, tfReal = 0.08
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 6.5147e-08
+Desired actuator forces:  73.4164 -49.9741 49.9741 -15.0083 0.362909 -0.362909 -7.1549 139.838 -386.113 -109.449 -114.952 447.201 -206.507 224.246 6.38945 298.11
+
+CMC::computeControls, root solve (tFinal = 0.08):
+ -- controls = 0.08
+
+CMC::computeControls, t = 0.08
+ -- step size = 0.00200000, target time = 0.082
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.0909443 -0.73725 0.933086 0.0800788 0.358372 1.49149 0.07005 0.774242 0.195027 2.70391 -0.774242 -0.195027 4.21127 -2.20053 -2.35443 0 -1.69505 -0.817787 -2.34321 0.991326 2.32898]
+ -- U = ~[1.74479 -4.77634 -11.8482 0.47485 -2.08698 7.87072 -5.54843 10.0097 0.460924 9.95769 -10.0097 -0.460924 11.827 -10.7065 13.6659 -53.8871 11.8281 -48.4304 41.3384 -87.1473]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.846804 1.04304 0.0710513 -0.07105 0.000319729 0.180425 -0.180424 0.317924 2.82095 1.57065 0.3 0.527737 -0.180702 -3.79987 -0.0567129 5.12401 1.95886 -2.34882 -3.15313
+ -- Udesired =  -1.76465e-21 0.57292 -1.45598 -0.442082 0.441639 0.108825 0.000488142 0.000475715 0.80283 -1.03628 -0.220226 7.86408e-15 -0.472715 3.07896 -2.84791 -2.72592 1.40709 -2.52483 0.00449739 2.11042
+ -- Qcorrection =  -0.0909442 0.109554 -0.109954 0.703191 -0.703192 0.079759 0.0146022 -0.0146027 0.0404483 -0.117039 -0.0791613 -0.22995 -2.22279 -0.637085 1.45666 1.04804 -2.79503 2.25241 0.148295 0.798704
+ -- Ucorrection =  1.74479 -5.34926 -10.3922 10.4518 -10.4513 0.366025 0.460435 -0.461399 -2.88981 10.994 8.09094 -5.54843 -53.4143 8.74915 -45.5825 44.0643 -88.5543 14.3519 -10.711 11.5555
+------------------------------
+
+Errors at time 0.08: 
+Task 'hipangle': pErr = -0.0404483, vErr = 2.33204.
+
+Task 'lbackangle': pErr = 0.22995, vErr = 5.53379.
+
+Task 'handleleft_out': pErr = -2.25241, vErr = -12.0184.
+
+Task 'handleleft_trn': pErr = -0.148295, vErr = 10.3612.
+
+Task 'handleleft_up': pErr = -0.798704, vErr = -13.2714.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.08, tfReal = 0.082
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 3.75564e-07
+Desired actuator forces:  360.508 -36.9471 36.9471 -140.83 3.47428 -3.47428 -322.056 -457.536 -850.954 -856.002 153.131 740.364 -482.462 127.478 694.637 393.03
+
+CMC::computeControls, root solve (tFinal = 0.082):
+ -- controls = 0.082
+
+CMC::computeControls, t = 0.082
+ -- step size = 0.00200000, target time = 0.084
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.0871993 -0.747128 0.908741 0.0809184 0.354419 1.50804 0.0589669 0.792771 0.195964 2.72442 -0.792771 -0.195964 4.27573 -2.21452 -2.30298 0 -1.79828 -0.792062 -2.46741 1.06355 2.13229]
+ -- U = ~[2.02478 -5.13193 -12.4369 0.349225 -1.85671 8.75279 -5.52393 8.51084 0.476569 10.6095 -8.51084 -0.476569 11.267 -10.1811 12.6225 -49.4931 13.7794 -75.8548 30.3527 -109.744]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.845912 1.04074 0.0703613 -0.0703609 0.00063702 0.180425 -0.180424 0.318916 2.8193 1.57 0.3 0.527245 -0.175939 -3.80429 -0.0607308 5.12631 1.95499 -2.34875 -3.14985
+ -- Udesired =  2.3124e-21 0.323458 -0.815741 -0.230292 0.229958 0.195256 -4.78199e-05 -4.71475e-05 0.215959 -0.630213 -0.414335 -7.99287e-15 -0.0748424 1.63391 -1.51131 -1.28052 0.814171 -1.30491 0.0779457 1.1301
+ -- Qcorrection =  -0.0871993 0.0987839 -0.132002 0.722409 -0.72241 0.0802814 0.0155384 -0.0155398 0.0355028 -0.0948798 -0.0619597 -0.241033 -2.32552 -0.616124 1.33688 1.12428 -2.99402 2.32075 0.134227 0.846865
+ -- Ucorrection =  2.02478 -5.45539 -11.6211 8.74114 -8.7408 0.153969 0.476617 -0.476522 -2.07267 11.2397 9.16712 -5.52393 -49.4182 12.1455 -74.3435 31.6332 -110.558 12.5719 -10.259 11.4924
+------------------------------
+
+Errors at time 0.082: 
+Task 'hipangle': pErr = -0.0355028, vErr = 2.10904.
+
+Task 'lbackangle': pErr = 0.241033, vErr = 5.41769.
+
+Task 'handleleft_out': pErr = -2.32075, vErr = -11.3642.
+
+Task 'handleleft_trn': pErr = -0.134227, vErr = 9.69976.
+
+Task 'handleleft_up': pErr = -0.846865, vErr = -12.5177.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.082, tfReal = 0.084
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 1.76456e-06
+Desired actuator forces:  775.62 4.39554 -4.39554 -354.403 8.8843 -8.8843 -725.016 -1636.91 -1492.17 -1878.19 543.372 1390.02 -1091.42 237.921 1586.14 450.864
+
+CMC::computeControls, root solve (tFinal = 0.084):
+ -- controls = 0.084
+
+CMC::computeControls, t = 0.084
+ -- step size = 0.00200000, target time = 0.086
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.0826976 -0.757958 0.883462 0.0813864 0.351003 1.5269 0.0480403 0.808297 0.196938 2.7467 -0.808297 -0.196938 4.33376 -2.22908 -2.2576 0 -1.89446 -0.76289 -2.64523 1.11067 1.89027]
+ -- U = ~[2.52818 -5.75899 -12.8479 0.0889731 -1.53542 10.2492 -5.368 7.02239 0.49898 11.7846 -7.02239 -0.49898 10.642 -9.23299 11.6964 -47.2616 15.4216 -101.146 16.2336 -131.892]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.845421 1.03971 0.0701444 -0.0701444 0.00102891 0.180425 -0.180424 0.319039 2.81825 1.56907 0.3 0.527114 -0.173999 -3.806 -0.0621499 5.12712 1.95349 -2.34851 -3.14853
+ -- Udesired =  4.82526e-21 0.198127 -0.260023 0.0054672 -0.00552123 0.177505 -0.000307965 -0.000300705 -0.0138089 -0.479798 -0.498101 -1.65194e-14 -0.14048 0.411842 -0.281857 -0.271964 -0.00270727 -0.274344 0.149962 0.257267
+ -- Qcorrection =  -0.0826976 0.0874638 -0.156249 0.738153 -0.738153 0.0803575 0.0165129 -0.0165135 0.031964 -0.0715521 -0.0421643 -0.25196 -2.42158 -0.588891 1.16077 1.17282 -3.23685 2.38027 0.119439 0.890925
+ -- Ucorrection =  2.52818 -5.95712 -12.5879 7.01692 -7.01687 -0.0885314 0.499288 -0.49868 -1.52161 12.2644 10.7473 -5.368 -47.1212 15.0097 -100.864 16.5055 -131.889 10.9164 -9.38295 11.4391
+------------------------------
+
+Errors at time 0.084: 
+Task 'hipangle': pErr = -0.031964, vErr = 1.80949.
+
+Task 'lbackangle': pErr = 0.25196, vErr = 5.26010.
+
+Task 'handleleft_out': pErr = -2.38027, vErr = -10.5926.
+
+Task 'handleleft_trn': pErr = -0.119439, vErr = 8.87126.
+
+Task 'handleleft_up': pErr = -0.890925, vErr = -12.1392.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.084, tfReal = 0.086
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 9.75837e-06
+Desired actuator forces:  1671.39 209.303 -209.303 -909.004 22.9952 -22.9952 -1454.7 -5222.08 -2403.99 -4187.32 1507.94 3031.89 -2693.53 627.277 3505.96 105.052
+
+CMC::computeControls, root solve (tFinal = 0.086):
+ -- controls = 0.086
+
+CMC::computeControls, t = 0.086
+ -- step size = 0.00200000, target time = 0.088
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.0767398 -0.770615 0.857179 0.0810676 0.348439 1.55007 0.0376312 0.820835 0.19797 2.77242 -0.820835 -0.19797 4.38516 -2.24455 -2.21848 0 -1.99056 -0.729873 -2.86668 1.12625 1.60754]
+ -- U = ~[3.54844 -7.05574 -13.499 -0.480072 -0.947389 13.294 -5.01051 5.47626 0.536837 14.2414 -5.47626 -0.536837 10.0165 -8.11815 11.2934 -49.7592 17.8177 -118.366 -1.30233 -149.594]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.845016 1.03948 0.0703209 -0.0703207 0.00128734 0.180425 -0.180425 0.319126 2.8172 1.5681 0.3 0.526462 -0.173781 -3.80584 -0.0623589 5.12644 1.9535 -2.34816 -3.14848
+ -- Udesired =  4.3151e-21 0.22086 -0.0198106 0.150249 -0.150094 0.0734786 -0.000137357 -0.000133981 0.136673 -0.585472 -0.448785 -1.30066e-14 -0.517406 -0.0717623 0.343325 -0.0411526 -0.622923 0.191712 0.202928 -0.12961
+ -- Qcorrection =  -0.0767397 0.0744009 -0.182305 0.750514 -0.750514 0.0797803 0.0175456 -0.0175452 0.0293128 -0.0447758 -0.018034 -0.262369 -2.51702 -0.556091 0.939156 1.1886 -3.5189 2.43166 0.103617 0.930003
+ -- Ucorrection =  3.54844 -7.2766 -13.4792 5.32601 -5.32616 -0.55355 0.536975 -0.536703 -1.08406 14.8268 13.7428 -5.01051 -49.2418 17.8895 -118.71 -1.26118 -148.971 9.82481 -8.32108 11.423
+------------------------------
+
+Errors at time 0.086: 
+Task 'hipangle': pErr = -0.0293128, vErr = 1.24295.
+
+Task 'lbackangle': pErr = 0.262369, vErr = 4.96329.
+
+Task 'handleleft_out': pErr = -2.43166, vErr = -9.78804.
+
+Task 'handleleft_trn': pErr = -0.103617, vErr = 8.03642.
+
+Task 'handleleft_up': pErr = -0.930003, vErr = -12.0508.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.086, tfReal = 0.088
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 0.000200647
+Desired actuator forces:  6712.27 1459.36 -1459.36 -4273.71 107.986 -107.986 -4313.4 -27279.3 -7462.12 -17324.1 6569.06 11611 -12711 2747.47 16280.2 -2742.62
+
+CMC::computeControls, root solve (tFinal = 0.088):
+ -- controls = 0.088
+
+CMC::computeControls, t = 0.088
+ -- step size = 0.00200000, target time = 0.09
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.0670575 -0.788194 0.829285 0.078528 0.348035 1.58475 0.0280389 0.829573 0.199134 2.80751 -0.829573 -0.199134 4.43163 -2.26167 -2.18445 0 -2.10199 -0.690018 -3.11282 1.10248 1.29121]
+ -- U = ~[6.67356 -11.2686 -14.2291 -2.43306 1.12088 23.3383 -4.61921 2.88237 0.647314 22.2175 -2.88237 -0.647314 10.5032 -7.33481 11.5718 -63.8031 22.4461 -125.676 -23.4228 -166.234]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.844543 1.03946 0.0706548 -0.0706544 0.00132673 0.180425 -0.180425 0.319582 2.81596 1.56732 0.3 0.525221 -0.173891 -3.80495 -0.0625453 5.12495 1.95402 -2.34766 -3.14879
+ -- Udesired =  1.13873e-21 0.241398 -0.0320645 0.161041 -0.160938 -0.0266671 8.52157e-05 8.32713e-05 0.292411 -0.625424 -0.32831 -9.27406e-16 -0.648481 0.0389086 0.477101 -0.168747 -0.781782 0.286283 0.309781 -0.133291
+ -- Qcorrection =  -0.0670575 0.056349 -0.21018 0.758918 -0.758918 0.0772013 0.0187097 -0.0187093 0.0284527 -0.00844664 0.0174298 -0.271961 -2.62721 -0.516127 0.692134 1.16503 -3.83374 2.47761 0.0859909 0.964345
+ -- Ucorrection =  6.67356 -11.51 -14.197 2.72133 -2.72143 -2.40639 0.647229 -0.647398 0.828466 22.8429 23.6666 -4.61921 -63.1546 22.4072 -126.153 -23.254 -165.452 10.217 -7.6446 11.7051
+------------------------------
+
+Errors at time 0.088: 
+Task 'hipangle': pErr = -0.0284527, vErr = -0.824295.
+
+Task 'lbackangle': pErr = 0.271961, vErr = 4.63348.
+
+Task 'handleleft_out': pErr = -2.47761, vErr = -10.1407.
+
+Task 'handleleft_trn': pErr = -0.0859909, vErr = 7.53595.
+
+Task 'handleleft_up': pErr = -0.964345, vErr = -12.2063.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.088, tfReal = 0.09
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 0.00791089
+Desired actuator forces:  -33827.9 -8678.76 8678.76 27796.9 -682.797 682.797 -16125.2 184810 36544.3 84083.7 -24047.9 -43613.8 90676.8 -25468.7 -116277 37913.5
+
+CMC::computeControls, root solve (tFinal = 0.09):
+ -- controls = 0.09
+
+CMC::computeControls, t = 0.09
+ -- step size = 0.00200000, target time = 0.092
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.0598285 -0.801584 0.804344 0.0779142 0.350854 1.61368 0.0195397 0.834727 0.200215 2.83362 -0.834727 -0.200215 4.47376 -2.28171 -2.15442 0 -2.1813 -0.65232 -3.29329 1.04827 1.06801]
+ -- U = ~[-4.33384 4.8495 -10.6892 5.28742 -1.60328 -10.9491 -3.34239 4.56982 0.245475 -9.34584 -4.56982 -0.245475 4.8186 -5.52183 13.5117 8.81736 10.8778 -34.1532 -22.5678 -18.569]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.844094 1.03925 0.0708853 -0.0708849 0.00122244 0.180425 -0.180425 0.320158 2.81482 1.56677 0.3 0.524165 -0.173385 -3.80417 -0.0630792 5.12364 1.95449 -2.34689 -3.14885
+ -- Udesired =  -2.97785e-21 0.201984 -0.210153 0.0540673 -0.0542359 -0.0664715 0.000108242 0.000105637 0.253144 -0.49083 -0.233453 1.249e-14 -0.355531 0.513806 0.240917 -0.379157 -0.456186 0.138235 0.463287 0.111032
+ -- Qcorrection =  -0.0598284 0.0425101 -0.234903 0.763841 -0.763842 0.0766918 0.01979 -0.01979 0.0306957 0.0188003 0.0469098 -0.28046 -2.70546 -0.478935 0.510883 1.11135 -4.05563 2.51928 0.0651843 0.994427
+ -- Ucorrection =  -4.33384 4.64751 -10.479 4.51575 -4.51558 5.35389 0.245367 -0.245581 -1.85643 -8.85501 -10.7157 -3.34239 9.17289 10.364 -34.3942 -22.1886 -18.1128 4.68036 -5.98512 13.4007
+------------------------------
+
+Errors at time 0.09: 
+Task 'hipangle': pErr = -0.0306957, vErr = 1.86907.
+
+Task 'lbackangle': pErr = 0.280460, vErr = 3.36367.
+
+Task 'handleleft_out': pErr = -2.51928, vErr = -4.46191.
+
+Task 'handleleft_trn': pErr = -0.0651843, vErr = 5.86582.
+
+Task 'handleleft_up': pErr = -0.994427, vErr = -13.7783.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.09, tfReal = 0.092
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 3.63463e-05
+Desired actuator forces:  -1935 -441.86 441.86 1904.96 -46.6569 46.6569 -3729.01 12604.1 2213.92 4477.08 -976.467 -1291.14 6377.52 -2132.78 -8176.97 2632.35
+
+CMC::computeControls, root solve (tFinal = 0.092):
+ -- controls = 0.092
+
+CMC::computeControls, t = 0.092
+ -- step size = 0.00200000, target time = 0.094
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.0867441 -0.764356 0.784619 0.101179 0.349498 1.53845 0.01684 0.848395 0.199995 2.75975 -0.848395 -0.199995 4.48695 -2.30977 -2.13277 0 -2.06215 -0.643724 -3.27109 1.01952 1.19978]
+ -- U = ~[-18.8898 27.3009 -8.92924 15.2688 5.53891 -49.9557 0.313468 6.88003 -0.330069 -55.4947 -6.88003 0.330069 -4.61792 -2.20688 16.0453 92.8232 1.98783 36.3458 -10.2521 118.001]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.843704 1.03853 0.0708376 -0.0708378 0.00109588 0.180425 -0.180425 0.320555 2.81395 1.5663 0.3 0.52381 -0.171685 -3.80426 -0.0642014 5.12329 1.95433 -2.34587 -3.1482
+ -- Udesired =  -5.26484e-21 0.20904 -0.523454 -0.102482 0.102129 -0.0546003 5.0226e-06 4.79287e-06 0.156775 -0.428224 -0.271171 1.82454e-14 -0.0467104 1.21198 -0.403588 -0.796533 0.120611 -0.360949 0.53387 0.568306
+ -- Qcorrection =  -0.0867441 0.0793473 -0.253914 0.777557 -0.777557 0.100083 0.0195701 -0.0195703 0.0289421 -0.0541989 -0.0278477 -0.28316 -2.58596 -0.472039 0.533177 1.08372 -3.92351 2.53262 0.0360944 1.01543
+ -- Ucorrection =  -18.8898 27.0919 -8.40578 6.98251 -6.98216 15.3234 -0.330074 0.330064 5.38214 -55.0664 -49.6846 0.313468 92.8699 0.775843 36.7494 -9.4556 117.88 -4.25697 -2.74075 15.477
+------------------------------
+
+Errors at time 0.092: 
+Task 'hipangle': pErr = -0.0289421, vErr = -5.31982.
+
+Task 'lbackangle': pErr = 0.28316, vErr = -0.345457.
+
+Task 'handleleft_out': pErr = -2.53262, vErr = 4.83103.
+
+Task 'handleleft_trn': pErr = -0.0360944, vErr = 2.49451.
+
+Task 'handleleft_up': pErr = -1.01543, vErr = -15.9983.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.092, tfReal = 0.094
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 0.0203914
+Desired actuator forces:  50376.5 17718.5 -17718.5 -43939.9 1399.14 -1399.14 -57951.6 -295650 -60889.6 -125878 25546.2 41268.7 -155129 50290.3 186481 -66160.4
+
+CMC::computeControls, root solve (tFinal = 0.094):
+ -- controls = 0.094
+
+CMC::computeControls, t = 0.094
+ -- step size = 0.00200000, target time = 0.096
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.108216 -0.73355 0.749059 0.121592 0.360037 1.48543 0.017594 0.861221 0.19998 2.69619 -0.861221 -0.19998 4.4837 -2.33859 -2.11958 0 -2.01338 -0.608823 -3.30928 0.950605 1.22284]
+ -- U = ~[6.95768 -11.3884 -36.1706 -0.716005 -5.26867 18.5443 -0.838944 6.92148 0.727655 23.8129 -6.92148 -0.727655 -9.51234 -0.126905 13.1325 -121.408 45.582 -117.586 -86.5069 -197.305]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.843162 1.03711 0.0705002 -0.070501 0.00101481 0.180425 -0.180425 0.320882 2.8129 1.56558 0.3 0.523689 -0.168523 -3.80598 -0.0664548 5.12406 1.95282 -2.34488 -3.1465
+ -- Udesired =  -3.86723e-21 0.353511 -0.891184 -0.222367 0.222178 -0.026013 -5.32442e-05 -5.2063e-05 0.197373 -0.662475 -0.468035 1.13176e-14 -0.151717 1.9231 -1.32363 -1.47883 0.607748 -1.16725 0.425494 1.13249
+ -- Qcorrection =  -0.108216 0.109612 -0.288054 0.79072 -0.79072 0.120577 0.0195554 -0.0195555 0.0391549 -0.116718 -0.0801508 -0.282406 -2.53706 -0.4403 0.496698 1.01706 -3.90123 2.53087 0.00628676 1.02692
+ -- Ucorrection =  6.95768 -11.7419 -35.2794 7.14385 -7.14366 -0.689992 0.727708 -0.727603 -5.46604 24.4754 19.0123 -0.838944 -121.256 43.6589 -116.262 -85.0281 -197.913 -8.3451 -0.552399 12
+------------------------------
+
+Errors at time 0.094: 
+Task 'hipangle': pErr = -0.0391549, vErr = 5.47067.
+
+Task 'lbackangle': pErr = 0.282406, vErr = 0.752271.
+
+Task 'handleleft_out': pErr = -2.53087, vErr = 9.59384.
+
+Task 'handleleft_trn': pErr = -0.00628676, vErr = 0.220710.
+
+Task 'handleleft_up': pErr = -1.02692, vErr = -12.9783.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.094, tfReal = 0.096
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 4.09576e-06
+Desired actuator forces:  -36.9729 406.751 -406.751 -370.039 14.1888 -14.1888 -1195.98 -3008.34 -662.206 -784.342 7.40965 2421.33 -3427.97 258.744 -1152.34 -2418.56
+
+CMC::computeControls, root solve (tFinal = 0.096):
+ -- controls = 0.096
+
+CMC::computeControls, t = 0.096
+ -- step size = 0.00200000, target time = 0.098
+------------------------------
+CMC::computeControls, summary:
+------------------------------
+ -- Q = ~[-0.0628525 -0.804397 0.649714 0.0994803 0.351862 1.6201 0.00668715 0.847512 0.202871 2.83903 -0.847512 -0.202871 4.46218 -2.36458 -2.13707 0 -2.41366 -0.432388 -3.52733 0.610815 0.743395]
+ -- U = ~[27.9435 -42.4619 -52.5802 -15.3262 16.416 97.7978 -7.92509 -23.8236 1.7515 81.3818 23.8236 -1.7515 2.10713 19.9303 10.8627 -197.557 119.051 -59.1197 -220.861 -173.893]
+ -- Z = ~[]
+ -- Qdesired =  -6e-08 -0.842263 1.03509 0.0700199 -0.0700207 0.000987956 0.180425 -0.180425 0.321419 2.81121 1.56441 0.3 0.522991 -0.164272 -3.80933 -0.0699884 5.12546 1.94984 -2.34423 -3.14383
+ -- Udesired =  2.11052e-22 0.531379 -1.07687 -0.235411 0.235642 -0.00269546 -2.66832e-05 -2.60396e-05 0.341921 -1.01994 -0.681157 -3.65041e-15 -0.556536 2.20962 -1.88674 -1.95262 0.706927 -1.69647 0.231214 1.45611
+ -- Qcorrection =  -0.0628524 0.0378658 -0.385373 0.777492 -0.777491 0.0984923 0.0224459 -0.0224458 0.0304426 0.0278258 0.0556872 -0.293313 -2.93665 -0.268116 0.282003 0.680803 -4.38207 2.51234 -0.0203585 1.00676
+ -- Ucorrection =  27.9435 -42.9933 -51.5033 -23.5882 23.588 -15.3235 1.75153 -1.75148 16.0741 82.4017 98.479 -7.92509 -197 116.842 -57.233 -218.908 -174.6 3.8036 19.6991 9.40663
+------------------------------
+
+Errors at time 0.096: 
+Task 'hipangle': pErr = -0.0304426, vErr = -16.1665.
+
+Task 'lbackangle': pErr = 0.293313, vErr = 7.8483.
+
+Task 'handleleft_out': pErr = -2.51234, vErr = -1.98544.
+
+Task 'handleleft_trn': pErr = 0.0203585, vErr = -20.0259.
+
+Task 'handleleft_up': pErr = -1.00676, vErr = -10.7977.
+
+xmin:  -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000 -10000
+xmax:  10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000
+
+tiReal = 0.096, tfReal = 0.098
+Min forces:  -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10 -3e+10
+Max forces:  3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10 3e+10
+
+performance = 0.213471
+Desired actuator forces:  -102351 33281.4 -33281.4 159000 -5049.85 5049.86 -345928 981560 199000 70434 12650.4 190718 578542 -352764 -462007 215377
+
+CMC::computeControls, root solve (tFinal = 0.098):
+ -- controls = 0.098
+
+-------------------------------------------
+Finished tracking the specified kinematics.
+-------------------------------------------
+ -- States = ~[-5.99982e-08 -0.788261 0.865697 7.72544e-05 0.311311 1.56165 0.3 0.109549 0.180425 2.82149 -0.109547 -0.180424 2.65199 -2.63596 -3.4864 0 0.885975 -0.158183 -4.35641 -0.424463 4.80968 -1.54407e-21 0.240049 -0.112026 0.00932742 0.195891 -0.331951 0.217739 -0.0354271 4.03562e-06 -0.527842 0.0354271 -4.03562e-06 0.0403828 0.101552 0.0712005 -0.555043 0.383935 0.344508 -0.274975 0.338718]
+ -- Start time = Tue Nov 12 15:22:28 2024
+ -- Finish time = Tue Nov 12 15:22:30 2024
+ -- Elapsed time = 2.0 seconds.
+-------------------------------------------
+
+Printing results of investigation CMC_row_subject to /home/sietse/Roeien/Modelling/OpenSim/MyCode/BootBaan1/ResultsCMC

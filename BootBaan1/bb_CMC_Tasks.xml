@@ -48,7 +48,6 @@
 		</CMC_Joint>
 	</defaults>
 	<objects>
-	  <!--  Most use default values  -->
 <!--
 		<CMC_Joint name='bJoint_3'>
 		  <on>true</on>
@@ -61,17 +60,38 @@
 		  <coordinate>bJoint_4</coordinate>
 		</CMC_Joint>
 -->
-<!-- Kinematic loop: hipangle, kneeangle, footangle, seatpos -->
+<!-- Kinematic loop in the leg: seatpos, kneeangle, footangle, hipangle
+		<CMC_Joint name='seatpos'>
+		  <on> true </on>
+		  <weight> 1000.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>seatpos</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='kneeangle'>
+		  <on> true </on>
+		  <weight> 1000.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>kneeangle</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='footangle'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>footangle</coordinate>
+		</CMC_Joint>
+-->
 		<CMC_Joint name='hipangle'>
 		  <on> true </on>
 		  <weight> 1000.00000000  1.00000000  1.00000000 </weight>
 		  <coordinate>hipangle</coordinate>
 		</CMC_Joint>
+		<!-- lbackangle in both arm-kinematic loops -->
 		<CMC_Joint name='lbackangle'>
 		  <on>true</on>
 		  <weight> 10000.00000000  1.00000000  1.00000000 </weight>
 		  <coordinate>lbackangle</coordinate>
 		</CMC_Joint>
+
+<!-- Kinematic loop in the left arm: 
+-->
+<!--
 		<CMC_Joint name='uarmleft_out'>
 		  <on>true</on>
 		  <weight> 10000.00000000  1.00000000  1.00000000 </weight>
@@ -87,6 +107,48 @@
 		  <weight> 10000.00000000  1.00000000  1.00000000 </weight>
 		  <coordinate>uarmleft_up</coordinate>
 		</CMC_Joint>
+-->
+		  <CMC_Joint name='handleleft_out'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>handleleft_out</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='handleleft_trn'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>handleleft_trn</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='handleleft_up'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>handleleft_up</coordinate>
+		</CMC_Joint>
+<!--
+		<CMC_Joint name='se_inout'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>se_inout</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='se_updown'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>se_updown</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='slocangle'>
+		  <on> true </on>
+		  <weight> 1000.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>slocangle</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='soarinout'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>soarinout</coordinate>
+		</CMC_Joint>
+-->
+
+<!-- Kinematic loop in the right arm:
+-->
+<!--
 		<CMC_Joint name='uarmright_out'>
 		  <on>true</on>
 		  <weight> 10000.00000000  1.00000000  1.00000000 </weight>
@@ -102,6 +164,43 @@
 		  <weight> 10000.00000000  1.00000000  1.00000000 </weight>
 		  <coordinate>uarmright_up</coordinate>
 		</CMC_Joint>
+
+		<CMC_Joint name='handleright_out'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>handleright_out</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='handleright_trn'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>handleright_trn</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='handleright_up'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>handleright_up</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='pe_inout'>
+		  <on> true </on>
+		<weight> 1.00000000  1.00000000  1.00000000 </weight>
+		<coordinate>pe_inout</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='pe_updown'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>pe_updown</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='plocangle'>
+		  <on> true </on>
+		  <weight> 1000.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>plocangle</coordinate>
+		</CMC_Joint>
+		<CMC_Joint name='poarinout'>
+		  <on> true </on>
+		  <weight> 1.00000000  1.00000000  1.00000000 </weight>
+		  <coordinate>poarinout</coordinate>
+		</CMC_Joint>
+-->
 	</objects>
 		<groups/>
 	</CMC_TaskSet>

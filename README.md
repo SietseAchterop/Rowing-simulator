@@ -22,10 +22,12 @@ First working version with partial person.
 ## BootBaan1
 
 First complete person without friction in the blades
+Work in progress
 
 ## BootBaan2
 
 Firt complete person with friction in the blade. Our first rower in action!
+Work in progress
 
 ## BootBaan
 
