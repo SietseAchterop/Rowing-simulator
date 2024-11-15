@@ -10,11 +10,9 @@
 		<!--Markers and coordinates to be considered (tasks) and their weightings.-->
 		<IKTaskSet name="bootbaan_IK">
 			<objects>
-<!--
 				<IKMarkerTask name="mBoat">
 					<weight>1.0</weight>
 				</IKMarkerTask>
--->
 				<IKMarkerTask name="mSeat">
 					<weight>1.0</weight>
 				</IKMarkerTask>

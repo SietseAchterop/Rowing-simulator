@@ -248,10 +248,12 @@ bbaan.addJoint(boatJoint)
 """
 act = osim.CoordinateActuator('bJoint_3')
 act.setName('bJ_act_3')
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 act = osim.CoordinateActuator('bJoint_4')
 act.setName('bJ_act_4')
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 """
 
@@ -278,12 +280,13 @@ bbaan.addJoint(seatJoint)
 coord = seatJoint.updCoordinate()
 coord.setName('seatpos')
 coord.setRangeMin(-(ulegl+llegl))
-coord.setRangeMax(0.0)
+coord.setRangeMax(0.1)
 coord.setDefaultValue(math.radians(-0.4226))
 
-#act = osim.CoordinateActuator('seatpos')
-#act.setName('seatact')
-#bbaan.addForce(act)
+act = osim.CoordinateActuator('seatpos')
+act.setName('seatact')
+act.set_optimal_force(10000)
+bbaan.addForce(act)
 
 bowJoint = osim.WeldJoint("bowJoint",
                           theBoat,
@@ -323,8 +326,7 @@ coord.set_clamped(True)
 
 act = osim.CoordinateActuator('slocangle')
 act.setName('slocact')
-act.set_optimal_force(3000000)
-
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 soarJoint = osim.PinJoint("starboardoarJoint",
@@ -338,14 +340,13 @@ bbaan.addJoint(soarJoint)
 coord = soarJoint.updCoordinate()
 coord.setName('soarinout')
 coord.setRangeMin(0.0)
-coord.setRangeMax(0.4)
+coord.setRangeMax(0.5)
 coord.setDefaultValue(math.radians(10.9))
 coord.set_clamped(True)
 
 act = osim.CoordinateActuator('soarinout')
 act.setName('soarinoutact')
-act.set_optimal_force(3000000)
-
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 sbladeJoint = osim.PinJoint("starboardbladeJoint",
@@ -358,14 +359,14 @@ sbladeJoint = osim.PinJoint("starboardbladeJoint",
 bbaan.addJoint(sbladeJoint)
 coord = sbladeJoint.updCoordinate()
 coord.setName('sblpos')
-coord.setRangeMin(-0.4)
+coord.setRangeMin(-0.6)
 coord.setRangeMax(0.1)
 #coord.setDefaultValue(math.radians(2.345))
 coord.set_clamped(True)
 
 act = osim.CoordinateActuator('sblpos')
 act.setName('sblact')
-act.set_optimal_force(3000000)
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 """ Port joints    """
@@ -396,8 +397,7 @@ coord.set_clamped(True)
 
 act = osim.CoordinateActuator('plocangle')
 act.setName('plocact')
-act.set_optimal_force(3000000)
-
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 poarJoint = osim.PinJoint("portoarJoint",
@@ -418,8 +418,7 @@ coord.set_clamped(True)
 
 act = osim.CoordinateActuator('poarinout')
 act.setName('poarinoutact')
-act.set_optimal_force(3000000)
-
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 pbladeJoint = osim.PinJoint("portbladeJoint",
@@ -432,15 +431,14 @@ pbladeJoint = osim.PinJoint("portbladeJoint",
 bbaan.addJoint(pbladeJoint)
 coord = pbladeJoint.updCoordinate()
 coord.setName('pblpos')
-coord.setRangeMin(-0.4)
+coord.setRangeMin(-0.6)
 coord.setRangeMax(0.1)
 #coord.setDefaultValue(math.radians(2.345))
 coord.set_clamped(True)
 
 act = osim.CoordinateActuator('pblpos')
 act.setName('pblact')
-act.set_optimal_force(3000000)
-
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 """       The Rower                              """
@@ -579,7 +577,7 @@ coord.set_clamped(True)
 
 act = osim.CoordinateActuator('hipangle')
 act.setName('hipact')
-act.set_optimal_force(3000000)
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 kneeJoint = osim.PinJoint("knee_Joint",
@@ -608,9 +606,10 @@ osim.CoordinateLimitForce('kneeangle',
                            2.0)
 """
 
-#act = osim.CoordinateActuator('kneeangle')
-#act.setName('kneeact')
-#bbaan.addForce(act)
+act = osim.CoordinateActuator('kneeangle')
+act.setName('kneeact')
+act.set_optimal_force(10000)
+bbaan.addForce(act)
 
 footJoint = osim.PinJoint("foot_Joint",
                           stretcher,
@@ -628,9 +627,10 @@ coord.setRangeMax(pi/2)
 coord.setDefaultValue(math.radians(5))
 coord.set_clamped(True)
 
-#act = osim.CoordinateActuator('footangle')
-#act.setName('footact')
-#bbaan.addForce(act)
+act = osim.CoordinateActuator('footangle')
+act.setName('footact')
+act.set_optimal_force(10000)
+bbaan.addForce(act)
 
 lbackJoint = osim.PinJoint("lbackJoint",
                            seat,
@@ -649,8 +649,7 @@ coord.set_clamped(True)
 
 act = osim.CoordinateActuator('lbackangle')
 act.setName('lbackact')
-act.set_optimal_force(3000000)
-
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 # Eventually will become a PinJoint
@@ -726,15 +725,15 @@ coord.setDefaultValue(math.radians(0))
 
 act = osim.CoordinateActuator('uarmleft_out')
 act.setName('ualo_act')
-act.set_optimal_force(3000000)
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 act = osim.CoordinateActuator('uarmleft_trn')
 act.setName('ualt_act')
-act.set_optimal_force(3000000)
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 act = osim.CoordinateActuator('uarmleft_up')
 act.setName('ualu_act')
-act.set_optimal_force(3000000)
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 larmltf = osim.SpatialTransform()
@@ -760,12 +759,12 @@ bbaan.addJoint(larmlJoint)
 
 act = osim.CoordinateActuator('se_inout')
 act.setName('sinout_act')
-act.set_optimal_force(3000000)
+act.set_optimal_force(10000)
 
 bbaan.addForce(act)
 act = osim.CoordinateActuator('se_updown')
 act.setName('supdown_act')
-act.set_optimal_force(3000000)
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 handlelJoint = osim.BallJoint("handle_left_Joint",
@@ -788,15 +787,15 @@ coord.setName('handleleft_up')
 
 act = osim.CoordinateActuator('handleleft_out')
 act.setName('hlout_act')
-act.set_optimal_force(3000000)
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 act = osim.CoordinateActuator('handleleft_trn')
 act.setName('hltrn_act')
-act.set_optimal_force(3000000)
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 act = osim.CoordinateActuator('handleleft_up')
 act.setName('hlup_act')
-act.set_optimal_force(3000000)
+act.set_optimal_force(10000)
 bbaan.addForce(act)
 
 
@@ -913,7 +912,8 @@ bbaan.addConstraint(constraint2)
 """      Markers                                 """
 ####################################################
 
-mboat = osim.Marker(markers[0], theBoat, osim.Vec3(0, 0, 0))
+# vreemd, zonder de 0.1 is de onderarm "gebroken".
+mboat = osim.Marker(markers[0], theBoat, osim.Vec3(0.1, 0, 0))
 bbaan.addMarker(mboat)
 
 mseat = osim.Marker(markers[1], seat, osim.Vec3(0))
@@ -931,12 +931,12 @@ bbaan.addMarker(mpelbow)
 """
 mshandle = osim.Marker(markers[6], soar, osim.Vec3(0, (outboard+inbhand)/2, 0))
 bbaan.addMarker(mshandle)
-"""
+
 
 mphandle = osim.Marker(markers[5], poar, osim.Vec3(0, (outboard+inbhand)/2, 0))
 bbaan.addMarker(mphandle)
 """
-
+"""
 """      The rest                                """
 ####################################################
 

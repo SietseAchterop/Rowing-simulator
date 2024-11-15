@@ -23,9 +23,9 @@ strokepart = 1/3  # part of time that is a stroke. 1/3 means a stroke/recover ra
 # we leave 1 step(s) for both exit and entry.
 #      maybe 2 at 100 Hz
 # time steps for each complete cycle
-totalsteps = int(60/strokerate*Hz)
+totalsteps = int((60/strokerate) * Hz)
+stroketime = int((60/strokerate) * Hz * strokepart)
 strokestart = 0
-stroketime = int(60/strokerate*strokepart*Hz)
 strokeend = stroketime - 1
 recoverstart = stroketime
 recoverend = totalsteps - 1
@@ -70,7 +70,7 @@ elbowangle_end = 3/4*pi
 
     3. benen rug armen
         elleboog kan richting handle hoogte gaan. maar ook naar buiten. kies voorlopig 45 graden naar buiten.
-        hand op bol rond elleboog snijf handle cirkel
+        hand op bol rond elleboog snijd handle cirkel
 
     4. rug armen
         als 3
@@ -83,6 +83,8 @@ elbowangle_end = 3/4*pi
          arm/handle:
             gestrekte arm: bol vanuit schouder
             gebogen arm: bepaal plaats elleboog en dan bol vanuit elleboog
+
+    Recover doen we voorlopig zelfde maar omgekeerde volgorde
     """
 
 # when are legs, back and arms used in the stroke as percentage of the stroke
@@ -94,7 +96,7 @@ a_st  = 50
 a_end = 100
 # for recover we go backwards with (at least) a different b_end.
 
-# the current position (one line in the trc file)
+# the current marker positions (one line in the trc file)
 position = np.zeros((nmbrmarkers, 3))
 
 

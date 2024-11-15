@@ -891,7 +891,7 @@
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
 							<default_value>-0.0073757614189280361</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
-							<range>-0.93000000000000016 0</range>
+							<range>-0.93000000000000016 0.10000000000000001</range>
 						</Coordinate>
 					</coordinates>
 					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
@@ -1067,7 +1067,7 @@
 							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
 							<default_value>0.19024088846738194</default_value>
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
-							<range>0 0.40000000000000002</range>
+							<range>0 0.5</range>
 							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
 							<clamped>true</clamped>
 						</Coordinate>
@@ -1115,7 +1115,7 @@
 					<coordinates>
 						<Coordinate name="sblpos">
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
-							<range>-0.40000000000000002 0.10000000000000001</range>
+							<range>-0.59999999999999998 0.10000000000000001</range>
 							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
 							<clamped>true</clamped>
 						</Coordinate>
@@ -1302,7 +1302,7 @@
 					<coordinates>
 						<Coordinate name="pblpos">
 							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
-							<range>-0.40000000000000002 0.10000000000000001</range>
+							<range>-0.59999999999999998 0.10000000000000001</range>
 							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
 							<clamped>true</clamped>
 						</Coordinate>
@@ -2032,101 +2032,119 @@
 		<!--Forces in the model (includes Actuators).-->
 		<ForceSet name="forceset">
 			<objects>
+				<CoordinateActuator name="seatact">
+					<!--Name of the generalized coordinate to which the actuator applies.-->
+					<coordinate>seatpos</coordinate>
+					<!--The maximum generalized force produced by this actuator.-->
+					<optimal_force>10000</optimal_force>
+				</CoordinateActuator>
 				<CoordinateActuator name="slocact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>slocangle</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="soarinoutact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>soarinout</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="sblact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>sblpos</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="plocact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>plocangle</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="poarinoutact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>poarinout</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="pblact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>pblpos</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="hipact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>hipangle</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
+				</CoordinateActuator>
+				<CoordinateActuator name="kneeact">
+					<!--Name of the generalized coordinate to which the actuator applies.-->
+					<coordinate>kneeangle</coordinate>
+					<!--The maximum generalized force produced by this actuator.-->
+					<optimal_force>10000</optimal_force>
+				</CoordinateActuator>
+				<CoordinateActuator name="footact">
+					<!--Name of the generalized coordinate to which the actuator applies.-->
+					<coordinate>footangle</coordinate>
+					<!--The maximum generalized force produced by this actuator.-->
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="lbackact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>lbackangle</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="ualo_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>uarmleft_out</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="ualt_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>uarmleft_trn</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="ualu_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>uarmleft_up</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="sinout_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>se_inout</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="supdown_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>se_updown</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="hlout_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>handleleft_out</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="hltrn_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>handleleft_trn</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="hlup_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>handleleft_up</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>3000000</optimal_force>
+					<optimal_force>10000</optimal_force>
 				</CoordinateActuator>
 			</objects>
 			<groups />
@@ -2138,7 +2156,7 @@
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/TheBoat</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 0 0</location>
+					<location>0.10000000000000001 0 0</location>
 				</Marker>
 				<Marker name="mSeat">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
@@ -2161,6 +2179,12 @@
 				<Marker name="msHandle">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/StarboardOar</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 1.405 0</location>
+				</Marker>
+				<Marker name="mpHandle">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/PortOar</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
 					<location>0 1.405 0</location>
 				</Marker>
