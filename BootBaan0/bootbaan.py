@@ -127,14 +127,10 @@ act.set_optimal_force(10000)
 bbaan.addForce(act)
 """
 
-stretcherJoint = osim.WeldJoint("stretcherJoint",
-                                theBoat,
-                                osim.Vec3(0, boatHeight/2, 0),
-                                osim.Vec3(0, 0, 0),
-                                stretcher,
-                                osim.Vec3(0, 0, 0),
-                                osim.Vec3(0, 0, 0))
-bbaan.addJoint(stretcherJoint)
+# close the loop between boat and stretcher
+boatconstraint = osim.WeldConstraint("boatconstraint", theBoat, osim.Transform(osim.Vec3(0, boatHeight/2, 0)), stretcher, osim.Transform(osim.Vec3(0, 0, 0)))
+bbaan.addConstraint(boatconstraint)
+
 
 # seat with stretched leg
 legangle = math.asin(seatHeight/(ulegl+llegl))
@@ -171,26 +167,16 @@ bbaan.addJoint(bowJoint)
 """       The Rower                              """
 ####################################################
 
-# Lower leg (split in 2 to create a WeldContraint)
-lower_l = osim.Body("Lower_leg_lower",
-                  llegw/2,
+# Lower leg
+lower_l = osim.Body("Lower_leg",
+                  llegw,
                   osim.Vec3(0, 0, 0),
                   osim.Inertia(1, 1, 1))
 
-lowerGeometry_l = osim.Cylinder(0.05, llegl/4)
+lowerGeometry_l = osim.Cylinder(0.05, llegl/2)
 lower_l.attachGeometry(lowerGeometry_l)
 lowerGeometry_l.setColor(osim.Vec3(1, 1, 1))
 bbaan.addBody(lower_l)
-
-lower_u = osim.Body("Lower_leg_upper",
-                  llegw/2,
-                  osim.Vec3(0, 0, 0),
-                  osim.Inertia(1, 1, 1))
-
-lowerGeometry_u = osim.Cylinder(0.05, llegl/4)
-lower_u.attachGeometry(lowerGeometry_u)
-lowerGeometry_u.setColor(osim.Vec3(1, 1, 1))
-bbaan.addBody(lower_u)
 
 # Upper leg
 upper = osim.Body("Upper_leg",
@@ -302,8 +288,8 @@ kneeJoint = osim.PinJoint("knee_Joint",
                           upper,
                           osim.Vec3(0, ulegl/2, 0),
                           osim.Vec3(0, 0, 0),
-                          lower_u,
-                          osim.Vec3(0, -llegl/4, 0),
+                          lower_l,
+                          osim.Vec3(0, -llegl/2, 0),
                           osim.Vec3(0, 0, 0))
 bbaan.addJoint(kneeJoint)
 
@@ -334,7 +320,7 @@ footJoint = osim.PinJoint("foot_Joint",
                           osim.Vec3(0, seatHeight/2, 0),
                           osim.Vec3(0, 0, pi/2),
                           lower_l,
-                          osim.Vec3(0, llegl/4, 0),
+                          osim.Vec3(0, llegl/2, 0),
                           osim.Vec3(0, 0, 0))
 bbaan.addJoint(footJoint)
 
@@ -579,11 +565,6 @@ act.set_stiffness(1)
 act.set_viscosity(1)
 bbaan.addForce(act)
 """
-
-# close the loop in the lower leg
-legconstraint = osim.WeldConstraint("legconstraint", lower_l, osim.Transform(osim.Vec3(0, -llegl/4, 0)), lower_u, osim.Transform(osim.Vec3(0, llegl/4, 0)))
-bbaan.addConstraint(legconstraint)
-
 
 """  Contact Geometry   en ElasticFoundationForce()
        maakt niet uit

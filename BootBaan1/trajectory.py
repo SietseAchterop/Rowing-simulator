@@ -8,6 +8,8 @@ from bb_common import *
 """     Create the rowing motion and write to a trc (track row column) file
           we pretend the boat is not moving.
 
+Dit moet duidelijk nog een keertje overnieuw! Zie mBoat marker positie
+
         All heigths are wrt the boat frame.
 """
 
@@ -231,7 +233,8 @@ def calc_pos(pos, blheight, bbaan, time):
     elbowangle = elbowangle_b+ea*(elbowangle_e-elbowangle_b)/100
 
     """  Markers   """
-    setPosition('mBoat', (0, 0, 0))
+    # waarom de 0.1 nodig, anders gebroken onderarm...?
+    #setPosition('mBoat', (-0.1, 0, 0))
 
     ''' Seat position   '''
     # knee position
