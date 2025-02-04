@@ -19,6 +19,7 @@
 #include <OpenSim/Simulation/Model/PhysicalOffsetFrame.h>
 
 #include <OpenSim/Simulation/Model/Force.h>
+#include <OpenSim/Simulation/Model/ForceProducer.h>
 #include <OpenSim/Simulation/Model/PrescribedForce.h>
 #include <OpenSim/Simulation/Model/CoordinateLimitForce.h>
 #include <OpenSim/Simulation/Model/ExternalForce.h>
@@ -53,6 +54,7 @@
 #include <OpenSim/Simulation/Control/ControlLinear.h>
 #include <OpenSim/Simulation/Control/Controller.h>
 #include <OpenSim/Simulation/Control/PrescribedController.h>
+#include <OpenSim/Simulation/Control/SynergyController.h>
 #include <OpenSim/Simulation/Manager/Manager.h>
 #include <OpenSim/Simulation/Model/Analysis.h>
 #include <OpenSim/Simulation/Model/AnalysisSet.h>
@@ -101,6 +103,7 @@
 #include <OpenSim/Simulation/SimbodyEngine/UniversalJoint.h>
 #include <OpenSim/Simulation/SimbodyEngine/PlanarJoint.h>
 #include <OpenSim/Simulation/SimbodyEngine/ScapulothoracicJoint.h>
+#include <OpenSim/Simulation/SimbodyEngine/ConstantCurvatureJoint.h>
 #include <OpenSim/Simulation/Model/JointSet.h>
 
 #include <OpenSim/Simulation/Model/Marker.h>
@@ -110,7 +113,9 @@
 #include <OpenSim/Simulation/Model/ConditionalPathPoint.h>
 #include <OpenSim/Simulation/Model/MovingPathPoint.h>
 #include <OpenSim/Simulation/Model/PointForceDirection.h>
+#include <OpenSim/Simulation/Model/AbstractGeometryPath.h>
 #include <OpenSim/Simulation/Model/GeometryPath.h>
+#include <OpenSim/Simulation/Model/FunctionBasedPath.h>
 #include <OpenSim/Simulation/Model/Ligament.h>
 #include <OpenSim/Simulation/Model/Blankevoort1991Ligament.h>
 
@@ -145,6 +150,7 @@
 #include <OpenSim/Simulation/OpenSense/IMU.h>
 #include <OpenSim/Simulation/OpenSense/OpenSenseUtilities.h>
 
+#include <OpenSim/Simulation/StatesDocument.h>
 #include <OpenSim/Simulation/StatesTrajectory.h>
 #include <OpenSim/Simulation/StatesTrajectoryReporter.h>
 

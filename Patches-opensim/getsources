@@ -1,0 +1,28 @@
+#!/bin/bash
+#   Ad hoc script to build opensim from source
+#   part 1: get the sources
+set -e
+
+# change this for a different location
+OPENSIM_DIR=/home/sietse/Software/OpenSim
+if [ `pwd` != $OPENSIM_DIR ]
+then
+    echo This script should be executed from $OPENSIM_DIR
+    echo Exiting.
+    exit 0
+fi
+cd ${OPENSIM_DIR}
+
+#     Get sources   
+git clone             https://github.com/opensim-org/opensim-core.git
+git clone --recursive https://github.com/opensim-org/opensim-gui.git
+
+#   I install Simbody separately because of the changes for BladeForce
+git clone             https://github.com/simbody/simbody.git
+
+echo Now is the time to patch the sources.
+echo    Use patch!
+echo =====================================
+
+
+

@@ -1,0 +1,22 @@
+#!/bin/bash
+#   Ad hoc script to build opensim from source
+#   part 1: get the sources
+set -e
+
+# change this for a different location
+OPENSIM_DIR=/home/sietse/Software/OpenSim
+cd ${OPENSIM_DIR}
+
+echo ====== met patch doen!
+
+exit 0
+# de vraag is of dit goed gaat!
+
+if [ -d Patches-opensim ]
+then
+    # Add patches
+    cp -r Patches-opensim/opensim-core .
+    cp -r Patches-opensim/simbody .
+fi
+
+

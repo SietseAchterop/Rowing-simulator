@@ -1,5 +1,5 @@
-#ifndef SimTK_SIMBODY_MYE_FOUNDATION_FORCE_H_
-#define SimTK_SIMBODY_MYE_FOUNDATION_FORCE_H_
+#ifndef SimTK_SIMBODY_BLADE_FORCE_H_
+#define SimTK_SIMBODY_BLADE_FORCE_H_
 
 /* -------------------------------------------------------------------------- *
  *                               Simbody(tm)                                  *
@@ -130,4 +130,4 @@ public:
 
 } // namespace SimTK
 
-#endif // SimTK_SIMBODY_MYE_FOUNDATION_FORCE_H_
+#endif // SimTK_SIMBODY_BLADE_FORCE_H_

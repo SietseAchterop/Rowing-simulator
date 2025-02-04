@@ -30,9 +30,8 @@
 #include <map>
 #include <set>
 
-// SATEST
+// Added SA
 using  namespace std;
-
 
 namespace SimTK {
 
@@ -98,7 +97,6 @@ void BladeForceImpl::calcForce
     Vector_<Vec3>& particleForces, Vector& mobilityForces) const 
 {
     const Array_<Contact>& contacts = subsystem.getContacts(state, set);
-
     Real& pe = Value<Real>::updDowncast
                 (subsystem.updCacheEntry(state, energyCacheIndex));
     pe = 0.0;
@@ -120,17 +118,15 @@ void BladeForceImpl::calcForce
 
             const TriangleMeshContact& contact = 
                 static_cast<const TriangleMeshContact&>(contacts[i]);
-
             processContact(state, contact.getSurface1(), 
                 contact.getSurface2(), iter1->second, 
                 contact.getSurface1Faces(), areaScale, bodyForces, pe);
-            }
+        }
 
         // Only this branch will be taken
         if (iter2 != parameters.end()) {
             const TriangleMeshContact& contact = 
                 static_cast<const TriangleMeshContact&>(contacts[i]);
-
             processContact(state, contact.getSurface2(), 
                 contact.getSurface1(), iter2->second, 
                 contact.getSurface2Faces(), areaScale, bodyForces, pe);
@@ -151,7 +147,6 @@ void BladeForceImpl::processContact
     const Transform t1g = body1.getBodyTransform(state)*subsystem.getBodyTransform(set, meshIndex); // mesh to ground
     const Transform t2g = body2.getBodyTransform(state)*subsystem.getBodyTransform(set, otherBodyIndex); // other object to ground
     const Transform t12 = ~t2g*t1g; // mesh to other object
-
 
     const Vec3 body1_pos = body1.getBodyOriginLocation(state);
     const Rotation body1_rot = body1.getBodyRotation(state);
@@ -178,6 +173,7 @@ void BladeForceImpl::processContact
 
     // Loop over all the springs, and evaluate the force from each one.
     int eenmaal = 1;
+
     for (std::set<int>::const_iterator iter = insideFaces.begin(); 
                                        iter != insideFaces.end(); ++iter) {
         int face = *iter;
@@ -189,7 +185,7 @@ void BladeForceImpl::processContact
         
         // Find how much the spring is displaced.
 
-	nearestPoint = t2g*nearestPoint;
+        nearestPoint = t2g*nearestPoint;
         const Vec3 springPosInGround = t1g*param.springPosition[face];
         const Vec3 displacement = nearestPoint-springPosInGround;
         const Real distance = displacement.norm();
@@ -198,17 +194,19 @@ void BladeForceImpl::processContact
         const Vec3 forceDir = displacement/distance;
         
         // Calculate the relative velocity of the two bodies at the contact point.
-
+        
         const Vec3 station1 = body1.findStationAtGroundPoint(state, nearestPoint);
         const Vec3 station2 = body2.findStationAtGroundPoint(state, nearestPoint);
         // als ik gebruik maak van dat de mesh een brick is?
         //   en dat body2 ground is? dus v2 == 0
-        const Vec3 v1 = body1.findStationVelocityInGround(state, station1);           
+        const Vec3 v1 = body1.findStationVelocityInGround(state, station1);
         const Vec3 v2 = body2.findStationVelocityInGround(state, station2);
         const Vec3 v = v2-v1;
         const Real vnormal = dot(v, forceDir);
         const Vec3 vtangent = v-vnormal*forceDir;
-
+        
+        // Calculate the damping force.
+        
         // Set param values according to angle
         // parameters in the direction of the blade
         const Real stblade = 1e9, disblade = 0.8, statfblade = 0.01, dynfblade = 0.01, viscblade = 0.01, transvblade = 0.02;
@@ -225,14 +223,12 @@ void BladeForceImpl::processContact
 	  //cout << "Parameters: angle: " << angle << " stiffness: " << stiffness << " dissipation " << dissip << " staticF " << staticf << " dynamicF " << dynamf << " viscousF " << viscf  << " transV " << transvel << endl;
 	}
 
-        // Calculate the damping force.
-
         const Real area = areaScale * param.springArea[face];
         const Real f = stiffness*area*distance*(1+dissip*vnormal);
         Vec3 force = (f > 0 ? f*forceDir : Vec3(0));
         
         // Calculate the friction force.
-
+        
         const Real vslip = vtangent.norm();
         if (f > 0 && vslip != 0) {
             const Real vrel = vslip/transvel;
@@ -242,7 +238,7 @@ void BladeForceImpl::processContact
                  /(1+vrel*vrel))+viscf*vslip);
             force += ffriction*vtangent/vslip;
         }
-	
+
         body1.applyForceToBodyPoint(state, station1, force, bodyForces);
         body2.applyForceToBodyPoint(state, station2, -force, bodyForces);
         pe += param.stiffness*area*displacement.normSqr()/2;

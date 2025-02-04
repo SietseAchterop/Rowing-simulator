@@ -1,0 +1,31 @@
+#!/bin/bash
+#   Ad hoc script to build opensim from source
+#   Part 3: compile it all
+set -e
+
+BUILD_TYPE="Release"
+MOCO="ON"
+
+# change this for a different location
+OPENSIM_DIR=/home/sietse/Software/OpenSim
+cd ${OPENSIM_DIR}
+
+# test for previous install?
+if [ -d ${OPENSIM_DIR}/opensim ]
+then
+    echo "Directory ${OPENSIM_DIR}/opensim exists on your filesystem."
+    echo "   Consider removing it before continuing."
+    #exit 1
+fi
+
+# We first build simbody, outside of opensim to make patching/rebuilding it easier.
+export SIMBODY_HOME=/usr/local
+
+cd ${OPENSIM_DIR}/build_core
+cmake  ../opensim-core -DOPENSIM_DEPENDENCIES_DIR=${OPENSIM_DIR}/opensim_dependencies_install -DBUILD_JAVA_WRAPPING=on -DBUILD_PYTHON_WRAPPING=on -DOPENSIM_C3D_PARSER=ezc3d -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DCMAKE_INSTALL_PREFIX=${OPENSIM_DIR}/opensim-core-install  -DOPENSIM_INSTALL_UNIX_FHS=OFF -DOPENSIM_DOXYGEN_USE_MATHJAX=off
+cmake . -LAH
+cmake --build . --config Release 
+cmake --install .
+
+echo ==== done building core ====
+

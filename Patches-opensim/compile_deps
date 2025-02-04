@@ -1,0 +1,35 @@
+#!/bin/bash
+#   Ad hoc script to build opensim from source
+#   Part 2: get all dependencies
+set -e
+
+BUILD_TYPE="Release"
+MOCO="ON"
+TESTING="OFF"
+
+#  swig moet versie 4.1.1 zijn.
+
+# change this for a different location
+OPENSIM_DIR=/home/sietse/Software/OpenSim
+cd ${OPENSIM_DIR}
+
+if [ ! -d build ]
+then
+    mkdir build build_deps build_core build_simbody
+fi
+
+# We first build simbody, outside of opensim to make patching/rebuilding it easier.
+export SIMBODY_HOME=/usr/local
+
+cd build_simbody
+cmake ../simbody -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DBUILD_TESTING=${TESTING}
+make -j8
+sudo make install
+
+cd ${OPENSIM_DIR}/build_deps
+cmake ../opensim-core/dependencies -DCMAKE_INSTALL_PREFIX=${OPENSIM_DIR}/opensim_dependencies_install  -DSUPERBUILD_ezc3d=ON -DOPENSIM_WITH_TROPTER=$MOCO -DOPENSIM_WITH_CASADI=$MOCO -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DSUPERBUILD_simbody=OFF
+cmake . -LAH
+cmake --build . --config Release
+
+echo ==== done  getdeps ====
+

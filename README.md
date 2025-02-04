@@ -19,24 +19,27 @@ There also is a version with muscles.
 
 First working version with partial person.
 
+  - osim- and trc-files are created via the python scripts.
+  - The mot file is created using the IK tool.
+
 ## BootBaan1
 
-First complete person without friction in the blades.
+First complete person. There are two trajectories, one with blades "above the water", so no friction and one with the blades "in the water".
+The value of blheight, line 38 in trajectory.py, determines the trajectory, 0.05 of 0.00 respectively.
+The blade only use normal friction, but it should basically work.
 Work in progress.
+
+<img src="BootBaan1/das_boot.png" alt="das Boot" width="800"/>
 
 ## BootBaan2
 
-Firt complete person with friction in the blade. Our first rower in action!
+We now use a special BladeForce component that mimics the real blade much better. Needs the patches mentioned below.
 Work in progress.
 
-## BootBaan
+## BootBaan3
 
-Contains a first version of a boat with a rower. No muscles yet, only actuators on the joints.
-
-<img src="BootBaan/bootbaan_snapshot.png" alt="bootbaan_image" width="800"/>
-
-  - Osim and trc files are created via the python scripts.
-  - The mot file is created using the IK tool.
+Version with muscles.
+Not yet.
 
 
 ## Patches-opensim

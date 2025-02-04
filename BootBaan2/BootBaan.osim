@@ -2521,44 +2521,44 @@
 					<!--Slip velocity (creep) at which peak static friction occurs.-->
 					<transition_velocity>0.02</transition_velocity>
 				</ElasticFoundationForce>
-				<ElasticFoundationForce name="SBlad">
+				<BladeForce name="SBlad">
 					<!--Material properties.-->
-					<ElasticFoundationForce::ContactParametersSet name="contact_parameters">
+					<BladeForce::ContactParametersSet name="contact_parameters">
 						<objects>
-							<ElasticFoundationForce::ContactParameters>
+							<BladeForce::ContactParameters>
 								<!--Names of geometry objects affected by these parameters.-->
 								<geometry>sblad baan</geometry>
 								<stiffness>50000</stiffness>
 								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>1.1000000000000001</static_friction>
-								<dynamic_friction>1.1000000000000001</dynamic_friction>
-								<viscous_friction>1.04</viscous_friction>
-							</ElasticFoundationForce::ContactParameters>
+								<static_friction>0.40000000000000002</static_friction>
+								<dynamic_friction>0.40000000000000002</dynamic_friction>
+								<viscous_friction>0.44</viscous_friction>
+							</BladeForce::ContactParameters>
 						</objects>
 						<groups />
-					</ElasticFoundationForce::ContactParametersSet>
+					</BladeForce::ContactParametersSet>
 					<!--Slip velocity (creep) at which peak static friction occurs.-->
 					<transition_velocity>0.02</transition_velocity>
-				</ElasticFoundationForce>
-				<ElasticFoundationForce name="PBlad">
+				</BladeForce>
+				<BladeForce name="PBlad">
 					<!--Material properties.-->
-					<ElasticFoundationForce::ContactParametersSet name="contact_parameters">
+					<BladeForce::ContactParametersSet name="contact_parameters">
 						<objects>
-							<ElasticFoundationForce::ContactParameters>
+							<BladeForce::ContactParameters>
 								<!--Names of geometry objects affected by these parameters.-->
 								<geometry>pblad baan</geometry>
 								<stiffness>50000</stiffness>
 								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>1.1000000000000001</static_friction>
-								<dynamic_friction>1.1000000000000001</dynamic_friction>
-								<viscous_friction>1.04</viscous_friction>
-							</ElasticFoundationForce::ContactParameters>
+								<static_friction>0.40000000000000002</static_friction>
+								<dynamic_friction>0.40000000000000002</dynamic_friction>
+								<viscous_friction>0.44</viscous_friction>
+							</BladeForce::ContactParameters>
 						</objects>
 						<groups />
-					</ElasticFoundationForce::ContactParametersSet>
+					</BladeForce::ContactParametersSet>
 					<!--Slip velocity (creep) at which peak static friction occurs.-->
 					<transition_velocity>0.02</transition_velocity>
-				</ElasticFoundationForce>
+				</BladeForce>
 			</objects>
 			<groups />
 		</ForceSet>

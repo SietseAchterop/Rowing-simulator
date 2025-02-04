@@ -118,12 +118,12 @@ bbaan.addJoint(boatJoint)
 """
 act = osim.CoordinateActuator('bJoint_3')
 act.setName('bJ_act_3')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 
 act = osim.CoordinateActuator('bJoint_4')
 act.setName('bJ_act_4')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 """
 
@@ -151,7 +151,7 @@ coord.setDefaultValue(math.radians(-0.4226))
 
 act = osim.CoordinateActuator('seatpos')
 act.setName('seatact')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 
 bowJoint = osim.WeldJoint("bowJoint",
@@ -281,7 +281,7 @@ coord.set_clamped(True)
 
 act = osim.CoordinateActuator('hipangle')
 act.setName('hipact')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 
 kneeJoint = osim.PinJoint("knee_Joint",
@@ -312,7 +312,7 @@ osim.CoordinateLimitForce('kneeangle',
 
 act = osim.CoordinateActuator('kneeangle')
 act.setName('kneeact')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 
 footJoint = osim.PinJoint("foot_Joint",
@@ -333,7 +333,7 @@ coord.set_clamped(True)
 
 act = osim.CoordinateActuator('footangle')
 act.setName('footact')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 
 lbackJoint = osim.PinJoint("lbackJoint",
@@ -353,7 +353,7 @@ coord.set_clamped(True)
 
 act = osim.CoordinateActuator('lbackangle')
 act.setName('lbackact')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 
 # Eventually will become a PinJoint
@@ -429,15 +429,15 @@ coord.setDefaultValue(math.radians(0))
 
 act = osim.CoordinateActuator('uarmleft_out')
 act.setName('ualo_act')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 act = osim.CoordinateActuator('uarmleft_trn')
 act.setName('ualt_act')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 act = osim.CoordinateActuator('uarmleft_up')
 act.setName('ualu_act')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 
 """
@@ -485,15 +485,15 @@ coord.setDefaultValue(math.radians(0))
 
 act = osim.CoordinateActuator('uarmright_out')
 act.setName('uaro_act')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 act = osim.CoordinateActuator('uarmright_trn')
 act.setName('uart_act')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 act = osim.CoordinateActuator('uarmright_up')
 act.setName('uaru_act')
-act.set_optimal_force(10000)
+act.set_optimal_force(1)
 bbaan.addForce(act)
 
 #  alle demping hier ivm vergelijk met Delft. Zinnig?

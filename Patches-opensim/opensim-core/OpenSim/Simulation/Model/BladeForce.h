@@ -1,5 +1,5 @@
-#ifndef OPENSIM_MYEF_FOUNDATION_FORCE_H_
-#define OPENSIM_MYEF_FOUNDATION_FORCE_H_
+#ifndef OPENSIM_BLADE_FORCE_H_
+#define OPENSIM_BLADE_FORCE_H_
 /* -------------------------------------------------------------------------- *
  *                     OpenSim:  BladeForce.h                     *
  * -------------------------------------------------------------------------- *
@@ -185,4 +185,4 @@ private:
 
 } // end of namespace OpenSim
 
-#endif // OPENSIM_ELASTIC_FOUNDATION_FORCE_H_
+#endif // OPENSIM_BLADE_FORCE_H_

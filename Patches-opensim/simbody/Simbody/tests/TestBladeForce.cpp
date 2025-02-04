@@ -77,7 +77,7 @@ int main() {
     RungeKuttaMersonIntegrator integ(system);
     TimeStepper ts(system, integ);
     ts.initialize(state);
-    ts.stepTo(4.0);
+    ts.stepTo(10.0);
 
 
   } catch (const std::exception& e) {

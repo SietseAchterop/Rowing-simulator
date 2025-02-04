@@ -1215,67 +1215,67 @@
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>seatpos</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="hipact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>hipangle</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="kneeact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>kneeangle</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="footact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>footangle</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="lbackact">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>lbackangle</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="ualo_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>uarmleft_out</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="ualt_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>uarmleft_trn</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="ualu_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>uarmleft_up</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="uaro_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>uarmright_out</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="uart_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>uarmright_trn</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 				<CoordinateActuator name="uaru_act">
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>uarmright_up</coordinate>
 					<!--The maximum generalized force produced by this actuator.-->
-					<optimal_force>10000</optimal_force>
+					<optimal_force>1</optimal_force>
 				</CoordinateActuator>
 			</objects>
 			<groups />

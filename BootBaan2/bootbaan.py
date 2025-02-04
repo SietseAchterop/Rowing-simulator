@@ -1108,16 +1108,17 @@ bbaan.addForce(e_1)
 # Blade values in the direction of the blade
 # from BladeForce.cpp:       const Real stblade = 1e9, disblade = 0.8, statfblade = 0.01, dynfblade = 0.01, viscblade = 0.01, transvblade = 0.02;
 
+# for perpendicular to the blade
 stiffness           = 50000;
 dissipation         = 0.8;
-staticFriction      = 1.1;
-dynamicFriction     = 1.1;
-viscousFriction     = 1.04;
+staticFriction      = 0.4;
+dynamicFriction     = 0.4;
+viscousFriction     = 0.44;
 transitionVelocity  = 0.02;
 
-#e_2 = osim.BladeForce()
+e_2 = osim.BladeForce()
 # voorlopig
-e_2 = osim.ElasticFoundationForce()
+#e_2 = osim.ElasticFoundationForce()
 e_2.setName('SBlad')
 e_2.addGeometry('sblad')
 e_2.addGeometry('baan')
@@ -1129,9 +1130,9 @@ e_2.setViscousFriction(viscousFriction)
 e_2.setTransitionVelocity(transitionVelocity)
 bbaan.addForce(e_2)
 
-#e_3 = osim.BladeForce()
+e_3 = osim.BladeForce()
 # voorlopig
-e_3 = osim.ElasticFoundationForce()
+#e_3 = osim.ElasticFoundationForce()
 e_3.setName('PBlad')
 e_3.addGeometry('pblad')
 e_3.addGeometry('baan')

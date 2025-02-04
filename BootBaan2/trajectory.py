@@ -36,7 +36,7 @@ print("TIMES: ", totalsteps, stroketime)
 nmbrstrokes = 3
 #  height of (middle of) blade above the water
 blheight = 0.00   # blade in the water
-#blheight = 0.05   # blade above the water
+#blheight = 0.03   # blade above the water
 
 """ position of the rower is determined by 4 values:
       1. height of the blade above the water

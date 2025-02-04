@@ -70,6 +70,8 @@ OpenSim::ModelComponentSet<OpenSim::Constraint>;
 %include <OpenSim/Simulation/Model/ConstraintSet.h>
 
 %include <OpenSim/Simulation/Model/Force.h>
+%include <OpenSim/Simulation/Model/ForceProducer.h>
+
 %template(SetForces) OpenSim::Set<OpenSim::Force, OpenSim::ModelComponent>;
 %template(ModelComponentSetForces) OpenSim::ModelComponentSet<OpenSim::Force>;
 %include <OpenSim/Simulation/Model/ForceSet.h>
@@ -79,6 +81,7 @@ OpenSim::ModelComponentSet<OpenSim::Constraint>;
 
 %include <OpenSim/Simulation/Model/TwoFrameLinker.h>
 %template(TwoFrameLinkerForce) OpenSim::TwoFrameLinker<OpenSim::Force, OpenSim::PhysicalFrame>;
+%template(TwoFrameLinkerForceProducer) OpenSim::TwoFrameLinker<OpenSim::ForceProducer, OpenSim::PhysicalFrame>;
 %template(TwoFrameLinkerConstraint) OpenSim::TwoFrameLinker<OpenSim::Constraint, OpenSim::PhysicalFrame>;
 
 %include <OpenSim/Simulation/SimbodyEngine/FreeJoint.h>
@@ -92,6 +95,7 @@ OpenSim::ModelComponentSet<OpenSim::Constraint>;
 %include <OpenSim/Simulation/SimbodyEngine/UniversalJoint.h>
 %include <OpenSim/Simulation/SimbodyEngine/PlanarJoint.h>
 %include <OpenSim/Simulation/SimbodyEngine/ScapulothoracicJoint.h>
+%include <OpenSim/Simulation/SimbodyEngine/ConstantCurvatureJoint.h>
 
 %include <OpenSim/Simulation/SimbodyEngine/WeldConstraint.h>
 %include <OpenSim/Simulation/SimbodyEngine/PointConstraint.h>
@@ -139,6 +143,8 @@ OpenSim::ModelComponentSet<OpenSim::Controller>;
 %include <OpenSim/Simulation/Control/ControlLinear.h>
 %include <OpenSim/Simulation/Control/Controller.h>
 %include <OpenSim/Simulation/Control/PrescribedController.h>
+%include <OpenSim/Simulation/Control/InputController.h>
+%include <OpenSim/Simulation/Control/SynergyController.h>
 
 %include <OpenSim/Simulation/Manager/Manager.h>
 %include <OpenSim/Simulation/Model/AbstractTool.h>
@@ -191,8 +197,9 @@ OpenSim::ModelComponentSet<OpenSim::Controller>;
 
 %include <OpenSim/Simulation/Model/PointForceDirection.h>
 %template(ArrayPointForceDirection) OpenSim::Array<OpenSim::PointForceDirection*>;
-
+%include <OpenSim/Simulation/Model/AbstractGeometryPath.h>
 %include <OpenSim/Simulation/Model/GeometryPath.h>
+%include <OpenSim/Simulation/Model/FunctionBasedPath.h>
 %include <OpenSim/Simulation/Model/Ligament.h>
 %include <OpenSim/Simulation/Model/Blankevoort1991Ligament.h>
 %include <OpenSim/Simulation/Model/PathActuator.h>
@@ -230,8 +237,12 @@ OpenSim::ModelComponentSet<OpenSim::Controller>;
 %template(SetMarkerWeights) OpenSim::Set<MarkerWeight, OpenSim::Object>;
 %include <OpenSim/Simulation/CoordinateReference.h>
 %include <OpenSim/Simulation/OrientationsReference.h>
+// Since we have both OrientationsReference and shared_ptr<OrientationsReference>
+// Across the interface, DO NOT use %shared_ptr macro here as it treats
+// all pointers and references as std::shared_ptr
+//
 %template (SetOientationWeights) OpenSim::Set<OrientationWeight, OpenSim::Object>;
-%shared_ptr(OpenSim::OrientationsReference);
+%template(SharedOrientationsReference) std::shared_ptr<OpenSim::OrientationsReference>;
 %include <OpenSim/Simulation/BufferedOrientationsReference.h>
 %shared_ptr(OpenSim::BufferedOrientationsReference);
 
@@ -244,6 +255,7 @@ OpenSim::ModelComponentSet<OpenSim::Controller>;
 
 %template(StdVectorIMUs) std::vector< OpenSim::IMU* >;
 
+%include <OpenSim/Simulation/StatesDocument.h>
 %include <OpenSim/Simulation/StatesTrajectory.h>
 // This enables iterating using the getBetween() method.
 %template(IteratorRangeStatesTrajectoryIterator)
@@ -254,6 +266,7 @@ OpenSim::ModelComponentSet<OpenSim::Controller>;
 %template(analyze) OpenSim::analyze<double>;
 %template(analyzeVec3) OpenSim::analyze<SimTK::Vec3>;
 %template(analyzeSpatialVec) OpenSim::analyze<SimTK::SpatialVec>;
+%template(analyzeRotation) OpenSim::analyze<SimTK::Rotation_<double>>;
 
 %include <OpenSim/Simulation/VisualizerUtilities.h>
 

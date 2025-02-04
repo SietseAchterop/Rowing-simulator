@@ -35,7 +35,8 @@ print("TIMES: ", totalsteps, stroketime)
 #
 nmbrstrokes = 3
 #  height of (middle of) blade above the water
-blheight = 0.1
+blheight = 0.00   # blade in the water
+blheight = 0.03   # blade above the water
 
 """ position of the rower is determined by 4 values:
       1. height of the blade above the water
@@ -513,7 +514,7 @@ def main():
             pos = pos_in_parts(100)
             print('exit1 ', pos, time)
             # set position
-            calc_pos(pos, blheight+0.025, bbaan, time)
+            calc_pos(pos, blheight+0.01, bbaan, time)
             nextstring = [time, (time)/Hz]
             for x in position:
                 nextstring.append(f'{x[0]:.3f}')
@@ -524,7 +525,7 @@ def main():
 
             print('exit2 ', pos, time)
             # set position
-            calc_pos(pos, blheight+0.05, bbaan, time)
+            calc_pos(pos, blheight+0.02, bbaan, time)
             nextstring = [time, (time)/Hz]
             for x in position:
                 nextstring.append(f'{x[0]:.3f}')
@@ -535,7 +536,7 @@ def main():
 
             print('exit3 ', pos, time)
             # set position
-            calc_pos(pos, blheight+0.075, bbaan, time)
+            calc_pos(pos, blheight+0.03, bbaan, time)
             nextstring = [time, (time)/Hz]
             for x in position:
                 nextstring.append(f'{x[0]:.3f}')
@@ -557,7 +558,7 @@ def main():
                 #print(t*100/aantal)
                 pos = pos_in_parts(t*100/aantal)
                 # set position
-                calc_pos(pos, blheight+0.10, bbaan, time)
+                calc_pos(pos, blheight+0.04, bbaan, time)
                 nextstring = [time, (time/Hz)]
                 for x in position:
                     nextstring.append(f'{x[0]:.3f}')
