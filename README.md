@@ -25,7 +25,7 @@ First working version with partial person.
 ## BootBaan1
 
 First complete person. There are two trajectories, one with blades "above the water", so no friction and one with the blades "in the water".
-The value of blheight, line 38 in trajectory.py, determines the trajectory, 0.05 of 0.00 respectively.
+The value of blheight, line 38 in trajectory.py, determines the trajectory, 0.05 or 0.00 respectively.
 The blade only use normal friction, but it should basically work.
 Work in progress.
 
