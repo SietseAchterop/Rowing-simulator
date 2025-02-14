@@ -225,11 +225,12 @@ bj_3.append("bJoint_3")
 boattf.updTransformAxis(3).setCoordinateNames(bj_3)
 boattf.updTransformAxis(3).set_function(osim.LinearFunction())
 
+"""
 bj_4 = osim.ArrayStr()
 bj_4.append("bJoint_4")
 boattf.updTransformAxis(4).setCoordinateNames(bj_4)
 boattf.updTransformAxis(4).set_function(osim.LinearFunction())
-
+"""
 boatJoint = osim.CustomJoint("boatJoint",
                            bbaan.getGround(),
                            osim.Vec3(0, boatHeight/2, 0),
@@ -1054,13 +1055,14 @@ baan = osim.ContactHalfSpace(osim.Vec3(0, 0, 0),
 baan.setName("baan")
 bbaan.addContactGeometry(baan)
 
-
+"""
 boot = osim.ContactMesh('box6_0.6_0.2.stl',
                         osim.Vec3(0, 0, 0),
                         osim.Vec3(-pi/2, 0, 0),
                         theBoat)
 boot.setName("boot")
 bbaan.addContactGeometry(boot)
+"""
 
 sblgeom = osim.ContactMesh('box0.05_0.45_0.45.stl',
                            osim.Vec3(0, 0, 0),
@@ -1093,6 +1095,7 @@ dynamicFriction     = 0.001;
 viscousFriction     = 0.001;
 transitionVelocity  = 0.02;
 
+"""
 e_1 = osim.ElasticFoundationForce()
 e_1.setName('Boot')
 e_1.addGeometry('boot')
@@ -1104,17 +1107,37 @@ e_1.setDynamicFriction(dynamicFriction)
 e_1.setViscousFriction(viscousFriction)
 e_1.setTransitionVelocity(transitionVelocity)
 bbaan.addForce(e_1)
-
+"""
 # Blade values in the direction of the blade
-# from BladeForce.cpp:       const Real stblade = 1e9, disblade = 0.8, statfblade = 0.01, dynfblade = 0.01, viscblade = 0.01, transvblade = 0.02;
+# from BladeForce.cpp:       const Real stblade = 50000, disblade = 0.8, statfblade = 0.01, dynfblade = 0.01, viscblade = 0.01, transvblade = 0.02;
 
 # for perpendicular to the blade
 stiffness           = 50000;
 dissipation         = 0.8;
-staticFriction      = 0.4;
-dynamicFriction     = 0.4;
-viscousFriction     = 0.44;
+staticFriction      = 1.5;
+dynamicFriction     = 1.5;
+viscousFriction     = 1.4;
 transitionVelocity  = 0.02;
+
+"""
+#  in direction of the blade
+stiffness           = 1e9;
+dissipation         = 0.8;
+staticFriction      = 0.01;
+dynamicFriction     = 0.01;
+viscousFriction     = 0.01;
+transitionVelocity  = 0.02;
+"""
+
+"""
+# testing
+stiffness           = 50000;
+dissipation         = 0.8;
+staticFriction      = 0.01;
+dynamicFriction     = 0.01;
+viscousFriction     = 0.01;
+transitionVelocity  = 0.02;
+"""
 
 e_2 = osim.BladeForce()
 # voorlopig

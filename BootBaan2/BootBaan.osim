@@ -817,9 +817,6 @@
 						<Coordinate name="bJoint_3">
 							<!--All properties of this object have their default values.-->
 						</Coordinate>
-						<Coordinate name="bJoint_4">
-							<!--All properties of this object have their default values.-->
-						</Coordinate>
 					</coordinates>
 					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
 					<frames>
@@ -888,13 +885,9 @@
 						</TransformAxis>
 						<TransformAxis name="translation2">
 							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
-							<coordinates>bJoint_4</coordinates>
+							<coordinates></coordinates>
 							<!--Rotation or translation axis for the transform.-->
 							<axis>0 1 0</axis>
-							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
-							<LinearFunction name="function">
-								<coefficients> 1 0</coefficients>
-							</LinearFunction>
 						</TransformAxis>
 						<TransformAxis name="translation3">
 							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
@@ -2502,25 +2495,6 @@
 					<!--Name of the generalized coordinate to which the actuator applies.-->
 					<coordinate>handleright_up</coordinate>
 				</CoordinateActuator>
-				<ElasticFoundationForce name="Boot">
-					<!--Material properties.-->
-					<ElasticFoundationForce::ContactParametersSet name="contact_parameters">
-						<objects>
-							<ElasticFoundationForce::ContactParameters>
-								<!--Names of geometry objects affected by these parameters.-->
-								<geometry>boot baan</geometry>
-								<stiffness>1000000</stiffness>
-								<dissipation>1</dissipation>
-								<static_friction>0.001</static_friction>
-								<dynamic_friction>0.001</dynamic_friction>
-								<viscous_friction>0.001</viscous_friction>
-							</ElasticFoundationForce::ContactParameters>
-						</objects>
-						<groups />
-					</ElasticFoundationForce::ContactParametersSet>
-					<!--Slip velocity (creep) at which peak static friction occurs.-->
-					<transition_velocity>0.02</transition_velocity>
-				</ElasticFoundationForce>
 				<BladeForce name="SBlad">
 					<!--Material properties.-->
 					<BladeForce::ContactParametersSet name="contact_parameters">
@@ -2530,9 +2504,9 @@
 								<geometry>sblad baan</geometry>
 								<stiffness>50000</stiffness>
 								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.40000000000000002</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.44</viscous_friction>
+								<static_friction>1.5</static_friction>
+								<dynamic_friction>1.5</dynamic_friction>
+								<viscous_friction>1.3999999999999999</viscous_friction>
 							</BladeForce::ContactParameters>
 						</objects>
 						<groups />
@@ -2549,9 +2523,9 @@
 								<geometry>pblad baan</geometry>
 								<stiffness>50000</stiffness>
 								<dissipation>0.80000000000000004</dissipation>
-								<static_friction>0.40000000000000002</static_friction>
-								<dynamic_friction>0.40000000000000002</dynamic_friction>
-								<viscous_friction>0.44</viscous_friction>
+								<static_friction>1.5</static_friction>
+								<dynamic_friction>1.5</dynamic_friction>
+								<viscous_friction>1.3999999999999999</viscous_friction>
 							</BladeForce::ContactParameters>
 						</objects>
 						<groups />
@@ -2615,16 +2589,6 @@
 					<!--Orientation of geometry in the PhysicalFrame (body-fixed XYZ Euler angles).-->
 					<orientation>0 0 -1.5707963267948966</orientation>
 				</ContactHalfSpace>
-				<ContactMesh name="boot">
-					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
-					<socket_frame>/bodyset/TheBoat</socket_frame>
-					<!--Location of geometry center in the PhysicalFrame.-->
-					<location>0 0 0</location>
-					<!--Orientation of geometry in the PhysicalFrame (body-fixed XYZ Euler angles).-->
-					<orientation>-1.5707963267948966 0 0</orientation>
-					<!--Path to mesh geometry file (supports .obj, .stl, .vtp). Mesh should be closed and water-tight.-->
-					<filename>box6_0.6_0.2.stl</filename>
-				</ContactMesh>
 				<ContactMesh name="sblad">
 					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which this geometry is attached.).-->
 					<socket_frame>/bodyset/StarboardBlade</socket_frame>

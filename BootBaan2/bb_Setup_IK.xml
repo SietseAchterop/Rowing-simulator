@@ -46,10 +46,12 @@
 					<weight>1.0</weight>
 					<value>0</value>
 				</IKCoordinateTask>
+<!--
 				<IKCoordinateTask name="bJoint_4">
 					<weight>1.0</weight>
 					<value>0.0022</value>
 				</IKCoordinateTask>
+-->
 			</objects>
 			<groups />
 		</IKTaskSet>
