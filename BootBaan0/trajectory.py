@@ -183,8 +183,8 @@ def calc_pos(pos, blheight, bbaan, time):
 
     """ First determine handle circles   """
     # Starboard side
-    #  place of (frame of) lock (0.02 higher than port side)
-    slockheight = boatHeight+seatHeight+lockHeight + 0.025 + 0.02 #   hoogteverschil geeft iets raars bij de elleboog in de uitzet 
+    #  place of (frame of) lock (higher than port side)
+    slockheight = boatHeight+seatHeight+lockHeight + 0.025 + heightdiff #   hoogteverschil geeft iets raars bij de elleboog in de uitzet 
     slockplace = np.array((place, slockheight, span/2))
     # handle height with blade  blheight above the water
     soarangle = math.asin((slockheight-blheight)/(outboard-bladepoint))

@@ -14,7 +14,7 @@
 		<!--Initial time for the simulation.-->
 		<initial_time>0.02</initial_time>
 		<!--Final time for the simulation.-->
-		<final_time>0.1</final_time>
+		<final_time>7.0</final_time>
 		<!--Flag indicating whether or not to compute equilibrium values for states other than the coordinates or speeds.  For example, equilibrium muscle fiber lengths or muscle forces.-->
 		<solve_for_equilibrium_for_auxiliary_states>true</solve_for_equilibrium_for_auxiliary_states>
 		<!--Maximum number of integrator steps.-->
@@ -48,7 +48,7 @@
 		<!--File containing the tracking tasks. Which coordinates are tracked and with what weights are specified here.-->
 		<task_set_file>bb_CMC_Tasks.xml</task_set_file>
 		<!--File containing the constraints on the controls.-->
-		<constraints_file/>
+		<constraints_file />
 		<!--File containing the controls output by RRA. These can be used to place constraints on the residuals during CMC.-->
 		<rra_controls_file />
 		<!--Low-pass cut-off frequency for filtering the desired kinematics. A negative value results in no filtering. The default value is -1.0, so no filtering.-->
@@ -62,11 +62,11 @@
 		<!--Step size used by the optimizer to compute numerical derivatives. A value between 1.0e-4 and 1.0e-8 is usually appropriate.-->
 		<numerical_derivative_step_size>1.0e-05</numerical_derivative_step_size>
 		<!--Convergence tolerance for the optimizer. The smaller this value, the deeper the convergence. Decreasing this number can improve a solution, but will also likely increase computation time.-->
-		<optimization_convergence_tolerance>1.0e-04</optimization_convergence_tolerance>
+		<optimization_convergence_tolerance>1.0e-05</optimization_convergence_tolerance>
 		<!--Maximum number of iterations for the optimizer.-->
 		<optimizer_max_iterations>1000</optimizer_max_iterations>
 		<!--Print level for the optimizer, 0 - 3. 0=no printing, 3=detailed printing, 2=in between-->
-		<optimizer_print_level>3</optimizer_print_level>
+		<optimizer_print_level>0</optimizer_print_level>
 		<!--True-false flag indicating whether or not to turn on verbose printing for cmc.-->
 		<use_verbose_printing>true</use_verbose_printing>
 

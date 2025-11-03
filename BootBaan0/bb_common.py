@@ -37,6 +37,9 @@ outboard = 1.98
 bladepoint = 0.45   # scull
 
 
+# difference between port and starboard lock
+heightdiff = 0.02
+
 """   Derived parameters    """
 llegw      = rowerw * 0.1
 ulegw      = rowerw * 0.1

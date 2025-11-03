@@ -35,8 +35,8 @@ print("TIMES: ", totalsteps, stroketime)
 #
 nmbrstrokes = 3
 #  height of (middle of) blade above the water
-#blheight = 0.00   # blade in the water
-blheight = 0.05   # blade above the water
+blheight = 0.00   # blade in the water
+#blheight = 0.05   # blade above the water
 
 """ position of the rower is determined by 4 values:
       1. height of the blade above the water
@@ -184,7 +184,7 @@ def calc_pos(pos, blheight, bbaan, time):
     """ First determine handle circles   """
     # Starboard side
     #  place of (frame of) lock (0.02 higher than port side)
-    slockheight = boatHeight+seatHeight+lockHeight + 0.025 + hoogteverschil
+    slockheight = boatHeight+seatHeight+lockHeight + 0.025 + 0.02 #   hoogteverschil geeft iets raars bij de elleboog in de uitzet 
     slockplace = np.array((place, slockheight, span/2))
     # handle height with blade  blheight above the water
     soarangle = math.asin((slockheight-blheight)/(outboard-bladepoint))

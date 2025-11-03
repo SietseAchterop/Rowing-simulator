@@ -21,8 +21,15 @@ First working version with partial person.
 
   - osim- and trc-files are created via the python scripts.
   - The mot file is created using the IK tool.
+  - the video is output of CMC tool.
 
 ## BootBaan1
+
+Includes lowerarms.
+
+   - CMC crashes immediately.
+
+## BootBaan5
 
 First complete person. There are two trajectories, one with blades "above the water", so no friction and one with the blades "in the water".
 The value of blheight, line 38 in trajectory.py, determines the trajectory, 0.05 or 0.00 respectively.
@@ -31,12 +38,12 @@ Work in progress.
 
 <img src="BootBaan1/das_boot.png" alt="das Boot" width="800"/>
 
-## BootBaan2
+## BootBaan6
 
 We now use a special BladeForce component that mimics the real blade much better. Needs the patches mentioned below.
 Work in progress.
 
-## BootBaan3
+## BootBaan7
 
 Version with muscles.
 Not yet.

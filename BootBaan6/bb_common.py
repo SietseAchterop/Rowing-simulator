@@ -71,10 +71,6 @@ markers = ['mBoat', 'mSeat', 'mShoulder', 'mpElbow', 'msElbow', 'mpHandle', 'msH
 nmbrmarkers = len(markers)
 
 
-# the boat
-hoogteverschil = 0.00 #  between port and starboard
-    
-
 def normalize(v):
     """ normalize vector v, should be non-zero!  """
     return v / np.sqrt(np.sum(v**2))
