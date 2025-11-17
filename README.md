@@ -40,7 +40,7 @@ The value of blheight, line 38 in trajectory.py, determines the trajectory, 0.05
 The blade only use normal friction, but it should basically work.
 Work in progress.
 
-<img src="BootBaan1/das_boot.png" alt="das Boot" width="800"/>
+<img src="BootBaan5/das_boot.png" alt="das Boot" width="800"/>
 
 ## BootBaan6
 
