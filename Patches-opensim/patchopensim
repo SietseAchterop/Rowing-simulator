@@ -7,10 +7,7 @@ set -e
 OPENSIM_DIR=/home/sietse/Software/OpenSim
 cd ${OPENSIM_DIR}
 
-echo ======
-echo  New files can be copied
-echo  Existing files have to be checked for changes!
-echo ======
+echo ====== met patch doen!
 
 exit 0
 # de vraag is of dit goed gaat!

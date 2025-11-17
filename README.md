@@ -21,13 +21,17 @@ First working version with partial person.
 
   - osim- and trc-files are created via the python scripts.
   - The mot file is created using the IK tool.
-  - the video is output of CMC tool.
+  - the video is output of the CMC tool.
 
 ## BootBaan1
 
 Includes lowerarms.
 
    - CMC crashes immediately.
+
+## BootBaan2
+
+Complete person. No contracts or friction on the boat or at the blades.
 
 ## BootBaan5
 
@@ -54,5 +58,7 @@ Not yet.
 To model a blade in water a new force, BladeForce, was created, a variant of the ElasticFoundationForce of Simbody.
 With BladeForce friction is dependant upon the angle between the blade and the speed of the blade in the water.
 The parameters set the friction perpendicular to the blade and friction in line with the blade is set very low in BladeForce.
+
+Note: this to an older version of OpenSim. Should use patch instead. Check before use!
 
 Also a script to create opensim from source on debian and ubuntu is included.

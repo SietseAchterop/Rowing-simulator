@@ -30,7 +30,8 @@
 #include <map>
 #include <set>
 
-#include <iomanip>
+// Added SA
+using  namespace std;
 
 namespace SimTK {
 
@@ -111,22 +112,21 @@ void BladeForceImpl::calcForce
 
         // in ons geval geldt iter1 == parameters.end().
         if (iter1 != parameters.end()) {
-	      // A crude check
-	      std::cout << "Should not happen in BladeForce!" << std::endl;
-	      exit(-1);
+            // A crude check
+            cout << "Should not happen in BladeForce!" << endl;
+            exit(-1);
 
-	  const TriangleMeshContact& contact = 
-	    static_cast<const TriangleMeshContact&>(contacts[i]);
-	  processContact(state, contact.getSurface1(), 
-			 contact.getSurface2(), iter1->second, 
-			 contact.getSurface1Faces(), areaScale, bodyForces, pe);
+            const TriangleMeshContact& contact = 
+                static_cast<const TriangleMeshContact&>(contacts[i]);
+            processContact(state, contact.getSurface1(), 
+                contact.getSurface2(), iter1->second, 
+                contact.getSurface1Faces(), areaScale, bodyForces, pe);
         }
 
         // Only this branch will be taken
         if (iter2 != parameters.end()) {
             const TriangleMeshContact& contact = 
                 static_cast<const TriangleMeshContact&>(contacts[i]);
-	    std::cout << "call processContact, i:" << i << "  "  << contacts[i].nameOfCondition << std::endl;
             processContact(state, contact.getSurface2(), 
                 contact.getSurface1(), iter2->second, 
                 contact.getSurface2Faces(), areaScale, bodyForces, pe);
@@ -134,6 +134,7 @@ void BladeForceImpl::calcForce
     }
 }
 
+// Version for iter2 
 void BladeForceImpl::processContact
    (const State& state, 
     ContactSurfaceIndex meshIndex, ContactSurfaceIndex otherBodyIndex, 
@@ -147,69 +148,31 @@ void BladeForceImpl::processContact
     const Transform t2g = body2.getBodyTransform(state)*subsystem.getBodyTransform(set, otherBodyIndex); // other object to ground
     const Transform t12 = ~t2g*t1g; // mesh to other object
 
-    // Added wrt ElasticFoundationForce
+    const Vec3 body1_pos = body1.getBodyOriginLocation(state);
     const Rotation body1_rot = body1.getBodyRotation(state);
-    // Direction of X-axis of body1 wrt the ground frame (normalized)
-    const Vec3 xdir = body1_rot*Vec3(0,1,0);
-    // speed of body1 wrt the ground plane
-    Vec3 vel = body1.getBodyOriginVelocity(state);
-    // snelheiden zijn wel heel klein! 
+    // Direction of X-axis, normalized
+    const Vec3 xdir = body1_rot*Vec3(1,0,0);
 
-    // beter gewoon de hoek met de x-as van body1 tov ground frame nemen? 
-    // kan omdat de boot steeds op de X-as blijft.
-    vel = Vec3(1, 0, 0);
+    Vec3 vel = body1.getBodyOriginVelocity(state);
 
     // angle between blade and velocity of blade, only use XZ plane.
-    // DIT IS GEWOON FOUT!! sin + cos is te simpel
-
-    int bofs;
-    Vec3 poss = body1.getBodyOriginLocation(state);
-    std::cout << "position body: " << poss << std::endl;
-    if (poss[2] > 0) bofs = 1; else bofs = 0;
-    
     const Real tijd = state.getTime();
- 
-    if (bofs == 0)
-      std::cout << "=====  body1_rot: " << std::setprecision(4) <<  body1_rot << " xdir " << xdir << " vel: "  <<  vel << " Tijd: " << std::setprecision(4) << tijd << std::endl;
-    else
-      std::cout << "++++  body1_rot: " << std::setprecision(4) <<  body1_rot << " xdir " << xdir << " vel: "  <<  vel << " Tijd: " << std::setprecision(4) << tijd << std::endl;
-
     Real angle;
     if (vel.norm() < 0.0001) {
       angle = 0;
-      std::cout << "BladForce: no speed." << std::endl;
+      cout << "BladForce: no speed." << endl;
       // we get here using the Inverse Kinematics tool
     } else {
       // dot product in the XZ plane
       const Real dotprod = vel[0]*xdir[0] + vel[2]*xdir[2];
       const Real prod = std::sqrt(vel[0]*vel[0]+vel[2]*vel[2])  *  std::sqrt(xdir[0]*xdir[0]+xdir[2]*xdir[2]);
-      angle = std::acos(dotprod/prod);
+      angle = std::acos(dotprod/prod);	
+      // cout << "\nAAA next processContact:  angle: " << angle << "  Vel " << setprecision(4) << nvel << " xdir: " << xdir <<  " pos: " << body1_pos << " at time: " << tijd << endl;
       if (angle > Pi/2) angle = Pi - angle;
-      if (bofs == 0)
-	std::cout << "==== prContact dotprod: " << dotprod << " prod: " << prod <<  " angle: " << std::setprecision(3) <<  angle *(180/3.14159) << std::endl;
-      else
-	std::cout << "++++ prContact dotprod: " << dotprod << " prod: " << prod <<  " angle: " << std::setprecision(3) <<  angle *(180/3.14159) << std::endl;
-	
     }
 
-    // Set param values according to angle
-    // parameters in the direction of the blade
-    const Real stblade = 50000, disblade = 0.8, statfblade = 0.01, dynfblade = 0.01, viscblade = 0.01, transvblade = 0.02;
-    // kan dit niet beter?
-    Real stiffness = stblade*std::cos(angle) + param.stiffness*std::sin(angle);
-    Real dissip = disblade*std::cos(angle) + param.dissipation*std::sin(angle);
-    Real staticf = statfblade*std::cos(angle) + param.staticFriction*std::sin(angle);
-    Real dynamf = dynfblade*std::cos(angle) + param.dynamicFriction*std::sin(angle);
-    Real viscf = viscblade*std::cos(angle) + param.viscousFriction*std::sin(angle);
-    Real transvel = transvblade*std::cos(angle) + transitionVelocity*std::sin(angle);
-
-    if (bofs == 0)
-      std::cout << "==== boord Parameters: angle: " << angle*(180/3.14159) << " stiffness: " << stiffness << " dissipation " << dissip << " staticF " << staticf << " dynamicF " << dynamf << " viscousF " << viscf  << " transV " << transvel << std::endl;
-    else
-      std::cout << "++++ boord Parameters: angle: " << angle*(180/3.14159) << " stiffness: " << stiffness << " dissipation " << dissip << " staticF " << staticf << " dynamicF " << dynamf << " viscousF " << viscf  << " transV " << transvel << std::endl;
-      
-
     // Loop over all the springs, and evaluate the force from each one.
+    int eenmaal = 1;
 
     for (std::set<int>::const_iterator iter = insideFaces.begin(); 
                                        iter != insideFaces.end(); ++iter) {
@@ -221,7 +184,7 @@ void BladeForceImpl::processContact
             continue;
         
         // Find how much the spring is displaced.
-        
+
         nearestPoint = t2g*nearestPoint;
         const Vec3 springPosInGround = t1g*param.springPosition[face];
         const Vec3 displacement = nearestPoint-springPosInGround;
@@ -243,6 +206,22 @@ void BladeForceImpl::processContact
         const Vec3 vtangent = v-vnormal*forceDir;
         
         // Calculate the damping force.
+        
+        // Set param values according to angle
+        // parameters in the direction of the blade
+        const Real stblade = 1e9, disblade = 0.8, statfblade = 0.01, dynfblade = 0.01, viscblade = 0.01, transvblade = 0.02;
+
+        Real stiffness = stblade*std::cos(angle) + param.stiffness*std::sin(angle);
+        Real dissip = disblade*std::cos(angle) + param.dissipation*std::sin(angle);
+        Real staticf = statfblade*std::cos(angle) + param.staticFriction*std::sin(angle);
+        Real dynamf = dynfblade*std::cos(angle) + param.dynamicFriction*std::sin(angle);
+        Real viscf = viscblade*std::cos(angle) + param.viscousFriction*std::sin(angle);
+        Real transvel = transvblade*std::cos(angle) + transitionVelocity*std::sin(angle);
+
+	if (eenmaal == 1){
+	  eenmaal = 0;
+	  //cout << "Parameters: angle: " << angle << " stiffness: " << stiffness << " dissipation " << dissip << " staticF " << staticf << " dynamicF " << dynamf << " viscousF " << viscf  << " transV " << transvel << endl;
+	}
 
         const Real area = areaScale * param.springArea[face];
         const Real f = stiffness*area*distance*(1+dissip*vnormal);
@@ -262,7 +241,7 @@ void BladeForceImpl::processContact
 
         body1.applyForceToBodyPoint(state, station1, force, bodyForces);
         body2.applyForceToBodyPoint(state, station2, -force, bodyForces);
-        pe += stiffness*area*displacement.normSqr()/2;
+        pe += param.stiffness*area*displacement.normSqr()/2;
     }
 }
 
