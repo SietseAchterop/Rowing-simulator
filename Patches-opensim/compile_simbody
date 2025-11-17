@@ -1,0 +1,24 @@
+#!/bin/bash
+#   Ad hoc script to build opensim from source
+#   Part 2: get all dependencies
+set -e
+
+BUILD_TYPE="Release"
+MOCO="ON"
+TESTING="OFF"
+
+if [ ! -d build ]
+then
+    mkdir build_simbody
+fi
+
+# We first build simbody, outside of opensim to make patching/rebuilding it easier.
+export SIMBODY_HOME=/usr/local
+
+cd build_simbody
+cmake ../simbody -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DBUILD_TESTING=${TESTING}
+make -j8
+sudo make install
+
+echo ==== done  simbody ====
+
